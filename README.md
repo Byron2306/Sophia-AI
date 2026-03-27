@@ -123,7 +123,7 @@ Hand this Markdown to reviewers with:
 Together these form the single source of truth proof for the sovereign audit and the linked prior-art document. Anyone with these items can recompute the hashes, confirm signatures, and see that nothing has changed since the event was generated.
 
 
-md = """# INTEGRITAS MECHANICUS  
+## INTEGRITAS MECHANICUS  
 ## Arda, Seraph, and the Constitutional Path
 
 > **Seraph guards. Arda judges. Integritas Mechanicus consecrates the keeping of the realm.**
