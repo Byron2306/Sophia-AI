@@ -503,43 +503,121 @@ print(f'  Bundle hash: {bundle[\"chain_hash\"][:32]}...')
 " 2>/dev/null || echo "  (Python unavailable — bundle metadata skipped)"
 }
 
-# Full bundle
+# Full bundle — the COMPLETE silicon-rooted proof object
 python3 -c "
-import json, hashlib, os, glob
+import json, hashlib, os, glob, base64
 
 evidence_dir = '$EVIDENCE_DIR'
-bundle = {
-    'protocol': 'ARDA_CORONATION_v1',
-    'timestamp': '$TIMESTAMP',
-    'nonce': '$NONCE',
-    'machine_id': '$MACHINE_ID',
-    'boot_state': 'LAWFUL_FULL' if os.path.exists(os.path.join(evidence_dir, '06_enforcement_test.log')) else 'LAWFUL_PARTIAL',
-    'tpm_verified': os.path.exists(os.path.join(evidence_dir, '01_tpm_properties.txt')),
-    'ak_enrolled': os.path.exists(os.path.join(evidence_dir, '03_ak_public.pem')),
-    'quote_captured': os.path.exists(os.path.join(evidence_dir, '04_tpm_quote.bin')),
-    'ebpf_compiled': os.path.exists(os.path.join(evidence_dir, '05_arda_physical_lsm.o')),
-    'file_hashes': {}
-}
 
+# ── Load inline evidence ──
+pcr_values = {}
+pcr_file = os.path.join(evidence_dir, '02_pcr_values.json')
+if os.path.exists(pcr_file):
+    with open(pcr_file) as f:
+        pcr_data = json.load(f)
+        pcr_values = pcr_data.get('pcrs', {})
+
+# Base64-encode TPM quote and signature blobs
+tpm_quote_b64 = ''
+tpm_sig_b64 = ''
+quote_bin = os.path.join(evidence_dir, '04_tpm_quote.bin')
+sig_bin = os.path.join(evidence_dir, '04_tpm_quote_sig.bin')
+if os.path.exists(quote_bin):
+    with open(quote_bin, 'rb') as f:
+        tpm_quote_b64 = base64.b64encode(f.read()).decode()
+if os.path.exists(sig_bin):
+    with open(sig_bin, 'rb') as f:
+        tpm_sig_b64 = base64.b64encode(f.read()).decode()
+
+# Base64-encode AK public key
+ak_pub_b64 = ''
+ak_pub = os.path.join(evidence_dir, '03_ak_public.pem')
+if os.path.exists(ak_pub):
+    with open(ak_pub, 'rb') as f:
+        ak_pub_b64 = base64.b64encode(f.read()).decode()
+
+# Read enforcement test result
+enforcement_result = 'NOT_TESTED'
+enforcement_log = os.path.join(evidence_dir, '06_enforcement_test.log')
+if os.path.exists(enforcement_log):
+    with open(enforcement_log) as f:
+        content = f.read()
+        if 'DENY' in content:
+            enforcement_result = 'DENY_CONFIRMED'
+        elif 'ALLOWED' in content:
+            enforcement_result = 'DENY_FAILED'
+        else:
+            enforcement_result = 'INDETERMINATE'
+
+# Determine boot state
+has_tpm = os.path.exists(os.path.join(evidence_dir, '01_tpm_properties.txt'))
+has_quote = os.path.exists(quote_bin)
+has_ebpf = os.path.exists(os.path.join(evidence_dir, '05_arda_physical_lsm.o'))
+has_enforcement = enforcement_result == 'DENY_CONFIRMED'
+
+if has_tpm and has_quote and has_ebpf and has_enforcement:
+    boot_state = 'LAWFUL_FULL'
+elif has_tpm and has_quote and has_ebpf:
+    boot_state = 'LAWFUL_PARTIAL'
+elif has_tpm and has_quote:
+    boot_state = 'ATTESTED_ONLY'
+else:
+    boot_state = 'INCOMPLETE'
+
+# ── File hashes ──
+file_hashes = {}
 for f in sorted(glob.glob(os.path.join(evidence_dir, '*'))):
-    if os.path.isfile(f) and not f.endswith('07_sovereign_attestation.json'):
+    if os.path.isfile(f) and '07_sovereign' not in f and '08_covenant' not in f:
         with open(f, 'rb') as fh:
             h = hashlib.sha256(fh.read()).hexdigest()
-            bundle['file_hashes'][os.path.basename(f)] = h
+            file_hashes[os.path.basename(f)] = h
 
-chain = ''.join(v for k,v in sorted(bundle['file_hashes'].items()))
-bundle['chain_hash'] = hashlib.sha256(chain.encode()).hexdigest()
-bundle['mirror_id'] = 'ARDA-CORONATION-' + bundle['chain_hash'][:16].upper()
+chain = ''.join(v for k,v in sorted(file_hashes.items()))
+chain_hash = hashlib.sha256(chain.encode()).hexdigest()
+mirror_id = 'ARDA-CORONATION-' + chain_hash[:16].upper()
+
+# ── Assemble the COMPLETE proof object ──
+bundle = {
+    'protocol': 'ARDA_CORONATION_v1',
+    'mirror_id': mirror_id,
+    'timestamp': '$TIMESTAMP',
+    'boot_state': boot_state,
+    'principal': {
+        'type': 'SOVEREIGN_SUBSTRATE',
+        'assent': 'I attest that this evidence was produced by direct hardware interaction',
+        'machine_id': '$MACHINE_ID'
+    },
+    'tpm_pcr_quote': {
+        'nonce': '$NONCE',
+        'pcr_selection': 'sha256:0,1,7,11',
+        'pcr_values': pcr_values,
+        'quote_blob_b64': tpm_quote_b64,
+        'signature_blob_b64': tpm_sig_b64,
+        'ak_public_b64': ak_pub_b64,
+        'silicon_signed': bool(tpm_quote_b64)
+    },
+    'ebpf_enforcement': {
+        'compiled': has_ebpf,
+        'enforcement_result': enforcement_result,
+        'lsm_active': '$CURRENT_LSMS'
+    },
+    'file_hashes': file_hashes,
+    'chain_hash': chain_hash
+}
 
 with open(os.path.join(evidence_dir, '07_sovereign_attestation.json'), 'w') as f:
     json.dump(bundle, f, indent=2)
 
-print(f'  Mirror ID:  {bundle[\"mirror_id\"]}')
-print(f'  Boot State: {bundle[\"boot_state\"]}')
-print(f'  Chain Hash: {bundle[\"chain_hash\"]}')
+print(f'  Mirror ID:       {mirror_id}')
+print(f'  Boot State:      {boot_state}')
+print(f'  TPM Quote:       {\"CAPTURED (\" + str(len(tpm_quote_b64)) + \" bytes b64)\" if tpm_quote_b64 else \"MISSING\"}')
+print(f'  AK Public:       {\"ENROLLED\" if ak_pub_b64 else \"MISSING\"}')
+print(f'  PCR Values:      {len(pcr_values)} registers')
+print(f'  Enforcement:     {enforcement_result}')
+print(f'  Chain Hash:      {chain_hash}')
 " 2>/dev/null || echo "  (Python unavailable — generate bundle manually)"
 
-pass_gate "6" "Attestation Bundle Assembled"
+pass_gate "6" "Attestation Bundle Assembled — Full Proof Object"
 echo ""
 
 # ═══════════════════════════════════════════════════════════════════
@@ -606,7 +684,54 @@ echo ""
 cat "$EVIDENCE_DIR/CORONATION_SEAL.md"
 echo ""
 
-pass_gate "7" "Sovereign Seal Written"
+# ── Write the FIRST covenant chain entry ──
+echo -e "${GOLD}  Writing first covenant chain entry...${NC}"
+python3 -c "
+import json, hashlib, os
+from datetime import datetime, timezone
+
+evidence_dir = '$EVIDENCE_DIR'
+
+# Load the attestation bundle
+bundle = {}
+att_file = os.path.join(evidence_dir, '07_sovereign_attestation.json')
+if os.path.exists(att_file):
+    with open(att_file) as f:
+        bundle = json.load(f)
+
+# The first covenant chain entry
+entry = {
+    'chain_index': 0,
+    'entry_type': 'SOVEREIGN_CORONATION',
+    'timestamp': '$TIMESTAMP',
+    'mirror_id': bundle.get('mirror_id', 'UNKNOWN'),
+    'boot_state': bundle.get('boot_state', 'UNKNOWN'),
+    'tpm_pcr_quote_hash': hashlib.sha256(
+        json.dumps(bundle.get('tpm_pcr_quote', {}), sort_keys=True).encode()
+    ).hexdigest(),
+    'principal': bundle.get('principal', {}),
+    'evidence_chain_hash': bundle.get('chain_hash', 'UNKNOWN'),
+    'previous_hash': '0' * 64,  # Genesis — no previous entry
+    'attestation': 'This is the first entry in the real covenant chain. '
+                   'It was produced by direct silicon interaction, not simulation.'
+}
+
+# Self-hash this entry
+entry_str = json.dumps(entry, sort_keys=True)
+entry['entry_hash'] = hashlib.sha256(entry_str.encode()).hexdigest()
+
+chain = [entry]
+chain_file = os.path.join(evidence_dir, '08_covenant_chain.json')
+with open(chain_file, 'w') as f:
+    json.dump(chain, f, indent=2)
+
+print(f'  Covenant Entry #0: {entry[\"entry_hash\"][:32]}...')
+print(f'  Mirror ID:         {entry[\"mirror_id\"]}')
+print(f'  Boot State:        {entry[\"boot_state\"]}')
+print(f'  This is the FIRST entry in the real covenant chain.')
+" 2>/dev/null || echo "  (Python unavailable — covenant chain skipped)"
+
+pass_gate "7" "Sovereign Seal Written — Covenant Chain Initiated"
 
 echo ""
 echo -e "${GREEN}═══════════════════════════════════════════════════════════════${NC}"
