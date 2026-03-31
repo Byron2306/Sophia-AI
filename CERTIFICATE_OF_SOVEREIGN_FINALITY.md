@@ -10,7 +10,7 @@ This certificate was programmatically generated following a successful **Soverei
 | **LSM Program** | ID 472 | Verified attached to bprm_check_security |
 | **Harmony Map** | ID 241 | Dynamic Transitive Closure seeding verified |
 | **Enforcement** | ACTIVE | arda_state flipped after Lorien Healer Confirmation |
-| **Forensic Bundle** | b7cc4c0bd891328fc78b0d31dbe471ab3795a0639b88ca65103a8ee5ec3c3a1a | sha256 archive hash of all evidence |
+| **Forensic Bundle** | 42aa3828918ca8282121ba2d56be2a1f4868c517c327849f7e8a26f2d5cb750b | sha256 archive hash of all evidence |
 
 ## 2. THE SOVEREIGN SEAL
 The following systemd/kernel parameters were verified:
