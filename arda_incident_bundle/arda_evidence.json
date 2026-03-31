@@ -1,0 +1,29 @@
+{
+  "incident_context": "Arda OS Coronation Attempt",
+  "agent_id": "Antigravity",
+  "timestamp": "2026-03-31T02:48:42Z",
+  "evidence": [
+    {
+      "type": "Source Code",
+      "file": "coronation_kit/scripts/arda_kernel_ignitor.c",
+      "summary": "Modified for explicit self-seeding and BPF state attachment."
+    },
+    {
+      "type": "Source Code",
+      "file": "bpf/arda_physical_lsm.c",
+      "summary": "Kernel-side LSM hook utilizing inode/dev for allowlisting."
+    },
+    {
+      "type": "Observation",
+      "diagnosis": "Universal Veto",
+      "cause": "Inode/Device mismatch in OverlayFS environment.",
+      "result": "Operation not permitted (EPERM) for all binaries."
+    },
+    {
+      "type": "Persistence",
+      "file": "arda_os/arda-lsm-guard.service",
+      "summary": "Likely re-armed the BPF LSM during boot before user interaction."
+    }
+  ],
+  "witness_statement": "I witnessed the successful engagement of the Arda state, followed immediately by the terminal rejection of all authorized userspace processes. The system became an immutable fortress at Ring-0."
+}
