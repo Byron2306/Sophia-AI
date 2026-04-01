@@ -1,0 +1,1130 @@
+
+==================================================
+   ARDA OS: ULTIMATE SOVEREIGN MEGA TESTER (v3.2)
+==================================================
+[0] Bombadil Law Daemon: Sovereign Audit...
+[2026-03-31T21:55:23Z] [bombadil] Bombadil looks around...
+
+  Mirror ID:       not set
+  Covenant State:  lawful_partial
+  Chain Valid:     False
+
+  Observations:
+    - harmony_map_empty
+
+  TPM:             present
+  LSM:             lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF in LSM:      yes
+  eBPF loaded:     yes
+  Harmony map:     not found
+  Manifest:        present
+  Foedus:          present
+  BPF object:      present
+  Audit chain:     not yet created
+
+
+INFO: Substrate audit passed. Proceeding to MEGA TEST.
+[1] Cleaning up previous BPF objects...
+[2] Compiling BPF LSM program...
+[3] Loading and Attaching BPF via C Ignitor...
+libbpf: loading object from bpf/arda_physical_lsm.o
+libbpf: elf: section(3) lsm/bprm_check_security, size 1016, link 0, flags 6, type=1
+libbpf: sec 'lsm/bprm_check_security': found program 'arda_sovereign_ignition' at insn offset 0 (0 bytes), code size 127 insns (1016 bytes)
+libbpf: elf: section(4) .rellsm/bprm_check_security, size 128, link 28, flags 40, type=9
+libbpf: elf: section(5) license, size 4, link 0, flags 3, type=1
+libbpf: license of bpf/arda_physical_lsm.o is GPL
+libbpf: elf: section(6) .maps, size 64, link 0, flags 3, type=1
+libbpf: elf: section(7) .rodata, size 308, link 0, flags 2, type=1
+libbpf: elf: section(18) .BTF, size 13755, link 0, flags 0, type=1
+libbpf: elf: section(20) .BTF.ext, size 844, link 0, flags 0, type=1
+libbpf: elf: section(28) .symtab, size 696, link 1, flags 0, type=2
+libbpf: looking for externs among 29 symbols...
+libbpf: collected 0 externs total
+libbpf: map 'arda_harmony': at sec_idx 6, offset 0.
+libbpf: map 'arda_harmony': found type = 1.
+libbpf: map 'arda_harmony': found key [8], sz = 16.
+libbpf: map 'arda_harmony': found value [11], sz = 4.
+libbpf: map 'arda_harmony': found max_entries = 1024.
+libbpf: map 'arda_state': at sec_idx 6, offset 32.
+libbpf: map 'arda_state': found type = 2.
+libbpf: map 'arda_state': found key_size = 4.
+libbpf: map 'arda_state': found value_size = 4.
+libbpf: map 'arda_state': found max_entries = 1.
+libbpf: map 'arda_phy.rodata' (global data): at sec_idx 7, offset 0, flags 80.
+libbpf: map 2 is "arda_phy.rodata"
+libbpf: sec '.rellsm/bprm_check_security': collecting relocation for section(3) 'lsm/bprm_check_security'
+libbpf: sec '.rellsm/bprm_check_security': relo #0: insn #20 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 20
+libbpf: sec '.rellsm/bprm_check_security': relo #1: insn #57 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 57
+libbpf: sec '.rellsm/bprm_check_security': relo #2: insn #81 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 81
+libbpf: sec '.rellsm/bprm_check_security': relo #3: insn #88 against 'arda_harmony'
+libbpf: prog 'arda_sovereign_ignition': found map 0 (arda_harmony, sec 6, off 0) for insn #88
+libbpf: sec '.rellsm/bprm_check_security': relo #4: insn #95 against 'arda_state'
+libbpf: prog 'arda_sovereign_ignition': found map 1 (arda_state, sec 6, off 32) for insn #95
+libbpf: sec '.rellsm/bprm_check_security': relo #5: insn #109 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 109
+libbpf: sec '.rellsm/bprm_check_security': relo #6: insn #117 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 117
+libbpf: sec '.rellsm/bprm_check_security': relo #7: insn #121 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 121
+libbpf: object 'arda_physical_l': failed (-95) to create BPF token from '/sys/fs/bpf', skipping optional step...
+libbpf: loaded kernel BTF from '/sys/kernel/btf/vmlinux'
+libbpf: sec 'lsm/bprm_check_security': found 8 CO-RE relocations
+libbpf: CO-RE relocating [25] struct linux_binprm: found target candidate [1603] struct linux_binprm in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #0: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #0: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #0: patched insn #7 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #1: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #1: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #1: patched insn #9 (LDX/ST/STX) off 64 -> 64
+libbpf: CO-RE relocating [37] struct file: found target candidate [727] struct file in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #2: <byte_off> [37] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #2: matching candidate #0 <byte_off> [727] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #2: patched insn #10 (LDX/ST/STX) off 40 -> 40
+libbpf: CO-RE relocating [95] struct inode: found target candidate [910] struct inode in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #3: <byte_off> [95] struct inode.i_ino (0:11 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #3: matching candidate #0 <byte_off> [910] struct inode.i_ino (0:11 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #3: patched insn #11 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #4: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #4: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #4: patched insn #13 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #5: <byte_off> [37] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #5: matching candidate #0 <byte_off> [727] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #5: patched insn #14 (LDX/ST/STX) off 40 -> 40
+libbpf: prog 'arda_sovereign_ignition': relo #6: <byte_off> [95] struct inode.i_sb (0:8 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #6: matching candidate #0 <byte_off> [910] struct inode.i_sb (0:8 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #6: patched insn #15 (LDX/ST/STX) off 40 -> 40
+libbpf: CO-RE relocating [142] struct super_block: found target candidate [916] struct super_block in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #7: <byte_off> [142] struct super_block.s_dev (0:1 @ offset 16)
+libbpf: prog 'arda_sovereign_ignition': relo #7: matching candidate #0 <byte_off> [916] struct super_block.s_dev (0:1 @ offset 16)
+libbpf: prog 'arda_sovereign_ignition': relo #7: patched insn #16 (LDX/ST/STX) off 16 -> 16
+libbpf: found no pinned map to reuse at '/sys/fs/bpf/arda_harmony'
+libbpf: map 'arda_harmony': created successfully, fd=4
+libbpf: pinned map '/sys/fs/bpf/arda_harmony'
+libbpf: found no pinned map to reuse at '/sys/fs/bpf/arda_state'
+libbpf: map 'arda_state': created successfully, fd=5
+libbpf: pinned map '/sys/fs/bpf/arda_state'
+libbpf: map 'arda_phy.rodata': created successfully, fd=6
+libbpf: link fd=8: pinned at /sys/fs/bpf/arda_lsm_link
+libbpf: map 'arda_harmony' already pinned at '/sys/fs/bpf/arda_harmony'; not re-pinning
+libbpf: map 'arda_state' already pinned at '/sys/fs/bpf/arda_state'; not re-pinning
+libbpf: pinned map '/sys/fs/bpf/arda_phy_rodata'
+SUCCESS: Arda LSM Attached and Maps Linked.
+
+SUCCESS: Arda LSM Attached and Maps Pinned.
+[4] Safety Seeding and Policy Verification...
+  Safely Seeded & Verified: /bin/bash (ino=27263057, dev=271581186)
+    Hex: 51 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/ls (ino=27263605, dev=271581186)
+    Hex: 75 02 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/cat (ino=27263103, dev=271581186)
+    Hex: 7f 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/grep (ino=27263396, dev=271581186)
+    Hex: a4 01 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/chmod (ino=27263116, dev=271581186)
+    Hex: 8c 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/cp (ino=27263138, dev=271581186)
+    Hex: a2 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /bin/rm (ino=27263896, dev=271581186)
+    Hex: 98 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /usr/bin/sudo (ino=27264005, dev=271581186)
+    Hex: 05 04 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /usr/bin/python3 (ino=27263872, dev=271581186)
+    Hex: 80 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /usr/bin/stat (ino=27263997, dev=271581186)
+    Hex: fd 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  Safely Seeded & Verified: /usr/bin/id (ino=27263478, dev=271581186)
+    Hex: f6 01 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+[5] Phase A: Audit-First Verification (Dry Run)...
+  Executing heart-beat tests for authorized set...
+FATAL: Policy Retrieval Failure for TARGETED binaries!
+  > /bin/bash (ino=27263057)
+  > /bin/cat (ino=27263103)
+  > /bin/rm (ino=27263896)
+  > /usr/bin/sudo (ino=27264005)
+Full trace for analysis:
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 951/3800   #P:12
+#
+#                                _-----=> irqs-off/BH-disabled
+#                               / _----=> need-resched
+#                              | / _---=> hardirq/softirq
+#                              || / _--=> preempt-depth
+#                              ||| / _-=> migrate-disable
+#                              |||| /     delay
+#           TASK-PID     CPU#  |||||  TIMESTAMP  FUNCTION
+#              | |         |   |||||     |         |
+              sh-3755    [001] ...11   668.954189: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3755    [001] ...11   668.954199: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+##### CPU 2 buffer started ####
+            sudo-3756    [002] ...11   668.956678: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-3756    [002] ...11   668.956682: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+##### CPU 0 buffer started ####
+              sh-3780    [000] ...11   669.202338: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3780    [000] ...11   669.202344: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+             cat-3792    [002] ...11   669.268647: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263103, dev 271581186
+             cat-3792    [002] ...11   669.268651: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263103
+             cat-3794    [000] ...11   669.277366: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263103, dev 271581186
+             cat-3794    [000] ...11   669.277373: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263103
+     unix_chkpwd-3796    [000] ...11   669.282624: bpf_trace_printk: ARDA_LSM: hook entry for inode 27394830, dev 271581186
+     unix_chkpwd-3796    [000] ...11   669.282627: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-3816    [000] ...11   669.460312: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3816    [000] ...11   669.460317: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-3827    [001] ...11   669.536341: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3827    [001] ...11   669.536347: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     antigravity-3846    [000] ...11   673.232816: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+     antigravity-3846    [000] ...11   673.232819: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-3873    [002] ...11   692.435423: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3873    [002] ...11   692.435427: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+           which-3874    [000] ...11   692.442063: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264171, dev 271581186
+           which-3874    [000] ...11   692.442076: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-3874    [000] ...11   692.442119: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+           which-3874    [000] ...11   692.442122: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+             git-3885    [000] ...11   701.785016: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-3885    [000] ...11   701.785027: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+     antigravity-3887    [000] ...11   701.851988: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+     antigravity-3887    [000] ...11   701.851996: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+              sh-3910    [002] ...11   722.424374: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-3910    [002] ...11   722.424381: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+    tpm2_pcrread-3929    [000] ...11   732.779740: bpf_trace_printk: ARDA_LSM: hook entry for inode 27265458, dev 271581186
+    tpm2_pcrread-3929    [000] ...11   732.779742: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27265458
+             git-3993    [002] ...11   747.041893: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-3993    [002] ...11   747.041902: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+           which-4004    [000] ...11   755.746263: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264171, dev 271581186
+           which-4004    [000] ...11   755.746270: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-4004    [000] ...11   755.746328: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+           which-4004    [000] ...11   755.746329: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     cpuUsage.sh-4008    [000] ...11   755.816545: bpf_trace_printk: ARDA_LSM: hook entry for inode 28214587, dev 271581186
+     cpuUsage.sh-4008    [000] ...11   755.816554: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-4008    [000] ...11   755.816602: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263057, dev 271581186
+     cpuUsage.sh-4008    [000] ...11   755.816605: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263057
+             sed-4066    [000] ...11   789.407727: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4066    [000] ...11   789.407741: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+     unix_chkpwd-4069    [000] ...11   789.450430: bpf_trace_printk: ARDA_LSM: hook entry for inode 27394830, dev 271581186
+     unix_chkpwd-4069    [000] ...11   789.450441: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+            sudo-4072    [002] ...11   789.509849: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-4072    [002] ...11   789.509853: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+##### CPU 3 buffer started ####
+              rm-4079    [003] ...11   789.792705: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263896, dev 271581186
+              rm-4079    [003] ...11   789.792711: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263896
+           which-4082    [002] ...11   790.423180: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264171, dev 271581186
+           which-4082    [002] ...11   790.423191: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-4082    [002] ...11   790.423325: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+           which-4082    [002] ...11   790.423327: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+             cat-4091    [000] ...11   791.543641: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263103, dev 271581186
+             cat-4091    [000] ...11   791.543653: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263103
+           which-4094    [003] ...11   795.406778: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264171, dev 271581186
+           which-4094    [003] ...11   795.406783: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-4094    [003] ...11   795.406821: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+           which-4094    [003] ...11   795.406823: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+           which-4113    [000] ...11   807.450299: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264171, dev 271581186
+           which-4113    [000] ...11   807.450311: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-4113    [000] ...11   807.450379: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+           which-4113    [000] ...11   807.450383: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-4126    [000] ...11   812.467190: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4126    [000] ...11   812.467194: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     cpuUsage.sh-4129    [000] ...11   812.532119: bpf_trace_printk: ARDA_LSM: hook entry for inode 28214587, dev 271581186
+     cpuUsage.sh-4129    [000] ...11   812.532121: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-4129    [000] ...11   812.532130: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263057, dev 271581186
+     cpuUsage.sh-4129    [000] ...11   812.532131: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263057
+             sed-4144    [002] ...11   834.769790: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4144    [002] ...11   834.769795: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+            sudo-4146    [002] ...11   834.784191: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-4146    [002] ...11   834.784199: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+              sh-4150    [002] ...11   834.941775: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4150    [002] ...11   834.941785: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-4181    [000] ...11   836.364304: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4181    [000] ...11   836.364310: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     unix_chkpwd-4193    [000] ...11   836.463203: bpf_trace_printk: ARDA_LSM: hook entry for inode 27394830, dev 271581186
+     unix_chkpwd-4193    [000] ...11   836.463213: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-4201    [002] ...11   836.514273: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4201    [002] ...11   836.514284: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-4206    [003] ...11   836.547643: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4206    [003] ...11   836.547652: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         bpftool-4215    [001] ...11   836.605034: bpf_trace_printk: ARDA_LSM: hook entry for inode 27428646, dev 271581186
+         bpftool-4215    [001] ...11   836.605036: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-4216    [002] ...11   836.615074: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4216    [002] ...11   836.615084: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-4226    [003] ...11   836.688403: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4226    [003] ...11   836.688409: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-4241    [003] ...11   836.814721: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4241    [003] ...11   836.814725: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-4248    [000] ...11   836.853377: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-4248    [000] ...11   836.853386: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+             git-4273    [002] ...11   838.147619: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-4273    [002] ...11   838.147631: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             sed-4286    [002] ...11   841.874109: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4286    [002] ...11   841.874118: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             cat-4287    [000] ...11   841.880315: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263103, dev 271581186
+             cat-4287    [000] ...11   841.880321: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+     antigravity-4293    [000] ...11   857.038907: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+     antigravity-4293    [000] ...11   857.038979: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-4305    [000] ...11   865.339534: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-4305    [000] ...11   865.339546: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             sed-4414    [002] ...11   988.763803: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4414    [002] ...11   988.763806: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             sed-4515    [002] ...11  1121.967177: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4515    [002] ...11  1121.967182: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             sed-4876    [002] ...11  1568.449909: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-4876    [002] ...11  1568.449914: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+         bpftool-4882    [002] ...11  1568.475914: bpf_trace_printk: ARDA_LSM: hook entry for inode 27428646, dev 271581186
+         bpftool-4882    [002] ...11  1568.475917: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-4884    [000] ...11  1569.451390: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-4884    [000] ...11  1569.451394: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+             git-4955    [002] ...11  1705.883113: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-4955    [002] ...11  1705.883116: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+              sh-5245    [000] ...11  1885.127257: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-5245    [000] ...11  1885.127260: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5506    [000] ...11  1956.315087: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-5506    [000] ...11  1956.315090: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+            sudo-5516    [002] ...11  1956.351896: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-5516    [002] ...11  1956.351899: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+            sudo-5531    [003] ...11  1956.393956: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264005, dev 271581186
+            sudo-5531    [003] ...11  1956.393959: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+##### CPU 10 buffer started ####
+     unix_chkpwd-5547    [010] ...11  1956.443425: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+        truncate-5554    [010] ...11  1956.467773: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264077, dev 271581186
+        truncate-5554    [010] ...11  1956.467775: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264077
+              sh-5566    [010] ...11  1956.516396: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-5566    [010] ...11  1956.516399: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     unix_chkpwd-5568    [010] ...11  1956.528221: bpf_trace_printk: ARDA_LSM: hook entry for inode 27394830, dev 271581186
+     unix_chkpwd-5568    [010] ...11  1956.528223: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+             git-5624    [010] ...11  2050.140056: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-5624    [010] ...11  2050.140058: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5643    [010] ...11  2100.823978: bpf_trace_printk: ARDA_LSM: hook entry for inode 27264499, dev 271581186
+             git-5643    [010] ...11  2100.823980: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             sed-5652    [003] ...11  2108.659118: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263926, dev 271581186
+             sed-5652    [003] ...11  2108.659121: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+         python3-5658    [002] ...11  2108.725113: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+         python3-5658    [002] ...11  2108.725115: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     tpm2_getcap-5660    [010] ...11  2108.770832: bpf_trace_printk: ARDA_LSM: hook entry for inode 27265458, dev 271581186
+     tpm2_getcap-5660    [010] ...11  2108.770834: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27265458
+    tpm2_pcrread-5661    [010] ...11  2108.792894: bpf_trace_printk: ARDA_LSM: hook entry for inode 27265458, dev 271581186
+    tpm2_pcrread-5661    [010] ...11  2108.792896: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27265458
+              sh-5664    [010] ...11  2109.244853: bpf_trace_printk: ARDA_LSM: hook entry for inode 27263155, dev 271581186
+              sh-5664    [010] ...11  2109.244855: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         bpftool-5686    [002] ...11  2109.556057: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5686    [002] ...11  2109.556061: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5686    [002] ...11  2109.556062: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5686    [002] ...11  2109.556064: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5697    [010] ...11  2109.607015: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5697    [010] ...11  2109.607019: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5697    [010] ...11  2109.607021: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5697    [010] ...11  2109.607023: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         bpftool-5701    [002] ...11  2109.623190: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5701    [002] ...11  2109.623194: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5701    [002] ...11  2109.623196: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5701    [002] ...11  2109.623197: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+            sudo-5708    [010] ...11  2109.647948: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5708    [010] ...11  2109.647951: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5708    [010] ...11  2109.647953: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5708    [010] ...11  2109.647954: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+         bpftool-5713    [010] ...11  2109.663763: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5713    [010] ...11  2109.663767: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5713    [010] ...11  2109.663769: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5713    [010] ...11  2109.663771: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+     cpuUsage.sh-5724    [002] ...11  2109.689566: bpf_trace_printk: ARDA_LSM: lookup ino=28214587, dev=271581186
+     cpuUsage.sh-5724    [002] ...11  2109.689574: bpf_trace_printk: ARDA_LSM: key_hex: 3b 85 ae 01 00 00 00 00
+     cpuUsage.sh-5724    [002] ...11  2109.689577: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5724    [002] ...11  2109.689579: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-5724    [002] ...11  2109.689607: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+     cpuUsage.sh-5724    [002] ...11  2109.689608: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+     cpuUsage.sh-5724    [002] ...11  2109.689608: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5724    [002] ...11  2109.689610: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+##### CPU 8 buffer started ####
+              sh-5739    [008] ...11  2109.712988: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         bpftool-5743    [008] ...11  2109.724996: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5743    [008] ...11  2109.725000: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5743    [008] ...11  2109.725001: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5743    [008] ...11  2109.725002: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+     unix_chkpwd-5746    [002] ...11  2109.739528: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5746    [002] ...11  2109.739535: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5746    [002] ...11  2109.739536: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5746    [002] ...11  2109.739538: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5764    [010] ...11  2109.808869: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5764    [010] ...11  2109.808872: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5764    [010] ...11  2109.808873: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5764    [010] ...11  2109.808874: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     unix_chkpwd-5766    [008] ...11  2109.818024: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5766    [008] ...11  2109.818027: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5766    [008] ...11  2109.818028: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5766    [008] ...11  2109.818029: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5769    [008] ...11  2109.824347: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5769    [008] ...11  2109.824349: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5769    [008] ...11  2109.824350: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5769    [008] ...11  2109.824351: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     unix_chkpwd-5776    [008] ...11  2109.848239: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5776    [008] ...11  2109.848242: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5776    [008] ...11  2109.848243: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5776    [008] ...11  2109.848244: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5779    [010] ...11  2109.854037: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5779    [010] ...11  2109.854040: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5779    [010] ...11  2109.854041: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5779    [010] ...11  2109.854043: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-5784    [008] ...11  2109.869041: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5784    [008] ...11  2109.869044: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5784    [008] ...11  2109.869046: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5784    [008] ...11  2109.869047: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+##### CPU 5 buffer started ####
+            sudo-5795    [005] ...11  2109.911924: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5795    [005] ...11  2109.911927: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5795    [005] ...11  2109.911929: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5795    [005] ...11  2109.911931: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-5796    [000] ...11  2109.920126: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5796    [000] ...11  2109.920128: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5796    [000] ...11  2109.920129: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5796    [000] ...11  2109.920129: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5798    [005] ...11  2109.924593: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5798    [005] ...11  2109.924598: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5798    [005] ...11  2109.924599: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5798    [005] ...11  2109.924601: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5799    [005] ...11  2109.927819: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5799    [005] ...11  2109.927821: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5799    [005] ...11  2109.927822: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5799    [005] ...11  2109.927823: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5805    [005] ...11  2109.942334: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5805    [005] ...11  2109.942336: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5805    [005] ...11  2109.942337: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5805    [005] ...11  2109.942338: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+              sh-5810    [005] ...11  2109.952021: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5810    [005] ...11  2109.952023: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5810    [005] ...11  2109.952024: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5810    [005] ...11  2109.952024: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5821    [005] ...11  2109.982753: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5821    [005] ...11  2109.982755: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5821    [005] ...11  2109.982756: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5821    [005] ...11  2109.982757: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-5822    [005] ...11  2109.986313: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5822    [005] ...11  2109.986315: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5822    [005] ...11  2109.986316: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5822    [005] ...11  2109.986317: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+##### CPU 7 buffer started ####
+            sudo-5826    [007] ...11  2109.994205: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5826    [007] ...11  2109.994206: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+             cat-5832    [005] ...11  2110.704112: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-5832    [005] ...11  2110.704116: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-5832    [005] ...11  2110.704118: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-5832    [005] ...11  2110.704119: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             git-5839    [010] ...11  2111.137689: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5839    [010] ...11  2111.137693: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5839    [010] ...11  2111.137694: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5839    [010] ...11  2111.137696: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5841    [010] ...11  2111.153738: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5841    [010] ...11  2111.153742: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5841    [010] ...11  2111.153743: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5841    [010] ...11  2111.153744: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5842    [007] ...11  2111.159285: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5842    [007] ...11  2111.159288: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5842    [007] ...11  2111.159290: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5842    [007] ...11  2111.159291: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+     antigravity-5843    [008] ...11  2114.534990: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+     antigravity-5843    [008] ...11  2114.534993: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+     antigravity-5843    [008] ...11  2114.534995: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     antigravity-5843    [008] ...11  2114.534997: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+           which-5844    [005] ...11  2114.537488: bpf_trace_printk: ARDA_LSM: lookup ino=27264171, dev=271581186
+           which-5844    [005] ...11  2114.537491: bpf_trace_printk: ARDA_LSM: key_hex: ab 04 a0 01 00 00 00 00
+           which-5844    [005] ...11  2114.537492: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           which-5844    [005] ...11  2114.537494: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-5844    [005] ...11  2114.537509: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+           which-5844    [005] ...11  2114.537510: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+           which-5844    [005] ...11  2114.537511: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           which-5844    [005] ...11  2114.537512: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+##### CPU 4 buffer started ####
+              sh-5845    [004] ...11  2114.541042: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              ps-5846    [007] ...11  2114.542787: bpf_trace_printk: ARDA_LSM: lookup ino=27263838, dev=271581186
+              ps-5846    [007] ...11  2114.542789: bpf_trace_printk: ARDA_LSM: key_hex: 5e 03 a0 01 00 00 00 00
+              ps-5846    [007] ...11  2114.542791: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              ps-5846    [007] ...11  2114.542792: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263838
+     antigravity-5847    [005] ...11  2114.559029: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+     antigravity-5847    [005] ...11  2114.559031: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+     antigravity-5847    [005] ...11  2114.559033: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     antigravity-5847    [005] ...11  2114.559034: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     cpuUsage.sh-5848    [004] ...11  2114.561055: bpf_trace_printk: ARDA_LSM: lookup ino=28214587, dev=271581186
+     cpuUsage.sh-5848    [004] ...11  2114.561059: bpf_trace_printk: ARDA_LSM: key_hex: 3b 85 ae 01 00 00 00 00
+     cpuUsage.sh-5848    [004] ...11  2114.561060: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5848    [004] ...11  2114.561061: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-5848    [004] ...11  2114.561074: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+     cpuUsage.sh-5848    [004] ...11  2114.561076: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+     cpuUsage.sh-5848    [004] ...11  2114.561077: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5848    [004] ...11  2114.561078: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+           sleep-5851    [010] ...11  2114.566647: bpf_trace_printk: ARDA_LSM: lookup ino=27263969, dev=271581186
+           sleep-5851    [010] ...11  2114.566650: bpf_trace_printk: ARDA_LSM: key_hex: e1 03 a0 01 00 00 00 00
+           sleep-5851    [010] ...11  2114.566651: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           sleep-5851    [010] ...11  2114.566652: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263969
+             sed-5853    [004] ...11  2115.568537: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5853    [004] ...11  2115.568540: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5853    [004] ...11  2115.568541: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5853    [004] ...11  2115.568542: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+   nm-dispatcher-5856    [008] ...11  2132.743983: bpf_trace_printk: ARDA_LSM: lookup ino=27394416, dev=271581186
+   nm-dispatcher-5856    [008] ...11  2132.743987: bpf_trace_printk: ARDA_LSM: key_hex: 70 01 a2 01 00 00 00 00
+   nm-dispatcher-5856    [008] ...11  2132.743989: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+   nm-dispatcher-5856    [008] ...11  2132.743991: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394416
+             sed-5876    [005] ...11  2208.437103: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5876    [005] ...11  2208.437106: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5876    [005] ...11  2208.437108: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5876    [005] ...11  2208.437109: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+            grep-5879    [004] ...11  2208.443854: bpf_trace_printk: ARDA_LSM: lookup ino=27263396, dev=271581186
+            grep-5879    [004] ...11  2208.443858: bpf_trace_printk: ARDA_LSM: key_hex: a4 01 a0 01 00 00 00 00
+            grep-5879    [004] ...11  2208.443859: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            grep-5879    [004] ...11  2208.443861: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263396
+            tail-5880    [007] ...11  2208.444313: bpf_trace_printk: ARDA_LSM: lookup ino=27264047, dev=271581186
+            tail-5880    [007] ...11  2208.444316: bpf_trace_printk: ARDA_LSM: key_hex: 2f 04 a0 01 00 00 00 00
+            tail-5880    [007] ...11  2208.444318: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            tail-5880    [007] ...11  2208.444319: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264047
+            sudo-5878    [007] ...11  2208.445301: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5878    [007] ...11  2208.445304: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5878    [007] ...11  2208.445305: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5878    [007] ...11  2208.445307: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     antigravity-5885    [007] ...11  2209.438452: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+     antigravity-5885    [007] ...11  2209.438455: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+     antigravity-5885    [007] ...11  2209.438457: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     antigravity-5885    [007] ...11  2209.438458: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+##### CPU 6 buffer started ####
+           which-5886    [006] ...11  2209.440678: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           which-5886    [006] ...11  2209.440679: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-5887    [006] ...11  2209.445507: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5887    [006] ...11  2209.445511: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5887    [006] ...11  2209.445512: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5887    [006] ...11  2209.445514: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-5889    [006] ...11  2209.468204: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5889    [006] ...11  2209.468207: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5889    [006] ...11  2209.468209: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5889    [006] ...11  2209.468210: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     cpuUsage.sh-5890    [005] ...11  2209.470507: bpf_trace_printk: ARDA_LSM: lookup ino=28214587, dev=271581186
+     cpuUsage.sh-5890    [005] ...11  2209.470510: bpf_trace_printk: ARDA_LSM: key_hex: 3b 85 ae 01 00 00 00 00
+     cpuUsage.sh-5890    [005] ...11  2209.470512: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5890    [005] ...11  2209.470513: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-5890    [005] ...11  2209.470527: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+     cpuUsage.sh-5890    [005] ...11  2209.470529: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+     cpuUsage.sh-5890    [005] ...11  2209.470530: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5890    [005] ...11  2209.470532: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+             sed-5891    [005] ...11  2209.472837: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5891    [005] ...11  2209.472841: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5891    [005] ...11  2209.472842: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5891    [005] ...11  2209.472844: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             cat-5892    [005] ...11  2209.476079: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-5892    [005] ...11  2209.476084: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-5892    [005] ...11  2209.476087: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-5892    [005] ...11  2209.476089: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+           sleep-5893    [010] ...11  2209.478152: bpf_trace_printk: ARDA_LSM: lookup ino=27263969, dev=271581186
+           sleep-5893    [010] ...11  2209.478156: bpf_trace_printk: ARDA_LSM: key_hex: e1 03 a0 01 00 00 00 00
+           sleep-5893    [010] ...11  2209.478158: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           sleep-5893    [010] ...11  2209.478160: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263969
+             sed-5894    [007] ...11  2210.480976: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5894    [007] ...11  2210.480980: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5894    [007] ...11  2210.480982: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5894    [007] ...11  2210.480984: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+##### CPU 11 buffer started ####
+             cat-5895    [011] ...11  2210.483926: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-5895    [011] ...11  2210.483928: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-5895    [011] ...11  2210.483930: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+              sh-5897    [008] ...11  2214.432268: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5897    [008] ...11  2214.432270: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5897    [008] ...11  2214.432271: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5897    [008] ...11  2214.432272: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-5899    [008] ...11  2214.436209: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5899    [008] ...11  2214.436211: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5899    [008] ...11  2214.436212: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5899    [008] ...11  2214.436212: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-5901    [004] ...11  2214.467275: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5901    [004] ...11  2214.467280: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5901    [004] ...11  2214.467281: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5901    [004] ...11  2214.467283: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+     cpuUsage.sh-5902    [002] ...11  2214.470388: bpf_trace_printk: ARDA_LSM: lookup ino=28214587, dev=271581186
+     cpuUsage.sh-5902    [002] ...11  2214.470394: bpf_trace_printk: ARDA_LSM: key_hex: 3b 85 ae 01 00 00 00 00
+     cpuUsage.sh-5902    [002] ...11  2214.470396: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5902    [002] ...11  2214.470398: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-5902    [002] ...11  2214.470424: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+     cpuUsage.sh-5902    [002] ...11  2214.470426: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+     cpuUsage.sh-5902    [002] ...11  2214.470428: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-5902    [002] ...11  2214.470430: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+             sed-5903    [001] ...11  2214.473356: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5903    [001] ...11  2214.473360: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5903    [001] ...11  2214.473363: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5903    [001] ...11  2214.473365: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             cat-5904    [000] ...11  2214.476568: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-5904    [000] ...11  2214.476573: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-5904    [000] ...11  2214.476576: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-5904    [000] ...11  2214.476578: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+           sleep-5905    [004] ...11  2214.478625: bpf_trace_printk: ARDA_LSM: lookup ino=27263969, dev=271581186
+           sleep-5905    [004] ...11  2214.478629: bpf_trace_printk: ARDA_LSM: key_hex: e1 03 a0 01 00 00 00 00
+           sleep-5905    [004] ...11  2214.478631: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           sleep-5905    [004] ...11  2214.478633: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263969
+             sed-5908    [008] ...11  2215.481491: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5908    [008] ...11  2215.481495: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5908    [008] ...11  2215.481497: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5908    [008] ...11  2215.481499: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+             cat-5909    [008] ...11  2215.484821: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-5909    [008] ...11  2215.484824: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-5909    [008] ...11  2215.484826: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-5909    [008] ...11  2215.484827: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+      debian-sa1-5914    [005] ...11  2221.467627: bpf_trace_printk: ARDA_LSM: lookup ino=27394443, dev=271581186
+      debian-sa1-5914    [005] ...11  2221.467629: bpf_trace_printk: ARDA_LSM: key_hex: 8b 01 a2 01 00 00 00 00
+      debian-sa1-5914    [005] ...11  2221.467631: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+      debian-sa1-5914    [005] ...11  2221.467632: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394443
+      debian-sa1-5914    [005] ...11  2221.467644: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+      debian-sa1-5914    [005] ...11  2221.467645: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+      debian-sa1-5914    [005] ...11  2221.467646: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+      debian-sa1-5914    [005] ...11  2221.467647: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+             git-5917    [011] ...11  2235.142330: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5917    [011] ...11  2235.142334: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5917    [011] ...11  2235.142336: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5917    [011] ...11  2235.142337: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5918    [005] ...11  2235.150468: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5918    [005] ...11  2235.150471: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5918    [005] ...11  2235.150473: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5918    [005] ...11  2235.150474: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5919    [010] ...11  2235.159779: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5919    [010] ...11  2235.159785: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5919    [010] ...11  2235.159786: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5919    [010] ...11  2235.159788: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             git-5920    [007] ...11  2235.165947: bpf_trace_printk: ARDA_LSM: lookup ino=27264499, dev=271581186
+             git-5920    [007] ...11  2235.165949: bpf_trace_printk: ARDA_LSM: key_hex: f3 05 a0 01 00 00 00 00
+             git-5920    [007] ...11  2235.165950: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             git-5920    [007] ...11  2235.165951: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264499
+             sed-5924    [006] ...11  2243.955045: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-5924    [006] ...11  2243.955049: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-5924    [006] ...11  2243.955051: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-5924    [006] ...11  2243.955053: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+            sudo-5926    [006] ...11  2243.959655: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5926    [006] ...11  2243.959658: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5926    [006] ...11  2243.959659: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5926    [006] ...11  2243.959660: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-5927    [004] ...11  2243.966616: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5927    [004] ...11  2243.966618: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5927    [004] ...11  2243.966619: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5927    [004] ...11  2243.966620: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5930    [010] ...11  2243.998356: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5930    [010] ...11  2243.998358: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5930    [010] ...11  2243.998359: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5930    [010] ...11  2243.998360: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         python3-5931    [006] ...11  2243.999029: bpf_trace_printk: ARDA_LSM: lookup ino=27263872, dev=271581186
+         python3-5931    [006] ...11  2243.999031: bpf_trace_printk: ARDA_LSM: key_hex: 80 03 a0 01 00 00 00 00
+         python3-5931    [006] ...11  2243.999032: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         python3-5931    [006] ...11  2243.999033: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263872
+     tpm2_getcap-5932    [006] ...11  2244.029270: bpf_trace_printk: ARDA_LSM: lookup ino=27265458, dev=271581186
+     tpm2_getcap-5932    [006] ...11  2244.029273: bpf_trace_printk: ARDA_LSM: key_hex: b2 09 a0 01 00 00 00 00
+     tpm2_getcap-5932    [006] ...11  2244.029274: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     tpm2_getcap-5932    [006] ...11  2244.029275: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27265458
+    tpm2_pcrread-5933    [011] ...11  2244.047405: bpf_trace_printk: ARDA_LSM: lookup ino=27265458, dev=271581186
+    tpm2_pcrread-5933    [011] ...11  2244.047407: bpf_trace_printk: ARDA_LSM: key_hex: b2 09 a0 01 00 00 00 00
+    tpm2_pcrread-5933    [011] ...11  2244.047408: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+    tpm2_pcrread-5933    [011] ...11  2244.047409: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27265458
+         bpftool-5934    [011] ...11  2244.069249: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5934    [011] ...11  2244.069251: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5934    [011] ...11  2244.069252: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5934    [011] ...11  2244.069253: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+         bpftool-5935    [010] ...11  2244.271822: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5935    [010] ...11  2244.271824: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5935    [010] ...11  2244.271825: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5935    [010] ...11  2244.271825: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5936    [010] ...11  2244.480268: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5936    [010] ...11  2244.480271: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5936    [010] ...11  2244.480272: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5936    [010] ...11  2244.480272: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5937    [007] ...11  2244.480955: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5937    [007] ...11  2244.480957: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5937    [007] ...11  2244.480958: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5937    [007] ...11  2244.480959: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-5938    [010] ...11  2244.486707: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5938    [010] ...11  2244.486709: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5938    [010] ...11  2244.486710: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5938    [010] ...11  2244.486711: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              rm-5940    [011] ...11  2244.490147: bpf_trace_printk: ARDA_LSM: lookup ino=27263896, dev=271581186
+              rm-5940    [011] ...11  2244.490151: bpf_trace_printk: ARDA_LSM: key_hex: 98 03 a0 01 00 00 00 00
+              rm-5940    [011] ...11  2244.490152: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              rm-5940    [011] ...11  2244.490154: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263896
+              sh-5941    [007] ...11  2244.492951: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5941    [007] ...11  2244.492954: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5941    [007] ...11  2244.492956: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5941    [007] ...11  2244.492957: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5950    [006] ...11  2244.775398: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5950    [006] ...11  2244.775401: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5950    [006] ...11  2244.775402: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5950    [006] ...11  2244.775403: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5951    [007] ...11  2244.780904: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5951    [007] ...11  2244.780906: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5951    [007] ...11  2244.780907: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5951    [007] ...11  2244.780908: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5953    [008] ...11  2244.784193: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5953    [008] ...11  2244.784196: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5953    [008] ...11  2244.784197: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5953    [008] ...11  2244.784198: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5954    [007] ...11  2244.789480: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5954    [007] ...11  2244.789483: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5954    [007] ...11  2244.789485: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5954    [007] ...11  2244.789487: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5955    [006] ...11  2244.790535: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5955    [006] ...11  2244.790538: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5955    [006] ...11  2244.790540: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5955    [006] ...11  2244.790541: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5956    [008] ...11  2244.798061: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5956    [008] ...11  2244.798064: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5956    [008] ...11  2244.798066: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5956    [008] ...11  2244.798067: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+            sudo-5958    [006] ...11  2244.802821: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+            sudo-5958    [006] ...11  2244.802824: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+            sudo-5958    [006] ...11  2244.802826: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5958    [006] ...11  2244.802827: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5959    [006] ...11  2244.807929: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5959    [006] ...11  2244.807933: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5959    [006] ...11  2244.807934: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5959    [006] ...11  2244.807935: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5960    [010] ...11  2244.808994: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5960    [010] ...11  2244.808997: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5960    [010] ...11  2244.808998: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5960    [010] ...11  2244.809000: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5961    [010] ...11  2244.816951: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5961    [010] ...11  2244.816954: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5961    [010] ...11  2244.816955: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5961    [010] ...11  2244.816956: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5963    [007] ...11  2244.820690: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5963    [007] ...11  2244.820693: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5963    [007] ...11  2244.820694: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5963    [007] ...11  2244.820696: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5964    [008] ...11  2244.825236: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5964    [008] ...11  2244.825239: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5964    [008] ...11  2244.825241: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5964    [008] ...11  2244.825242: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5965    [005] ...11  2244.826313: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5965    [005] ...11  2244.826316: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5965    [005] ...11  2244.826318: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5965    [005] ...11  2244.826319: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5966    [006] ...11  2244.833045: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5966    [006] ...11  2244.833048: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5966    [006] ...11  2244.833049: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5966    [006] ...11  2244.833051: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5968    [007] ...11  2244.837373: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5968    [007] ...11  2244.837376: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5968    [007] ...11  2244.837377: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5968    [007] ...11  2244.837378: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5969    [004] ...11  2244.842497: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5969    [004] ...11  2244.842501: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5969    [004] ...11  2244.842503: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5969    [004] ...11  2244.842504: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5970    [010] ...11  2244.843637: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5970    [010] ...11  2244.843640: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5970    [010] ...11  2244.843642: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5970    [010] ...11  2244.843643: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5971    [006] ...11  2244.852601: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5971    [006] ...11  2244.852603: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5971    [006] ...11  2244.852605: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5971    [006] ...11  2244.852606: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5974    [008] ...11  2244.862511: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5974    [008] ...11  2244.862514: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5974    [008] ...11  2244.862515: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5974    [008] ...11  2244.862517: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5975    [007] ...11  2244.863719: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5975    [007] ...11  2244.863722: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5975    [007] ...11  2244.863723: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5975    [007] ...11  2244.863725: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5976    [005] ...11  2244.873094: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5976    [005] ...11  2244.873098: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5976    [005] ...11  2244.873099: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5976    [005] ...11  2244.873101: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5978    [007] ...11  2244.878502: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5978    [007] ...11  2244.878504: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5978    [007] ...11  2244.878506: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5978    [007] ...11  2244.878508: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5979    [008] ...11  2244.882739: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5979    [008] ...11  2244.882743: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5979    [008] ...11  2244.882744: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5979    [008] ...11  2244.882745: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5980    [011] ...11  2244.883602: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5980    [011] ...11  2244.883605: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5980    [011] ...11  2244.883606: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5980    [011] ...11  2244.883607: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5981    [005] ...11  2244.893229: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5981    [005] ...11  2244.893240: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5981    [005] ...11  2244.893242: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5981    [005] ...11  2244.893244: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5983    [011] ...11  2244.898029: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5983    [011] ...11  2244.898032: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5983    [011] ...11  2244.898034: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5983    [011] ...11  2244.898035: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5984    [007] ...11  2244.902408: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5984    [007] ...11  2244.902411: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5984    [007] ...11  2244.902413: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5984    [007] ...11  2244.902414: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5985    [007] ...11  2244.903828: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5985    [007] ...11  2244.903831: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5985    [007] ...11  2244.903832: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5985    [007] ...11  2244.903834: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5986    [006] ...11  2244.912680: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5986    [006] ...11  2244.912683: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5986    [006] ...11  2244.912684: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5986    [006] ...11  2244.912685: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+            sudo-5990    [004] ...11  2244.922484: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5990    [004] ...11  2244.922488: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5990    [004] ...11  2244.922489: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5990    [004] ...11  2244.922491: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5991    [004] ...11  2244.930527: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5991    [004] ...11  2244.930530: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5991    [004] ...11  2244.930531: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5991    [004] ...11  2244.930532: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-5993    [006] ...11  2244.934868: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-5993    [006] ...11  2244.934872: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-5993    [006] ...11  2244.934874: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-5993    [006] ...11  2244.934875: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-5994    [011] ...11  2244.940958: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5994    [011] ...11  2244.940961: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5994    [011] ...11  2244.940963: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5994    [011] ...11  2244.940965: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-5995    [004] ...11  2244.942295: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-5995    [004] ...11  2244.942299: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-5995    [004] ...11  2244.942301: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-5995    [004] ...11  2244.942302: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-5996    [006] ...11  2244.949638: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-5996    [006] ...11  2244.949641: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-5996    [006] ...11  2244.949642: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-5996    [006] ...11  2244.949643: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-5999    [008] ...11  2244.956664: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-5999    [008] ...11  2244.956667: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-5999    [008] ...11  2244.956669: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-5999    [008] ...11  2244.956670: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              sh-6000    [007] ...11  2244.958660: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6000    [007] ...11  2244.958663: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6000    [007] ...11  2244.958665: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6000    [007] ...11  2244.958666: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+##### CPU 9 buffer started ####
+           which-6001    [009] ...11  2244.958805: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264171
+           which-6001    [009] ...11  2244.958819: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+           which-6001    [009] ...11  2244.958820: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+           which-6001    [009] ...11  2244.958821: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           which-6001    [009] ...11  2244.958822: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6002    [007] ...11  2244.959668: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6002    [007] ...11  2244.959671: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6002    [007] ...11  2244.959672: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6002    [007] ...11  2244.959673: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+              sh-6003    [008] ...11  2244.961903: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6003    [008] ...11  2244.961906: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6003    [008] ...11  2244.961908: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6003    [008] ...11  2244.961909: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+              ps-6004    [009] ...11  2244.963763: bpf_trace_printk: ARDA_LSM: lookup ino=27263838, dev=271581186
+              ps-6004    [009] ...11  2244.963766: bpf_trace_printk: ARDA_LSM: key_hex: 5e 03 a0 01 00 00 00 00
+              ps-6004    [009] ...11  2244.963767: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              ps-6004    [009] ...11  2244.963768: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263838
+     unix_chkpwd-6005    [006] ...11  2244.968792: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6005    [006] ...11  2244.968798: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6005    [006] ...11  2244.968799: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6005    [006] ...11  2244.968802: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6007    [005] ...11  2244.973881: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6007    [005] ...11  2244.973885: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6007    [005] ...11  2244.973886: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6007    [005] ...11  2244.973887: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6008    [005] ...11  2244.977989: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6008    [005] ...11  2244.977991: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6008    [005] ...11  2244.977992: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6008    [005] ...11  2244.977993: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6009    [007] ...11  2244.978706: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6009    [007] ...11  2244.978708: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6009    [007] ...11  2244.978709: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6009    [007] ...11  2244.978710: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-6010    [008] ...11  2244.984247: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6010    [008] ...11  2244.984250: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6010    [008] ...11  2244.984250: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6010    [008] ...11  2244.984252: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+              sh-6011    [011] ...11  2244.987362: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6011    [011] ...11  2244.987364: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6011    [011] ...11  2244.987365: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6011    [011] ...11  2244.987366: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+         bpftool-6013    [006] ...11  2244.987911: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6013    [006] ...11  2244.987913: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6013    [006] ...11  2244.987914: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6013    [006] ...11  2244.987915: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+     cpuUsage.sh-6014    [009] ...11  2244.988891: bpf_trace_printk: ARDA_LSM: lookup ino=28214587, dev=271581186
+     cpuUsage.sh-6014    [009] ...11  2244.988893: bpf_trace_printk: ARDA_LSM: key_hex: 3b 85 ae 01 00 00 00 00
+     cpuUsage.sh-6014    [009] ...11  2244.988894: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-6014    [009] ...11  2244.988895: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 28214587
+     cpuUsage.sh-6014    [009] ...11  2244.988904: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+     cpuUsage.sh-6014    [009] ...11  2244.988905: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+     cpuUsage.sh-6014    [009] ...11  2244.988906: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     cpuUsage.sh-6014    [009] ...11  2244.988907: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+             sed-6015    [010] ...11  2244.990409: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-6015    [010] ...11  2244.990411: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-6015    [010] ...11  2244.990412: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-6015    [010] ...11  2244.990413: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263926
+              sh-6016    [005] ...11  2244.991150: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6016    [005] ...11  2244.991152: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6016    [005] ...11  2244.991153: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6016    [005] ...11  2244.991154: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6017    [006] ...11  2244.991815: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6017    [006] ...11  2244.991817: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6017    [006] ...11  2244.991819: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6017    [006] ...11  2244.991819: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+             cat-6018    [008] ...11  2244.992254: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-6018    [008] ...11  2244.992257: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-6018    [008] ...11  2244.992258: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-6018    [008] ...11  2244.992259: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-6019    [011] ...11  2244.993556: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-6019    [011] ...11  2244.993558: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-6019    [011] ...11  2244.993559: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-6019    [011] ...11  2244.993560: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-6020    [008] ...11  2244.994867: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-6020    [008] ...11  2244.994870: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-6020    [008] ...11  2244.994871: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-6020    [008] ...11  2244.994872: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-6021    [006] ...11  2244.996248: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-6021    [006] ...11  2244.996250: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-6021    [006] ...11  2244.996252: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-6021    [006] ...11  2244.996253: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+     unix_chkpwd-6023    [008] ...11  2244.997617: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6023    [008] ...11  2244.997620: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6023    [008] ...11  2244.997622: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6023    [008] ...11  2244.997623: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+           sleep-6022    [004] ...11  2244.997668: bpf_trace_printk: ARDA_LSM: lookup ino=27263969, dev=271581186
+           sleep-6022    [004] ...11  2244.997671: bpf_trace_printk: ARDA_LSM: key_hex: e1 03 a0 01 00 00 00 00
+           sleep-6022    [004] ...11  2244.997672: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           sleep-6022    [004] ...11  2244.997674: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263969
+         bpftool-6025    [006] ...11  2245.001654: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6025    [006] ...11  2245.001659: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6025    [006] ...11  2245.001660: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6025    [006] ...11  2245.001663: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6026    [005] ...11  2245.006567: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6026    [005] ...11  2245.006571: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6026    [005] ...11  2245.006572: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6026    [005] ...11  2245.006574: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6027    [011] ...11  2245.007931: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6027    [011] ...11  2245.007934: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6027    [011] ...11  2245.007936: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6027    [011] ...11  2245.007937: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-6028    [005] ...11  2245.016955: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6028    [005] ...11  2245.016958: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6028    [005] ...11  2245.016959: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6028    [005] ...11  2245.016960: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6030    [009] ...11  2245.021945: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6030    [009] ...11  2245.021948: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6030    [009] ...11  2245.021949: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6030    [009] ...11  2245.021951: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6031    [011] ...11  2245.026713: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6031    [011] ...11  2245.026716: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6031    [011] ...11  2245.026717: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6031    [011] ...11  2245.026719: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6032    [005] ...11  2245.027729: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6032    [005] ...11  2245.027732: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6032    [005] ...11  2245.027733: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6032    [005] ...11  2245.027734: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264005
+     unix_chkpwd-6033    [006] ...11  2245.036043: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6033    [006] ...11  2245.036045: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6033    [006] ...11  2245.036047: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6033    [006] ...11  2245.036048: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6035    [009] ...11  2245.041143: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6035    [009] ...11  2245.041146: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6035    [009] ...11  2245.041148: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6035    [009] ...11  2245.041149: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6036    [009] ...11  2245.045758: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6036    [009] ...11  2245.045761: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6036    [009] ...11  2245.045762: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6036    [009] ...11  2245.045764: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6037    [004] ...11  2245.046742: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6037    [004] ...11  2245.046745: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6037    [004] ...11  2245.046747: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6037    [004] ...11  2245.046748: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6038    [010] ...11  2245.053880: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6038    [010] ...11  2245.053883: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6038    [010] ...11  2245.053885: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6038    [010] ...11  2245.053887: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6040    [010] ...11  2245.057778: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6040    [010] ...11  2245.057780: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6040    [010] ...11  2245.057782: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6040    [010] ...11  2245.057783: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6041    [011] ...11  2245.062257: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6041    [011] ...11  2245.062260: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6041    [011] ...11  2245.062261: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6041    [011] ...11  2245.062263: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6042    [004] ...11  2245.063188: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6042    [004] ...11  2245.063191: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6042    [004] ...11  2245.063192: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6042    [004] ...11  2245.063194: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6043    [004] ...11  2245.071735: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6043    [004] ...11  2245.071738: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6043    [004] ...11  2245.071740: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6043    [004] ...11  2245.071741: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6045    [008] ...11  2245.075678: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6045    [008] ...11  2245.075681: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6045    [008] ...11  2245.075683: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6045    [008] ...11  2245.075684: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6046    [009] ...11  2245.079435: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6046    [009] ...11  2245.079438: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6046    [009] ...11  2245.079439: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6046    [009] ...11  2245.079440: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6047    [004] ...11  2245.080380: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6047    [004] ...11  2245.080383: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6047    [004] ...11  2245.080384: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6047    [004] ...11  2245.080385: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6048    [010] ...11  2245.088044: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6048    [010] ...11  2245.088046: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6048    [010] ...11  2245.088048: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6048    [010] ...11  2245.088049: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6050    [011] ...11  2245.091810: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6050    [011] ...11  2245.091813: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6050    [011] ...11  2245.091815: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6050    [011] ...11  2245.091816: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6051    [010] ...11  2245.096275: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6051    [010] ...11  2245.096278: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6051    [010] ...11  2245.096279: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6051    [010] ...11  2245.096281: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6052    [007] ...11  2245.097250: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6052    [007] ...11  2245.097253: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6052    [007] ...11  2245.097254: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6052    [007] ...11  2245.097255: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6053    [010] ...11  2245.105329: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6053    [010] ...11  2245.105338: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6053    [010] ...11  2245.105340: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6053    [010] ...11  2245.105342: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6055    [008] ...11  2245.110371: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6055    [008] ...11  2245.110374: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6055    [008] ...11  2245.110376: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6055    [008] ...11  2245.110377: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6056    [006] ...11  2245.114593: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6056    [006] ...11  2245.114596: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6056    [006] ...11  2245.114597: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6056    [006] ...11  2245.114599: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6057    [008] ...11  2245.115629: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6057    [008] ...11  2245.115637: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6057    [008] ...11  2245.115639: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6057    [008] ...11  2245.115640: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6058    [009] ...11  2245.125482: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6058    [009] ...11  2245.125485: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6058    [009] ...11  2245.125487: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6058    [009] ...11  2245.125488: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6060    [009] ...11  2245.130351: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6060    [009] ...11  2245.130354: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6060    [009] ...11  2245.130355: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6060    [009] ...11  2245.130356: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6061    [006] ...11  2245.134639: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6061    [006] ...11  2245.134643: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6061    [006] ...11  2245.134644: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6061    [006] ...11  2245.134646: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6062    [009] ...11  2245.136240: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6062    [009] ...11  2245.136243: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6062    [009] ...11  2245.136245: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6062    [009] ...11  2245.136247: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6063    [011] ...11  2245.144675: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6063    [011] ...11  2245.144678: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6063    [011] ...11  2245.144680: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6063    [011] ...11  2245.144682: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6065    [009] ...11  2245.148776: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6065    [009] ...11  2245.148779: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6065    [009] ...11  2245.148780: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6065    [009] ...11  2245.148782: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6066    [010] ...11  2245.153163: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6066    [010] ...11  2245.153167: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6066    [010] ...11  2245.153168: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6066    [010] ...11  2245.153170: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6067    [006] ...11  2245.154352: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6067    [006] ...11  2245.154356: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6067    [006] ...11  2245.154358: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6067    [006] ...11  2245.154359: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6068    [008] ...11  2245.164450: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6068    [008] ...11  2245.164453: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6068    [008] ...11  2245.164455: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6068    [008] ...11  2245.164456: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6070    [008] ...11  2245.170394: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6070    [008] ...11  2245.170399: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6070    [008] ...11  2245.170400: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6070    [008] ...11  2245.170403: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6071    [005] ...11  2245.175606: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6071    [005] ...11  2245.175609: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6071    [005] ...11  2245.175611: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6071    [005] ...11  2245.175612: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6072    [009] ...11  2245.176768: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6072    [009] ...11  2245.176772: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6072    [009] ...11  2245.176773: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6072    [009] ...11  2245.176775: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6073    [009] ...11  2245.183709: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6073    [009] ...11  2245.183712: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6073    [009] ...11  2245.183714: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6073    [009] ...11  2245.183715: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+         bpftool-6075    [009] ...11  2245.188759: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-6075    [009] ...11  2245.188763: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-6075    [009] ...11  2245.188764: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-6075    [009] ...11  2245.188766: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27428646
+              sh-6076    [009] ...11  2245.193384: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6076    [009] ...11  2245.193387: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6076    [009] ...11  2245.193389: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6076    [009] ...11  2245.193390: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6077    [005] ...11  2245.194346: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6077    [005] ...11  2245.194349: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6077    [005] ...11  2245.194351: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6077    [005] ...11  2245.194352: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6078    [011] ...11  2245.204879: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6078    [011] ...11  2245.204882: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6078    [011] ...11  2245.204884: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6078    [011] ...11  2245.204886: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+        truncate-6080    [008] ...11  2245.210027: bpf_trace_printk: ARDA_LSM: lookup ino=27264077, dev=271581186
+        truncate-6080    [008] ...11  2245.210030: bpf_trace_printk: ARDA_LSM: key_hex: 4d 04 a0 01 00 00 00 00
+        truncate-6080    [008] ...11  2245.210032: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+        truncate-6080    [008] ...11  2245.210033: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27264077
+            bash-6081    [009] ...11  2245.213655: bpf_trace_printk: ARDA_LSM: lookup ino=27263057, dev=271581186
+            bash-6081    [009] ...11  2245.213658: bpf_trace_printk: ARDA_LSM: key_hex: 51 00 a0 01 00 00 00 00
+            bash-6081    [009] ...11  2245.213659: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            bash-6081    [009] ...11  2245.213661: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263057
+              ls-6082    [004] ...11  2245.215487: bpf_trace_printk: ARDA_LSM: lookup ino=27263605, dev=271581186
+              ls-6082    [004] ...11  2245.215490: bpf_trace_printk: ARDA_LSM: key_hex: 75 02 a0 01 00 00 00 00
+              ls-6082    [004] ...11  2245.215491: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              ls-6082    [004] ...11  2245.215493: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263605
+             cat-6083    [004] ...11  2245.217229: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-6083    [004] ...11  2245.217231: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-6083    [004] ...11  2245.217233: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-6083    [004] ...11  2245.217234: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+            grep-6084    [011] ...11  2245.218822: bpf_trace_printk: ARDA_LSM: lookup ino=27263396, dev=271581186
+            grep-6084    [011] ...11  2245.218825: bpf_trace_printk: ARDA_LSM: key_hex: a4 01 a0 01 00 00 00 00
+            grep-6084    [011] ...11  2245.218826: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            grep-6084    [011] ...11  2245.218828: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263396
+           chmod-6085    [011] ...11  2245.220915: bpf_trace_printk: ARDA_LSM: lookup ino=27263116, dev=271581186
+           chmod-6085    [011] ...11  2245.220919: bpf_trace_printk: ARDA_LSM: key_hex: 8c 00 a0 01 00 00 00 00
+           chmod-6085    [011] ...11  2245.220920: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           chmod-6085    [011] ...11  2245.220922: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263116
+              cp-6086    [011] ...11  2245.224621: bpf_trace_printk: ARDA_LSM: lookup ino=27263138, dev=271581186
+              cp-6086    [011] ...11  2245.224624: bpf_trace_printk: ARDA_LSM: key_hex: a2 00 a0 01 00 00 00 00
+              cp-6086    [011] ...11  2245.224626: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              cp-6086    [011] ...11  2245.224628: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263138
+              rm-6087    [005] ...11  2245.228163: bpf_trace_printk: ARDA_LSM: lookup ino=27263896, dev=271581186
+              rm-6087    [005] ...11  2245.228166: bpf_trace_printk: ARDA_LSM: key_hex: 98 03 a0 01 00 00 00 00
+              rm-6087    [005] ...11  2245.228168: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              rm-6087    [005] ...11  2245.228170: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263896
+            sudo-6088    [008] ...11  2245.229715: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6088    [008] ...11  2245.229718: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6088    [008] ...11  2245.229720: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6088    [008] ...11  2245.229721: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+         python3-6089    [009] ...11  2245.236840: bpf_trace_printk: ARDA_LSM: lookup ino=27263872, dev=271581186
+         python3-6089    [009] ...11  2245.236843: bpf_trace_printk: ARDA_LSM: key_hex: 80 03 a0 01 00 00 00 00
+         python3-6089    [009] ...11  2245.236844: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         python3-6089    [009] ...11  2245.236846: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263872
+            stat-6090    [009] ...11  2245.238782: bpf_trace_printk: ARDA_LSM: lookup ino=27263997, dev=271581186
+            stat-6090    [009] ...11  2245.238785: bpf_trace_printk: ARDA_LSM: key_hex: fd 03 a0 01 00 00 00 00
+            stat-6090    [009] ...11  2245.238786: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            stat-6090    [009] ...11  2245.238788: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263997
+              id-6091    [004] ...11  2245.240668: bpf_trace_printk: ARDA_LSM: lookup ino=27263478, dev=271581186
+              id-6091    [004] ...11  2245.240671: bpf_trace_printk: ARDA_LSM: key_hex: f6 01 a0 01 00 00 00 00
+              id-6091    [004] ...11  2245.240672: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              id-6091    [004] ...11  2245.240674: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263478
+              sh-6092    [010] ...11  2245.242540: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-6092    [010] ...11  2245.242543: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-6092    [010] ...11  2245.242544: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-6092    [010] ...11  2245.242546: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27263155
+            sudo-6093    [011] ...11  2245.243407: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-6093    [011] ...11  2245.243410: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-6093    [011] ...11  2245.243411: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-6093    [011] ...11  2245.243413: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-6094    [008] ...11  2245.253165: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-6094    [008] ...11  2245.253169: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-6094    [008] ...11  2245.253170: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-6094    [008] ...11  2245.253173: bpf_trace_printk: ARDA_LSM: [AUDIT] would deny execution for inode 27394830
+           <...>-6096    [009] ...11  2245.257895: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+           <...>-6096    [009] ...11  2245.257898: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+           <...>-6096    [009] ...11  2245.257900: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           <...>-6096    [009] ...11  2245.257902: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+
+
+[SAFETY] Deactivating Ring-0 Enforcement...
+  Sovereignty state set to AUDIT (Permissive).
+[FINAL] Dumping Harmony Map for forensic record...
+
+==================================================
+   MEGA TEST v3.2 COMPLETE
+==================================================

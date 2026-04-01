@@ -1,0 +1,84 @@
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 72/72   #P:12
+#
+#                                _-----=> irqs-off/BH-disabled
+#                               / _----=> need-resched
+#                              | / _---=> hardirq/softirq
+#                              || / _--=> preempt-depth
+#                              ||| / _-=> migrate-disable
+#                              |||| /     delay
+#           TASK-PID     CPU#  |||||  TIMESTAMP  FUNCTION
+#              | |         |   |||||     |         |
+             sed-148093  [006] ...11  5930.186508: bpf_trace_printk: ARDA_LSM: lookup ino=27263926, dev=271581186
+             sed-148093  [006] ...11  5930.186513: bpf_trace_printk: ARDA_LSM: key_hex: b6 03 a0 01 00 00 00 00
+             sed-148093  [006] ...11  5930.186515: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             sed-148093  [006] ...11  5930.186517: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263926
+             cat-148094  [008] ...11  5930.190132: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-148094  [008] ...11  5930.190136: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-148094  [008] ...11  5930.190138: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-148094  [008] ...11  5930.190140: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-148096  [010] ...11  5930.193327: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-148096  [010] ...11  5930.193332: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-148096  [010] ...11  5930.193334: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-148096  [010] ...11  5930.193336: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-148098  [007] ...11  5930.197051: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-148098  [007] ...11  5930.197055: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-148098  [007] ...11  5930.197057: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-148098  [007] ...11  5930.197059: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+             cat-148100  [010] ...11  5930.200887: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+             cat-148100  [010] ...11  5930.200891: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+             cat-148100  [010] ...11  5930.200893: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+             cat-148100  [010] ...11  5930.200895: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103
+              sh-148102  [010] ...11  5930.243077: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-148102  [010] ...11  5930.243081: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-148102  [010] ...11  5930.243083: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-148102  [010] ...11  5930.243085: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263155
+            sudo-148103  [009] ...11  5930.244415: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-148103  [009] ...11  5930.244419: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-148103  [009] ...11  5930.244421: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-148103  [009] ...11  5930.244423: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-148104  [005] ...11  5930.255207: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-148104  [005] ...11  5930.255210: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-148104  [005] ...11  5930.255212: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-148104  [005] ...11  5930.255213: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27394830
+         bpftool-148106  [010] ...11  5930.259957: bpf_trace_printk: ARDA_LSM: lookup ino=27428646, dev=271581186
+         bpftool-148106  [010] ...11  5930.259961: bpf_trace_printk: ARDA_LSM: key_hex: 26 87 a2 01 00 00 00 00
+         bpftool-148106  [010] ...11  5930.259962: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+         bpftool-148106  [010] ...11  5930.259964: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27428646
+              ls-148107  [009] ...11  5931.265319: bpf_trace_printk: ARDA_LSM: lookup ino=27263605, dev=271581186
+              ls-148107  [009] ...11  5931.265322: bpf_trace_printk: ARDA_LSM: key_hex: 75 02 a0 01 00 00 00 00
+              ls-148107  [009] ...11  5931.265324: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              ls-148107  [009] ...11  5931.265326: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263605
+              sh-148108  [011] ...11  5931.267352: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-148108  [011] ...11  5931.267354: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-148108  [011] ...11  5931.267356: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-148108  [011] ...11  5931.267358: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263155
+              cp-148109  [004] ...11  5931.268371: bpf_trace_printk: ARDA_LSM: lookup ino=27263138, dev=271581186
+              cp-148109  [004] ...11  5931.268374: bpf_trace_printk: ARDA_LSM: key_hex: a2 00 a0 01 00 00 00 00
+              cp-148109  [004] ...11  5931.268376: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              cp-148109  [004] ...11  5931.268378: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263138
+           chmod-148110  [004] ...11  5931.270690: bpf_trace_printk: ARDA_LSM: lookup ino=27263116, dev=271581186
+           chmod-148110  [004] ...11  5931.270693: bpf_trace_printk: ARDA_LSM: key_hex: 8c 00 a0 01 00 00 00 00
+           chmod-148110  [004] ...11  5931.270695: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           chmod-148110  [004] ...11  5931.270697: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263116
+         python3-148111  [008] ...11  5931.272473: bpf_trace_printk: ARDA_LSM: lookup ino=867, dev=39
+         python3-148111  [008] ...11  5931.272476: bpf_trace_printk: ARDA_LSM: key_hex: 63 03 00 00 00 00 00 00
+         python3-148111  [008] ...11  5931.272478: bpf_trace_printk: ARDA_LSM: key_hex: 27 00 00 00 00 00 00 00
+         python3-148111  [008] ...11  5931.272480: bpf_trace_printk: ARDA_LSM: [ENFORCE] DENIED execution for inode 867
+              sh-148113  [006] ...11  5932.273930: bpf_trace_printk: ARDA_LSM: lookup ino=27263155, dev=271581186
+              sh-148113  [006] ...11  5932.273934: bpf_trace_printk: ARDA_LSM: key_hex: b3 00 a0 01 00 00 00 00
+              sh-148113  [006] ...11  5932.273936: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+              sh-148113  [006] ...11  5932.273939: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263155
+            sudo-148114  [007] ...11  5932.275272: bpf_trace_printk: ARDA_LSM: lookup ino=27264005, dev=271581186
+            sudo-148114  [007] ...11  5932.275276: bpf_trace_printk: ARDA_LSM: key_hex: 05 04 a0 01 00 00 00 00
+            sudo-148114  [007] ...11  5932.275278: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+            sudo-148114  [007] ...11  5932.275280: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27264005
+     unix_chkpwd-148115  [011] ...11  5932.284662: bpf_trace_printk: ARDA_LSM: lookup ino=27394830, dev=271581186
+     unix_chkpwd-148115  [011] ...11  5932.284665: bpf_trace_printk: ARDA_LSM: key_hex: 0e 03 a2 01 00 00 00 00
+     unix_chkpwd-148115  [011] ...11  5932.284666: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+     unix_chkpwd-148115  [011] ...11  5932.284667: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27394830
+           <...>-148117  [010] ...11  5932.289272: bpf_trace_printk: ARDA_LSM: lookup ino=27263103, dev=271581186
+           <...>-148117  [010] ...11  5932.289275: bpf_trace_printk: ARDA_LSM: key_hex: 7f 00 a0 01 00 00 00 00
+           <...>-148117  [010] ...11  5932.289277: bpf_trace_printk: ARDA_LSM: key_hex: 02 00 30 10 00 00 00 00
+           <...>-148117  [010] ...11  5932.289279: bpf_trace_printk: ARDA_LSM: [PASS] ALLOWED execution for inode 27263103

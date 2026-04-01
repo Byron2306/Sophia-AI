@@ -1,0 +1,109 @@
+2026-03-27 05:31:30,648 - MORGOTH_MEGA_GAUNTLET - INFO - Telemetry Collector Initialized: MORGOTH_MEGA_GAUNTLET
+2026-03-27 05:31:30,648 - MORGOTH_MEGA_GAUNTLET - INFO - Logging to: C:\Users\User\source\repos\Metatron-triune-outbound-gate\ARDA_OS_v1_80_UNIVERSAL_SANCTITY\backend\scripts\telemetry_logs\MORGOTH_MEGA_GAUNTLET_20260327_033130.log
+2026-03-27 05:31:30,656 - MORGOTH_MEGA_GAUNTLET - INFO - Initializing Morgoth Campaign Engine...
+2026-03-27 05:31:30,661 - MORGOTH_MEGA_GAUNTLET - INFO - =========================================================================
+2026-03-27 05:31:30,662 - MORGOTH_MEGA_GAUNTLET - INFO - >>> ENTERING PHASE: TRIAL I: THE LONG POISON <<<
+2026-03-27 05:31:30,662 - MORGOTH_MEGA_GAUNTLET - INFO - =========================================================================
+2026-03-27 05:31:30,670 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,670 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3318 | Jitter: 0.0000
+2026-03-27 05:31:30,671 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,671 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3335 | Jitter: 0.0000
+2026-03-27 05:31:30,674 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,674 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3354 | Jitter: 0.0042
+2026-03-27 05:31:30,675 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,675 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3370 | Jitter: 0.0068
+2026-03-27 05:31:30,679 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,680 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,682 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,682 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,687 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,687 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,689 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,689 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,693 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,693 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,694 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,694 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,694 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,694 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,695 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,695 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,695 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,696 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,703 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,703 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,704 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,705 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,711 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,712 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,717 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,717 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,721 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,723 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6682 | Jitter: 1.0000
+2026-03-27 05:31:30,727 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,727 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,728 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,728 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,729 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,729 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,737 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,738 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,739 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,739 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,746 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,746 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,747 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,749 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,755 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,755 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,763 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,763 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,764 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,772 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,773 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,773 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,789 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,789 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,791 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,797 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,798 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,799 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,807 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,807 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,808 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,808 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,809 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,809 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,827 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,828 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,839 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,839 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,840 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,844 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,846 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,846 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,854 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL I: THE LONG POISON] Observation: agent:sauron_in_disguise -> sys.sync
+2026-03-27 05:31:30,861 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.6225 | Jitter: 1.0000
+2026-03-27 05:31:30,861 - MORGOTH_MEGA_GAUNTLET - INFO - =========================================================================
+2026-03-27 05:31:30,862 - MORGOTH_MEGA_GAUNTLET - INFO - >>> ENTERING PHASE: TRIAL II: THE BEAUTIFUL FRAUD <<<
+2026-03-27 05:31:30,862 - MORGOTH_MEGA_GAUNTLET - INFO - =========================================================================
+2026-03-27 05:31:30,862 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,863 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3318 | Jitter: 0.0000
+2026-03-27 05:31:30,863 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,863 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3676 | Jitter: 0.0000
+2026-03-27 05:31:30,875 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,875 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3665 | Jitter: 0.0000
+2026-03-27 05:31:30,876 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,876 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3655 | Jitter: 0.0000
+2026-03-27 05:31:30,888 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,888 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3318 | Jitter: 0.0000
+2026-03-27 05:31:30,889 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,889 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3775 | Jitter: 0.0000
+2026-03-27 05:31:30,894 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,895 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3775 | Jitter: 0.0000
+2026-03-27 05:31:30,895 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,896 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3775 | Jitter: 0.0000
+2026-03-27 05:31:30,905 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,905 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3775 | Jitter: 0.0000
+2026-03-27 05:31:30,906 - MORGOTH_MEGA_GAUNTLET - INFO - [TRIAL II: THE BEAUTIFUL FRAUD] Observation: agent:sauron_in_disguise -> sys.read
+2026-03-27 05:31:30,906 - MORGOTH_MEGA_GAUNTLET - DEBUG -    - Discord: 0.3775 | Jitter: 0.0000

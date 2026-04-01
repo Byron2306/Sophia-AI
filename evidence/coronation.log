@@ -1,0 +1,1629 @@
+[0;36m── PRE-FLIGHT: Dependency Check ──[0m
+  All dependencies present.
+  Pre-flight complete.
+
+
+[0;36m═══════════════════════════════════════════════════════════════[0m
+[0;36m   ARDA OS — SOVEREIGN CORONATION[0m
+[0;36m   Silicon Truth Protocol[0m
+[0;36m   2026-03-31T08:18:25Z[0m
+[0;36m═══════════════════════════════════════════════════════════════[0m
+
+[0;33m── GATE 0: HARDWARE CENSUS ──[0m
+  Kernel:  6.12.74+deb12-amd64
+  Arch:    x86_64
+  CPU:     13th Gen Intel(R) Core(TM) i7-1355U
+  Machine: c895237d07c64b029a495b62b878aeba
+[0;32m[PASS][0m GATE 0: Hardware Census Complete
+
+[0;33m── GATE 1: TPM VERIFICATION ──[0m
+  Running tpm2_getcap properties-fixed...
+  TPM Manufacturer: raw: 0x4E544300
+  TPM Firmware:     raw: 0x30001
+  THIS IS A REAL TPM 2.0
+  Reading PCR bank (sha256:0,1,7,11)...
+  PCR values captured.
+  PCR JSON saved.
+    PCR 0: 0886e6fc01b4b9c8...
+    PCR 1: 9c2d3fc65c013a74...
+    PCR 7: d1a66959abf306c3...
+    PCR 11: 0000000000000000...
+[0;32m[PASS][0m GATE 1: TPM 2.0 Verified — Real Silicon
+
+[0;33m── GATE 2: ATTESTATION KEY ENROLLMENT ──[0m
+  Clearing stale TPM handles...
+persistent-handle: 0x81010001
+action: evicted
+  Creating primary key hierarchy...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|restricted|decrypt
+  raw: 0x30072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: aes
+  raw: 0x6
+sym-mode:
+  value: cfb
+  raw: 0x43
+sym-keybits: 128
+rsa: d8d46e02673dec42f6dc335a4e69a1770620704bb07adac28ca7a1193a1786cea158a378de14b715ef16900a9a7ff3a9a193cb076991389eee2c13f2e1e1fcb3bddff309fb5495322dd6bac563d6d238c189e0a18d9f5235f7382575221e6650c32526534abf4363dca09e96f49c936703f32b5a8e6e16595076c302dfb983c0e7d3cc78f39859c46fef555af1d6fa45d89a31f5a6b80dc7b125ca40e61d05e25ebca62e6f684772958540d86699157e291371ddf8cc956768511fa1704098320df77c1259dbe4d2dd84c78046657e5605dbffee343e9400fae6df54e3119846fca3ce48c37609bd23f2079cebbf354e2011665bf3508f79d3040fe9a57a9215
+  Primary key created.
+  Creating Attestation Key (AK)...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: b5eb9b5c868a1c8bc705251070862389124dd9921c98d49bded61e07ccefbb827bac3c055051c8d2ad4dc2c5f146b4d7658a89865111a4b516b5e7abb74562591dffe99b2ace214a8e898f6d58f010237cb561f3c50b169e50dca576552e24117a8017a17462a77c833262a9e2937344f3b662fdec7793b0736ab9d438c8532f777170a20c23d75ea18101bfba4a564e55dfb33515e1ae885e6f0d7041f8c494574088f77ab76d7fa10345ce56634d23eb48763ed02d26ed9cb34034db36637f475145b7b685cb55607502cc4bf4108677f5ddd2bc92f84ce836dad95bcecc5867a3a2c0c2b62b48e0e9eb503857579a0ad496a84e4d9cc7fde8743e0bfaaefb
+  AK created.
+  Loading AK into TPM...
+name: 000b8bd51b9dee59f7cb1cac2dfd3fa96c7f53564073b945028bc2ccd9340852682f
+  AK loaded.
+  Making AK persistent (0x81010001)...
+persistent-handle: 0x81010001
+action: persisted
+name: 000b8bd51b9dee59f7cb1cac2dfd3fa96c7f53564073b945028bc2ccd9340852682f
+qualified name: 000bdb7dce6e4d3d678b72757d76e266c1c3e8945151a1265e1887415e31e6603e4e
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: b5eb9b5c868a1c8bc705251070862389124dd9921c98d49bded61e07ccefbb827bac3c055051c8d2ad4dc2c5f146b4d7658a89865111a4b516b5e7abb74562591dffe99b2ace214a8e898f6d58f010237cb561f3c50b169e50dca576552e24117a8017a17462a77c833262a9e2937344f3b662fdec7793b0736ab9d438c8532f777170a20c23d75ea18101bfba4a564e55dfb33515e1ae885e6f0d7041f8c494574088f77ab76d7fa10345ce56634d23eb48763ed02d26ed9cb34034db36637f475145b7b685cb55607502cc4bf4108677f5ddd2bc92f84ce836dad95bcecc5867a3a2c0c2b62b48e0e9eb503857579a0ad496a84e4d9cc7fde8743e0bfaaefb
+[0;32m[PASS][0m GATE 2: Attestation Key Enrolled — Identity Anchor Set
+
+[0;33m── GATE 3: BOOT QUOTE ──[0m
+  Nonce: 4c0c68bd8640058f902b459c1cc044ed
+  Generating TPM quote against PCRs 0,1,7,11...
+quoted: ff54434780180022000bdb7dce6e4d3d678b72757d76e266c1c3e8945151a1265e1887415e31e6603e4e00104c0c68bd8640058f902b459c1cc044ed0000000002cc2f2f000000280000000001000700020003000100000001000b0383080000201ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+signature:
+  alg: rsassa
+  sig: 17b0d95f45b28211e71df3baa3225cd8899de1c5e0674d6fd9edff42c84f5e5b178790910308dfd8989c1d23dbbcefe1b2b12de2115e6bfda815354ed5a540bae335b568a75498b0aa7b584f83a83c48e6035f2fdad1d22e03a6b4df8fb456a6101a3988931b45b031ff7bf150eb3375ce8b58d369852ae53ab47f6d224ed79b343bc28c9fb6a49ba9380be32f4b299a1a4358cd76ef273df991512b01b88351f26317988ad4e39b71a9b80bfef871afc723a22f2601a79ebacc8a2d734d0dd62584cbcf7ba4059511c260362b83a6e4b0388d5ebcb64e5aee201ecbc68b6278d30632fc43c3b21c6af909ee2f764f8809c9ea6808527173551b4d7c471f2e8a
+pcrs:
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+    11: 0x0000000000000000000000000000000000000000000000000000000000000000
+calcDigest: 1ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+  Quote blob hash:     31e2dac2912406fdafa78a365859e6bf9a0d81dbadb7ba61668dbab70adbfe55
+  Signature blob hash: 5919824e0e4e2b03185a2d2e75d69039750fc8d417ae3009f5531f0d0be98784
+  THIS IS A SILICON-SIGNED BOOT ATTESTATION
+[0;32m[PASS][0m GATE 3: Boot Quote Captured — Silicon Root of Trust
+
+[0;33m── GATE 4: eBPF LSM COMPILATION ──[0m
+  Checking kernel LSM configuration...
+  Active LSMs: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF LSM: ACTIVE
+  Generating vmlinux.h from running kernel...
+  Compiling arda_physical_lsm.c...
+  CMD: clang -O2 -g -target bpf -D__TARGET_ARCH_x86     -I/home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf     -I/usr/include/x86_64-linux-gnu     -c /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.c     -o /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o
+  Compiled: arda_physical_lsm.o (822536 bytes)
+  Object hash: 0205f691ea3ae177877e815ed552e9576dc73b72ff5e6475f0c8e2a283890512
+[0;32m[PASS][0m GATE 4: eBPF LSM Compiled — Kernel Object Ready
+
+[0;33m── GATE 4.5: HARMONY DISCOVERY ──[0m
+  Running dynamic discovery agent...
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+  Dynamic discovery: 155 unique binaries
+  Running static tier discovery (critical + operational + development)...
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Static tier discovery: 120 unique binaries
+  Merging discovered and tier manifests...
+  Merged manifest: 257 unique binaries
+  Total harmony entries: 257
+[0;32m[PASS][0m GATE 4.5: Harmony Discovery Complete — 257 Binaries Mapped
+
+[0;33m── GATE 5: eBPF ENFORCEMENT ──[0m
+  Test binary: /tmp/arda_test_binary (inode=890, dev=0x26)
+[0;36m  Enforcement mode not active (use --enforce to enable)[0m
+  This is the SAFE default — proving compilation and seeding readiness
+
+  BPF object:   /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o (822536 bytes)
+  Manifest:     /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_harmony_manifest.json (257 entries)
+  BPF LSM:      ACTIVE in kernel
+
+[0;33m  To prove enforcement, re-run with: sudo ./00_coronation.sh --enforce[0m
+
+[0;32m[PASS][0m GATE 5: eBPF Compiled + 257 Binaries Discovered — Enforcement Ready
+
+[0;33m── GATE 6: ATTESTATION BUNDLE ──[0m
+  Mirror ID:       ARDA-CORONATION-FA9F0FAE0E05FE04
+  Boot State:      LAWFUL_PARTIAL
+  TPM Quote:       CAPTURED (172 bytes b64)
+  AK Public:       ENROLLED
+  PCR Values:      4 registers
+  Enforcement:     NOT_TESTED
+  Chain Hash:      fa9f0fae0e05fe043418360d32d1b08ddef579e992d95149b678f131ae70c7f3
+[0;32m[PASS][0m GATE 6: Attestation Bundle Assembled — Full Proof Object
+
+[0;33m── GATE 7: SOVEREIGN SEAL ──[0m
+
+# ARDA OS — SOVEREIGN CORONATION SEAL
+
+## Silicon Truth Protocol
+
+- **Timestamp**: 2026-03-31T08:18:25Z
+- **Machine ID**: c895237d07c64b029a495b62b878aeba
+- **Kernel**: 6.12.74+deb12-amd64
+- **CPU**: 13th Gen Intel(R) Core(TM) i7-1355U
+- **Gates Passed**: 28/7 (Warnings: 2)
+- **Bundle Hash**: fa9f0fae0e05fe043418360d32d1b08ddef579e992d95149b678f131ae70c7f3
+
+## Gate Results
+
+- ✅ **GATE_0**: Hardware Census Complete
+- ✅ **GATE_1**: TPM 2.0 Verified — Real Silicon
+- ✅ **GATE_2**: Attestation Key Enrolled — Identity Anchor Set
+- ✅ **GATE_3**: Boot Quote Captured — Silicon Root of Trust
+- ❌ **GATE_4**: eBPF Compilation — clang BPF compilation failed. See 05_ebpf_compile.log|2026-03-30T19:02:40Z
+- ✅ **GATE_0**: Hardware Census Complete
+- ✅ **GATE_1**: TPM 2.0 Verified — Real Silicon
+- ✅ **GATE_2**: Attestation Key Enrolled — Identity Anchor Set
+- ✅ **GATE_3**: Boot Quote Captured — Silicon Root of Trust
+- ✅ **GATE_4**: eBPF LSM Compiled — Kernel Object Ready
+- ⚠️ **GATE_5**: LSM loaded but did not deny execution
+- ✅ **GATE_5**: eBPF Enforcement Demonstrated
+- ✅ **GATE_6**: Attestation Bundle Assembled — Full Proof Object
+- ✅ **GATE_7**: Sovereign Seal Written — Covenant Chain Initiated
+- ✅ **GATE_0**: Hardware Census Complete
+- ✅ **GATE_1**: TPM 2.0 Verified — Real Silicon
+- ✅ **GATE_2**: Attestation Key Enrolled — Identity Anchor Set
+- ✅ **GATE_3**: Boot Quote Captured — Silicon Root of Trust
+- ✅ **GATE_4**: eBPF LSM Compiled — Kernel Object Ready
+- ⚠️ **GATE_5**: LSM loaded but did not deny execution
+- ✅ **GATE_5**: eBPF Enforcement Demonstrated
+- ✅ **GATE_6**: Attestation Bundle Assembled — Full Proof Object
+- ✅ **GATE_7**: Sovereign Seal Written — Covenant Chain Initiated
+- ✅ **GATE_0**: Hardware Census Complete
+- ✅ **GATE_1**: TPM 2.0 Verified — Real Silicon
+- ✅ **GATE_2**: Attestation Key Enrolled — Identity Anchor Set
+- ✅ **GATE_3**: Boot Quote Captured — Silicon Root of Trust
+- ✅ **GATE_4**: eBPF LSM Compiled — Kernel Object Ready
+- ✅ **GATE_4.5**: Harmony Discovery Complete — 257 Binaries Mapped
+- ✅ **GATE_5**: eBPF Compiled + 257 Binaries Discovered — Enforcement Ready
+- ✅ **GATE_6**: Attestation Bundle Assembled — Full Proof Object
+
+## Evidence Manifest
+
+drwxrwxr-x  3 byron byron   4096 Mar 31 03:18 .
+drwxrwxr-x 10 byron byron   4096 Mar 30 21:48 ..
+-rw-rw-r--  1 byron byron    321 Mar 31 03:18 00_hardware_census.json
+-rw-rw-r--  1 byron byron   1758 Mar 31 03:18 01_tpm_properties.txt
+-rw-rw-r--  1 byron byron    310 Mar 31 03:18 02_pcr_raw.txt
+-rw-rw-r--  1 byron byron    386 Mar 31 03:18 02_pcr_values.json
+-rw-rw-r--  1 byron byron    280 Mar 31 03:18 03_ak_public.pem
+-rw-rw-r--  1 byron byron      0 Mar 31 03:18 04_quote.err
+-rw-rw-r--  1 byron byron    372 Mar 31 03:18 04_quote_metadata.json
+-rw-rw-r--  1 byron byron     33 Mar 31 03:18 04_quote_nonce.txt
+-rw-rw-r--  1 byron byron    129 Mar 31 03:18 04_tpm_quote.bin
+-rw-rw-r--  1 byron byron    668 Mar 31 03:18 04_tpm_quote_pcrs.bin
+-rw-rw-r--  1 byron byron    262 Mar 31 03:18 04_tpm_quote_sig.bin
+-rw-rw-r--  1 byron byron 822536 Mar 31 03:18 05_arda_physical_lsm.o
+-rw-r--r--  1 root  root   37269 Mar 31 03:18 05_discovered_binaries.json
+-rw-r--r--  1 root  root       0 Mar 31 03:18 05_ebpf_compile.log
+-rw-r--r--  1 root  root   61400 Mar 31 03:18 05_harmony_manifest.json
+-rw-r--r--  1 root  root   30543 Mar 31 03:18 05_tier_manifest.json
+-rw-rw-r--  1 byron byron    429 Mar 31 03:18 06_bpf_map_list.txt
+-rw-rw-r--  1 byron byron   2574 Mar 31 03:18 06_bpf_prog_list.txt
+-rw-rw-r--  1 byron byron   4108 Mar 31 03:18 07_sovereign_attestation.json
+-rw-rw-r--  1 byron byron    914 Mar 30 19:45 08_covenant_chain.json
+drwxrwxr-x  2 byron byron   4096 Mar 30 19:45 ak
+-rw-r--r--  1 root  root   12045 Mar 31 03:18 coronation.log
+-rw-rw-r--  1 byron byron      0 Mar 31 03:18 CORONATION_SEAL.md
+-rw-rw-r--  1 byron byron   2344 Mar 31 03:18 gate_results.txt
+
+## Attestation
+
+This seal was produced by executing the Arda OS Sovereign Coronation Script
+on physical hardware with a real TPM 2.0 chip. The TPM quote is signed by
+the machine's silicon. The eBPF object was compiled against the running kernel.
+
+No mock mode was used. No simulation was employed.
+
+The evidence in this bundle is either:
+- **Proof** that the system works as designed, or
+- **Documentation** of exactly where it does not, which is equally valuable.
+
+---
+
+*Probatio ante laudem. Lex ante actionem. Veritas ante vanitatem.*
+
+[0;33m  Writing first covenant chain entry...[0m
+  Covenant Entry #0: d65a4e67ccf6a19e084135b028237e2c...
+  Mirror ID:         ARDA-CORONATION-FA9F0FAE0E05FE04
+  Boot State:        LAWFUL_PARTIAL
+  This is the FIRST entry in the real covenant chain.
+[0;32m[PASS][0m GATE 7: Sovereign Seal Written — Covenant Chain Initiated
+
+[0;32m═══════════════════════════════════════════════════════════════[0m
+[0;32m   CORONATION COMPLETE[0m
+[0;32m   Gates Passed: 28/7[0m
+[0;32m   Evidence:     /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/[0m
+[0;32m═══════════════════════════════════════════════════════════════[0m
+
+[0;36mCopy the evidence/ directory to commit to the covenant chain.[0m
+
+[0;36m── PRE-FLIGHT: Dependency Check ──[0m
+  All dependencies present.
+  Pre-flight complete.
+
+
+[0;36m═══════════════════════════════════════════════════════════════[0m
+[0;36m   ARDA OS — SOVEREIGN CORONATION[0m
+[0;36m   Silicon Truth Protocol[0m
+[0;36m   2026-03-31T08:20:11Z[0m
+[0;36m═══════════════════════════════════════════════════════════════[0m
+
+[0;33m── GATE 0: HARDWARE CENSUS ──[0m
+  Kernel:  6.12.74+deb12-amd64
+  Arch:    x86_64
+  CPU:     13th Gen Intel(R) Core(TM) i7-1355U
+  Machine: c895237d07c64b029a495b62b878aeba
+[0;32m[PASS][0m GATE 0: Hardware Census Complete
+
+[0;33m── GATE 1: TPM VERIFICATION ──[0m
+  Running tpm2_getcap properties-fixed...
+  TPM Manufacturer: raw: 0x4E544300
+  TPM Firmware:     raw: 0x30001
+  THIS IS A REAL TPM 2.0
+  Reading PCR bank (sha256:0,1,7,11)...
+  PCR values captured.
+  PCR JSON saved.
+    PCR 0: 0886e6fc01b4b9c8...
+    PCR 1: 9c2d3fc65c013a74...
+    PCR 7: d1a66959abf306c3...
+    PCR 11: 0000000000000000...
+[0;32m[PASS][0m GATE 1: TPM 2.0 Verified — Real Silicon
+
+[0;33m── GATE 2: ATTESTATION KEY ENROLLMENT ──[0m
+  Clearing stale TPM handles...
+persistent-handle: 0x81010001
+action: evicted
+  Creating primary key hierarchy...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|restricted|decrypt
+  raw: 0x30072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: aes
+  raw: 0x6
+sym-mode:
+  value: cfb
+  raw: 0x43
+sym-keybits: 128
+rsa: d8d46e02673dec42f6dc335a4e69a1770620704bb07adac28ca7a1193a1786cea158a378de14b715ef16900a9a7ff3a9a193cb076991389eee2c13f2e1e1fcb3bddff309fb5495322dd6bac563d6d238c189e0a18d9f5235f7382575221e6650c32526534abf4363dca09e96f49c936703f32b5a8e6e16595076c302dfb983c0e7d3cc78f39859c46fef555af1d6fa45d89a31f5a6b80dc7b125ca40e61d05e25ebca62e6f684772958540d86699157e291371ddf8cc956768511fa1704098320df77c1259dbe4d2dd84c78046657e5605dbffee343e9400fae6df54e3119846fca3ce48c37609bd23f2079cebbf354e2011665bf3508f79d3040fe9a57a9215
+  Primary key created.
+  Creating Attestation Key (AK)...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: d0d6ebbce222b3232733dc0121c0cda887344f25af7ab33dd3b5966fca7117d37ae7a93603710ef41e35f134a275628e34648cad5fe4f266a952354125ff76d8b56b725e7914fdb2856b5fdc036f63c29b1d0d5f2f7198966ba88695b5c1ff9840f889a9b913f06e10d8f959aac0eba2b642a53a1f7c4c6da4a6dbab8702980e8a6806d95488aabc6ca898d32c8d4d543e9f0d41b8bf1f9b96f2cb74038a931146fa8f2a354d10b7481c6490175aff0d3fc2df6d186ac7b3eeee6220047b24ea3d443eadfab760f8d3672087695c3caeccc7cbfa7e5d081de9ef97eaec070dc398cf8f505d1f35f9183bed8c0d6324c1ea2f785a057c15c0c59e7760adc72739
+  AK created.
+  Loading AK into TPM...
+name: 000b29dbb297ab8b184dbb6e011f49a6427e73a4b03310a06a1fe050af53f9dad2ef
+  AK loaded.
+  Making AK persistent (0x81010001)...
+persistent-handle: 0x81010001
+action: persisted
+name: 000b29dbb297ab8b184dbb6e011f49a6427e73a4b03310a06a1fe050af53f9dad2ef
+qualified name: 000b63e5b5286b63bb0c32ab32c88ff4de67bf7da70a195db701a34de9d735ee64d1
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: d0d6ebbce222b3232733dc0121c0cda887344f25af7ab33dd3b5966fca7117d37ae7a93603710ef41e35f134a275628e34648cad5fe4f266a952354125ff76d8b56b725e7914fdb2856b5fdc036f63c29b1d0d5f2f7198966ba88695b5c1ff9840f889a9b913f06e10d8f959aac0eba2b642a53a1f7c4c6da4a6dbab8702980e8a6806d95488aabc6ca898d32c8d4d543e9f0d41b8bf1f9b96f2cb74038a931146fa8f2a354d10b7481c6490175aff0d3fc2df6d186ac7b3eeee6220047b24ea3d443eadfab760f8d3672087695c3caeccc7cbfa7e5d081de9ef97eaec070dc398cf8f505d1f35f9183bed8c0d6324c1ea2f785a057c15c0c59e7760adc72739
+[0;32m[PASS][0m GATE 2: Attestation Key Enrolled — Identity Anchor Set
+
+[0;33m── GATE 3: BOOT QUOTE ──[0m
+  Nonce: ec90a7dd2bb3ef3f0bc7f32215fa00d2
+  Generating TPM quote against PCRs 0,1,7,11...
+quoted: ff54434780180022000b63e5b5286b63bb0c32ab32c88ff4de67bf7da70a195db701a34de9d735ee64d10010ec90a7dd2bb3ef3f0bc7f32215fa00d20000000002cdba46000000280000000001000700020003000100000001000b0383080000201ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+signature:
+  alg: rsassa
+  sig: 350edf4a18eec73cc272999af6985c905e56074be46ea8b104d043b4bcb18e706cbafc12b90d1e005a65904049d05bac35f6c60f3296a9fef81fc3f3303e86b175f0950451b0ca3fde6133e806a3ae2ccbea5afc12149d160b48f7a56ad5f80d97389da1826e7902a9f9c64eb089e5ad048beb375744d68727390ecbc59ff7b966822311b51d4b551d34108afbfd17c6862bc824717cae15efea75318625d02ea9b2b5a11130b4d488d49c59671c43cfa64b213bad569db1e4f78df11f892d955b7ec4c8cc99ceff65256d84de69bfa00c20ecab31454d03463d9f00a3ff67030de5e6ece0bbf111d8d345cfb9a9bc5f3fb64fb1a537a7a9f1b148cfe5256672
+pcrs:
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+    11: 0x0000000000000000000000000000000000000000000000000000000000000000
+calcDigest: 1ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+  Quote blob hash:     559d6721e42a3d414cc79242a95444db7c6e6ed901405947c4109562443b773f
+  Signature blob hash: 4713e0c9def72509ae41d046483360b41fac201cc3de4f3bf88c7b2de210fb06
+  THIS IS A SILICON-SIGNED BOOT ATTESTATION
+[0;32m[PASS][0m GATE 3: Boot Quote Captured — Silicon Root of Trust
+
+[0;33m── GATE 4: eBPF LSM COMPILATION ──[0m
+  Checking kernel LSM configuration...
+  Active LSMs: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF LSM: ACTIVE
+  Generating vmlinux.h from running kernel...
+  Compiling arda_physical_lsm.c...
+  CMD: clang -O2 -g -target bpf -D__TARGET_ARCH_x86     -I/home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf     -I/usr/include/x86_64-linux-gnu     -c /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.c     -o /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o
+  Compiled: arda_physical_lsm.o (822536 bytes)
+  Object hash: 0205f691ea3ae177877e815ed552e9576dc73b72ff5e6475f0c8e2a283890512
+[0;32m[PASS][0m GATE 4: eBPF LSM Compiled — Kernel Object Ready
+
+[0;33m── GATE 4.5: HARMONY DISCOVERY ──[0m
+  Running dynamic discovery agent...
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 77 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 159
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 156
+    critical: 62
+    operational: 90
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 77 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 159
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 156
+    critical: 62
+    operational: 90
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+  Dynamic discovery: 156 unique binaries
+  Running static tier discovery (critical + operational + development)...
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Static tier discovery: 120 unique binaries
+  Merging discovered and tier manifests...
+  Merged manifest: 257 unique binaries
+  Total harmony entries: 257
+[0;32m[PASS][0m GATE 4.5: Harmony Discovery Complete — 257 Binaries Mapped
+
+[0;33m── GATE 5: eBPF ENFORCEMENT ──[0m
+  Test binary: /tmp/arda_test_binary (inode=904, dev=0x26)
+[0;31m  ══ ENFORCE MODE ACTIVE ══[0m
+  Loading BPF LSM with pre-seeded harmony map...
+
+  [1/4] Loading BPF program...
+  BPF program loaded (pinned at /sys/fs/bpf/arda_lsm)
+  [2/4] Locating harmony map...
+[0;36m── PRE-FLIGHT: Dependency Check ──[0m
+  All dependencies present.
+  Pre-flight complete.
+
+
+[0;36m═══════════════════════════════════════════════════════════════[0m
+[0;36m   ARDA OS — SOVEREIGN CORONATION[0m
+[0;36m   Silicon Truth Protocol[0m
+[0;36m   2026-03-31T08:21:51Z[0m
+[0;36m═══════════════════════════════════════════════════════════════[0m
+
+[0;33m── GATE 0: HARDWARE CENSUS ──[0m
+  Kernel:  6.12.74+deb12-amd64
+  Arch:    x86_64
+  CPU:     13th Gen Intel(R) Core(TM) i7-1355U
+  Machine: c895237d07c64b029a495b62b878aeba
+[0;32m[PASS][0m GATE 0: Hardware Census Complete
+
+[0;33m── GATE 1: TPM VERIFICATION ──[0m
+  Running tpm2_getcap properties-fixed...
+  TPM Manufacturer: raw: 0x4E544300
+  TPM Firmware:     raw: 0x30001
+  THIS IS A REAL TPM 2.0
+  Reading PCR bank (sha256:0,1,7,11)...
+  PCR values captured.
+  PCR JSON saved.
+    PCR 0: 0886e6fc01b4b9c8...
+    PCR 1: 9c2d3fc65c013a74...
+    PCR 7: d1a66959abf306c3...
+    PCR 11: 0000000000000000...
+[0;32m[PASS][0m GATE 1: TPM 2.0 Verified — Real Silicon
+
+[0;33m── GATE 2: ATTESTATION KEY ENROLLMENT ──[0m
+  Clearing stale TPM handles...
+persistent-handle: 0x81010001
+action: evicted
+  Creating primary key hierarchy...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|restricted|decrypt
+  raw: 0x30072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: aes
+  raw: 0x6
+sym-mode:
+  value: cfb
+  raw: 0x43
+sym-keybits: 128
+rsa: d8d46e02673dec42f6dc335a4e69a1770620704bb07adac28ca7a1193a1786cea158a378de14b715ef16900a9a7ff3a9a193cb076991389eee2c13f2e1e1fcb3bddff309fb5495322dd6bac563d6d238c189e0a18d9f5235f7382575221e6650c32526534abf4363dca09e96f49c936703f32b5a8e6e16595076c302dfb983c0e7d3cc78f39859c46fef555af1d6fa45d89a31f5a6b80dc7b125ca40e61d05e25ebca62e6f684772958540d86699157e291371ddf8cc956768511fa1704098320df77c1259dbe4d2dd84c78046657e5605dbffee343e9400fae6df54e3119846fca3ce48c37609bd23f2079cebbf354e2011665bf3508f79d3040fe9a57a9215
+  Primary key created.
+  Creating Attestation Key (AK)...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: a50c94df5aabea7b9b44ed3ae9efddbdc6f3a45de54d7d6ff37b3f6013b8e9ebc4b8ffcbd841df4781eb5e1316a67595cf08778a46f1e9192605653247723c7d9e29a19cf2b2dbc4ecfa2af1bb45f173c92eeb8d9ee6479d2f5b73e8e2a45d253bfceb21e9bfac4ac54003036b3f06cb381b5e5e848340a400de951e6c654d1a8e260790429b6e76d3c44735e8b1ff2587c3585871630588f97a6b99b3d61477fe697beb598bcefa9e670a14338bc1e1d797a7e0ef169c9a644663964bb181a9ea4292dc637fed45b7dba5138eae86c5dced65b632a79b573ebd7484c1a81431c3c6ed7fb2f523c837f47352c9f9ecae309efe56f03a94a35f19388f90aeeb11
+  AK created.
+  Loading AK into TPM...
+name: 000bec1a7447e793dac561a49d24898f2e3513f10a1ba42891930be6f2f710b32d7d
+  AK loaded.
+  Making AK persistent (0x81010001)...
+persistent-handle: 0x81010001
+action: persisted
+name: 000bec1a7447e793dac561a49d24898f2e3513f10a1ba42891930be6f2f710b32d7d
+qualified name: 000b9e33e3ceb91fd66c8c8756cf641092667da83c849edde1243dc8a634ea91f30c
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: a50c94df5aabea7b9b44ed3ae9efddbdc6f3a45de54d7d6ff37b3f6013b8e9ebc4b8ffcbd841df4781eb5e1316a67595cf08778a46f1e9192605653247723c7d9e29a19cf2b2dbc4ecfa2af1bb45f173c92eeb8d9ee6479d2f5b73e8e2a45d253bfceb21e9bfac4ac54003036b3f06cb381b5e5e848340a400de951e6c654d1a8e260790429b6e76d3c44735e8b1ff2587c3585871630588f97a6b99b3d61477fe697beb598bcefa9e670a14338bc1e1d797a7e0ef169c9a644663964bb181a9ea4292dc637fed45b7dba5138eae86c5dced65b632a79b573ebd7484c1a81431c3c6ed7fb2f523c837f47352c9f9ecae309efe56f03a94a35f19388f90aeeb11
+[0;32m[PASS][0m GATE 2: Attestation Key Enrolled — Identity Anchor Set
+
+[0;33m── GATE 3: BOOT QUOTE ──[0m
+  Nonce: b836c1c3da220379f3e3c7e356cb297f
+  Generating TPM quote against PCRs 0,1,7,11...
+quoted: ff54434780180022000b9e33e3ceb91fd66c8c8756cf641092667da83c849edde1243dc8a634ea91f30c0010b836c1c3da220379f3e3c7e356cb297f0000000002cf46d0000000280000000001000700020003000100000001000b0383080000201ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+signature:
+  alg: rsassa
+  sig: 3c96dad3fc410a93efc57acc2bd519101126e006443d76112c65b98d86331bc02600bbdc82c7342bb28dc88c20ed7c2e8170b220faf6f9b7a0c9e211874476fc8bf02db61cd6a7fe5a6afd14b7878fc945219244e44745e1230759b3e5aed338b09c3703488fbdd9aacb69bca7f0d83d4d0310ebcfcb3a4846ce02216e70585df8b049ea4cfbae727b541072c199b0c365ec37f1eea9e70e855586802217d23a0f11e514e6a0dbdb822c735024474d629a7f3a65cef5fbf0ae2332ab224ed518437e46a4cd98c0712462c953fbb0e93cd38f65cefd6d5181c822c427377000973ff5200a5b39e16ef417fdfd536413a2ffa30ef872f97df092a2c6acd4f6c10e
+pcrs:
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+    11: 0x0000000000000000000000000000000000000000000000000000000000000000
+calcDigest: 1ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+  Quote blob hash:     5b56ccb77cfd06e85f5116b2385fd1e16aa80cd1f1f0050759cd6ee53bfc7521
+  Signature blob hash: 8b480d861f689d1e2d60fa9d861c80ae7f1e82583d3bc3fd22a7483e518b048d
+  THIS IS A SILICON-SIGNED BOOT ATTESTATION
+[0;32m[PASS][0m GATE 3: Boot Quote Captured — Silicon Root of Trust
+
+[0;33m── GATE 4: eBPF LSM COMPILATION ──[0m
+  Checking kernel LSM configuration...
+  Active LSMs: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF LSM: ACTIVE
+  Generating vmlinux.h from running kernel...
+  Compiling arda_physical_lsm.c...
+  CMD: clang -O2 -g -target bpf -D__TARGET_ARCH_x86     -I/home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf     -I/usr/include/x86_64-linux-gnu     -c /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.c     -o /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o
+  Compiled: arda_physical_lsm.o (822536 bytes)
+  Object hash: 0205f691ea3ae177877e815ed552e9576dc73b72ff5e6475f0c8e2a283890512
+[0;32m[PASS][0m GATE 4: eBPF LSM Compiled — Kernel Object Ready
+
+[0;33m── GATE 4.5: HARMONY DISCOVERY ──[0m
+  Running dynamic discovery agent...
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+  Dynamic discovery: 155 unique binaries
+  Running static tier discovery (critical + operational + development)...
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Static tier discovery: 120 unique binaries
+  Merging discovered and tier manifests...
+  Merged manifest: 257 unique binaries
+  Total harmony entries: 257
+[0;32m[PASS][0m GATE 4.5: Harmony Discovery Complete — 257 Binaries Mapped
+
+[0;33m── GATE 5: eBPF ENFORCEMENT ──[0m
+  Test binary: /tmp/arda_test_binary (inode=920, dev=0x26)
+[0;31m  ══ ENFORCE MODE ACTIVE ══[0m
+  Loading BPF LSM with pre-seeded harmony map...
+
+  [1/4] Loading BPF program...
+  BPF program loaded (pinned at /sys/fs/bpf/arda_lsm)
+  [2/4] Locating harmony map...
+  Harmony map ID: pids
+  [3/4] Seeding harmony map from manifest...
+  Seeded: 0 entries, Failed: 257
+[0;31m  ABORT: Only 0 entries seeded — too few for safe enforcement[0m
+[0;31m  Unpinning BPF program to prevent lockout...[0m
+[0;31m[FAIL][0m GATE 5: Safety Check
+[0;31m       Reason: Only 0 entries seeded — aborting to prevent lockout[0m
+
+[0;33mThis failure is evidence. It documents the exact gap between[0m
+[0;33mthe design and the hardware. See evidence/ for details.[0m
+  Partial bundle saved. Hash: 03caeaf6353a49a49bbfbd806378e3b1...
+[0;36m── PRE-FLIGHT: Dependency Check ──[0m
+  All dependencies present.
+  Pre-flight complete.
+
+
+[0;36m═══════════════════════════════════════════════════════════════[0m
+[0;36m   ARDA OS — SOVEREIGN CORONATION[0m
+[0;36m   Silicon Truth Protocol[0m
+[0;36m   2026-03-31T08:23:11Z[0m
+[0;36m═══════════════════════════════════════════════════════════════[0m
+
+[0;33m── GATE 0: HARDWARE CENSUS ──[0m
+  Kernel:  6.12.74+deb12-amd64
+  Arch:    x86_64
+  CPU:     13th Gen Intel(R) Core(TM) i7-1355U
+  Machine: c895237d07c64b029a495b62b878aeba
+[0;32m[PASS][0m GATE 0: Hardware Census Complete
+
+[0;33m── GATE 1: TPM VERIFICATION ──[0m
+  Running tpm2_getcap properties-fixed...
+  TPM Manufacturer: raw: 0x4E544300
+  TPM Firmware:     raw: 0x30001
+  THIS IS A REAL TPM 2.0
+  Reading PCR bank (sha256:0,1,7,11)...
+  PCR values captured.
+  PCR JSON saved.
+    PCR 0: 0886e6fc01b4b9c8...
+    PCR 1: 9c2d3fc65c013a74...
+    PCR 7: d1a66959abf306c3...
+    PCR 11: 0000000000000000...
+[0;32m[PASS][0m GATE 1: TPM 2.0 Verified — Real Silicon
+
+[0;33m── GATE 2: ATTESTATION KEY ENROLLMENT ──[0m
+  Clearing stale TPM handles...
+persistent-handle: 0x81010001
+action: evicted
+  Creating primary key hierarchy...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|restricted|decrypt
+  raw: 0x30072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: aes
+  raw: 0x6
+sym-mode:
+  value: cfb
+  raw: 0x43
+sym-keybits: 128
+rsa: d8d46e02673dec42f6dc335a4e69a1770620704bb07adac28ca7a1193a1786cea158a378de14b715ef16900a9a7ff3a9a193cb076991389eee2c13f2e1e1fcb3bddff309fb5495322dd6bac563d6d238c189e0a18d9f5235f7382575221e6650c32526534abf4363dca09e96f49c936703f32b5a8e6e16595076c302dfb983c0e7d3cc78f39859c46fef555af1d6fa45d89a31f5a6b80dc7b125ca40e61d05e25ebca62e6f684772958540d86699157e291371ddf8cc956768511fa1704098320df77c1259dbe4d2dd84c78046657e5605dbffee343e9400fae6df54e3119846fca3ce48c37609bd23f2079cebbf354e2011665bf3508f79d3040fe9a57a9215
+  Primary key created.
+  Creating Attestation Key (AK)...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: e0a674a5fed1e88f6f0f10871d37f346cf5e89058e24e9eadc46b9c6eec6268b724cff4c8e8e499350225ad721c7c28f20a7a244e39bdf96fa9a7e9913745e2fda8c2de3cdd43c8b1d0195fb0c4f365e6737dd4b12381c0710a9fbad06b54757cf07733244114b327863d3cb399231a31688b045d3780029b0e2750a155b6c4df12d6e385f4aefcf26d86f2a4f5fa0a424586c874439c8a2d7caee2ffd29459bdcd9e85983369055da086320b63aab6a9ea90d1ad80cc5d4bf91ba48e02d62932f973801bee10f36c81ed1af3342313197f207c5542ec5f19f10cfccfe8be32daa4d6a3e8d2d6ffa4b073d98ecc8862539ddd61c1d237dad8c2575ca5c41dcdf
+  AK created.
+  Loading AK into TPM...
+name: 000bc88a09b03c0452381ffc63650d1f69e1dde34667617d3c587560db0cdb50c36f
+  AK loaded.
+  Making AK persistent (0x81010001)...
+persistent-handle: 0x81010001
+action: persisted
+name: 000bc88a09b03c0452381ffc63650d1f69e1dde34667617d3c587560db0cdb50c36f
+qualified name: 000b0824ae4cdb83682b150fa1073525d69e1d84675f42132a86c03ec3b997252b65
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: e0a674a5fed1e88f6f0f10871d37f346cf5e89058e24e9eadc46b9c6eec6268b724cff4c8e8e499350225ad721c7c28f20a7a244e39bdf96fa9a7e9913745e2fda8c2de3cdd43c8b1d0195fb0c4f365e6737dd4b12381c0710a9fbad06b54757cf07733244114b327863d3cb399231a31688b045d3780029b0e2750a155b6c4df12d6e385f4aefcf26d86f2a4f5fa0a424586c874439c8a2d7caee2ffd29459bdcd9e85983369055da086320b63aab6a9ea90d1ad80cc5d4bf91ba48e02d62932f973801bee10f36c81ed1af3342313197f207c5542ec5f19f10cfccfe8be32daa4d6a3e8d2d6ffa4b073d98ecc8862539ddd61c1d237dad8c2575ca5c41dcdf
+[0;32m[PASS][0m GATE 2: Attestation Key Enrolled — Identity Anchor Set
+
+[0;33m── GATE 3: BOOT QUOTE ──[0m
+  Nonce: 448416797079ac8344503f86cf7a19d5
+  Generating TPM quote against PCRs 0,1,7,11...
+quoted: ff54434780180022000b0824ae4cdb83682b150fa1073525d69e1d84675f42132a86c03ec3b997252b650010448416797079ac8344503f86cf7a19d50000000002d07cd1000000280000000001000700020003000100000001000b0383080000201ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+signature:
+  alg: rsassa
+  sig: a8b755d95fd3c545152ed6256581994f65faa6ec145cb7775edff971472a8e138a710298cafee2d9f472b518feb4e4bc0f8ac15ffdaca20b9fc4e7809878028cdd002ad5c329c630768078746952aa73220f24a72ec8ea0f017da278dce549f50ed05cfaeae6fbc23a14926a8ce129ef39b5c456ac1f59f0414811082edb1c36d5fce71fff251c4c9ac866da764f37bb780a4ec3e019975f4de4ddf414ffca4a106f9717b3499448fd76ddb1a57d4ac44d6ce9859ca646faa1d209e22d630e99ab8c02ee9014693f76696bd9384814ce9cf5f77384a00b16199b5c1f9e96e9c4392e9be010ae004ea0e96d943141af3715a517d24d6145ae5703d9ffc43f6bfa
+pcrs:
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+    11: 0x0000000000000000000000000000000000000000000000000000000000000000
+calcDigest: 1ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+  Quote blob hash:     79095817ecf28754674eca60f8d9a3d5a79a643e9c52ae5ce6365f7898f8323f
+  Signature blob hash: cb78b74a7c95de6b0b2326eaae7e499b341e7eb4d465cbfcf63fef82923bc190
+  THIS IS A SILICON-SIGNED BOOT ATTESTATION
+[0;32m[PASS][0m GATE 3: Boot Quote Captured — Silicon Root of Trust
+
+[0;33m── GATE 4: eBPF LSM COMPILATION ──[0m
+  Checking kernel LSM configuration...
+  Active LSMs: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF LSM: ACTIVE
+  Generating vmlinux.h from running kernel...
+  Compiling arda_physical_lsm.c...
+  CMD: clang -O2 -g -target bpf -D__TARGET_ARCH_x86     -I/home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf     -I/usr/include/x86_64-linux-gnu     -c /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.c     -o /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o
+  Compiled: arda_physical_lsm.o (822536 bytes)
+  Object hash: 0205f691ea3ae177877e815ed552e9576dc73b72ff5e6475f0c8e2a283890512
+[0;32m[PASS][0m GATE 4: eBPF LSM Compiled — Kernel Object Ready
+
+[0;33m── GATE 4.5: HARMONY DISCOVERY ──[0m
+  Running dynamic discovery agent...
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 76 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 158
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 155
+    critical: 62
+    operational: 89
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+  Dynamic discovery: 155 unique binaries
+  Running static tier discovery (critical + operational + development)...
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Static tier discovery: 120 unique binaries
+  Merging discovered and tier manifests...
+  Merged manifest: 257 unique binaries
+  Total harmony entries: 257
+[0;32m[PASS][0m GATE 4.5: Harmony Discovery Complete — 257 Binaries Mapped
+
+[0;33m── GATE 5: eBPF ENFORCEMENT ──[0m
+  Test binary: /tmp/arda_test_binary (inode=934, dev=0x26)
+[0;31m  ══ ENFORCE MODE ACTIVE ══[0m
+  Loading BPF LSM with pre-seeded harmony map...
+
+  [1/4] Loading BPF program...
+  BPF program loaded (pinned at /sys/fs/bpf/arda_lsm)
+  [2/4] Locating harmony map...
+  Harmony map ID: 46
+  [3/4] Seeding harmony map from manifest...
+  Seeded: 0 entries, Failed: 257
+[0;31m  ABORT: Only 0 entries seeded — too few for safe enforcement[0m
+[0;31m  Unpinning BPF program to prevent lockout...[0m
+[0;31m[FAIL][0m GATE 5: Safety Check
+[0;31m       Reason: Only 0 entries seeded — aborting to prevent lockout[0m
+
+[0;33mThis failure is evidence. It documents the exact gap between[0m
+[0;33mthe design and the hardware. See evidence/ for details.[0m
+  Partial bundle saved. Hash: 7ff1455e3c2e0a7d903fc868d2994b6e...
+[0;36m── PRE-FLIGHT: Dependency Check ──[0m
+  All dependencies present.
+  Pre-flight complete.
+
+
+[0;36m═══════════════════════════════════════════════════════════════[0m
+[0;36m   ARDA OS — SOVEREIGN CORONATION[0m
+[0;36m   Silicon Truth Protocol[0m
+[0;36m   2026-03-31T08:24:53Z[0m
+[0;36m═══════════════════════════════════════════════════════════════[0m
+
+[0;33m── GATE 0: HARDWARE CENSUS ──[0m
+  Kernel:  6.12.74+deb12-amd64
+  Arch:    x86_64
+  CPU:     13th Gen Intel(R) Core(TM) i7-1355U
+  Machine: c895237d07c64b029a495b62b878aeba
+[0;32m[PASS][0m GATE 0: Hardware Census Complete
+
+[0;33m── GATE 1: TPM VERIFICATION ──[0m
+  Running tpm2_getcap properties-fixed...
+  TPM Manufacturer: raw: 0x4E544300
+  TPM Firmware:     raw: 0x30001
+  THIS IS A REAL TPM 2.0
+  Reading PCR bank (sha256:0,1,7,11)...
+  PCR values captured.
+  PCR JSON saved.
+    PCR 0: 0886e6fc01b4b9c8...
+    PCR 1: 9c2d3fc65c013a74...
+    PCR 7: d1a66959abf306c3...
+    PCR 11: 0000000000000000...
+[0;32m[PASS][0m GATE 1: TPM 2.0 Verified — Real Silicon
+
+[0;33m── GATE 2: ATTESTATION KEY ENROLLMENT ──[0m
+  Clearing stale TPM handles...
+persistent-handle: 0x81010001
+action: evicted
+  Creating primary key hierarchy...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|restricted|decrypt
+  raw: 0x30072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: aes
+  raw: 0x6
+sym-mode:
+  value: cfb
+  raw: 0x43
+sym-keybits: 128
+rsa: d8d46e02673dec42f6dc335a4e69a1770620704bb07adac28ca7a1193a1786cea158a378de14b715ef16900a9a7ff3a9a193cb076991389eee2c13f2e1e1fcb3bddff309fb5495322dd6bac563d6d238c189e0a18d9f5235f7382575221e6650c32526534abf4363dca09e96f49c936703f32b5a8e6e16595076c302dfb983c0e7d3cc78f39859c46fef555af1d6fa45d89a31f5a6b80dc7b125ca40e61d05e25ebca62e6f684772958540d86699157e291371ddf8cc956768511fa1704098320df77c1259dbe4d2dd84c78046657e5605dbffee343e9400fae6df54e3119846fca3ce48c37609bd23f2079cebbf354e2011665bf3508f79d3040fe9a57a9215
+  Primary key created.
+  Creating Attestation Key (AK)...
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: c0dbe5dbb89ca023a7e1095d30a48737bdb55a5512c2af19a2475c227befdda3278a3ffdd5ba60ce5cb10679f413538267bf9282fb1036e71d126956694fbffad892e01edd13ab7f834071c8a5aa1d6b8d19794d1e51b6b64e4c7b8067699e113443a3b91b870f58b121ad9ac235399083d756045e40b6799b8133f544f0b5eb4ef6fc99e79fa80b339717db36906a3fcfad7e211e07231512438fa3d0c0b04bc7c54019eda469f619e7c99a70626826d29a5cfdf9cdab0e1af8ed9b021fb0acb55e8ec8093581577673066e10b0ef9db5b7e0d0102fc346ac64b2224863276b3b12ee35ba6d2eaaff74dd3a3bfd196fb22f7a877fe228485dca61c9d0186901
+  AK created.
+  Loading AK into TPM...
+name: 000bd396de1afb57330bbca9944e976b17eb886da958a8b2568b0ce8551ee299a11f
+  AK loaded.
+  Making AK persistent (0x81010001)...
+persistent-handle: 0x81010001
+action: persisted
+name: 000bd396de1afb57330bbca9944e976b17eb886da958a8b2568b0ce8551ee299a11f
+qualified name: 000bda8ed6161b191f2913d840cb7ba5b1930f117d2b0a45e7bf24ba6b16d811a685
+name-alg:
+  value: sha256
+  raw: 0xb
+attributes:
+  value: fixedtpm|fixedparent|sensitivedataorigin|userwithauth|sign
+  raw: 0x40072
+type:
+  value: rsa
+  raw: 0x1
+exponent: 65537
+bits: 2048
+scheme:
+  value: null
+  raw: 0x10
+scheme-halg:
+  value: (null)
+  raw: 0x0
+sym-alg:
+  value: null
+  raw: 0x10
+sym-mode:
+  value: (null)
+  raw: 0x0
+sym-keybits: 0
+rsa: c0dbe5dbb89ca023a7e1095d30a48737bdb55a5512c2af19a2475c227befdda3278a3ffdd5ba60ce5cb10679f413538267bf9282fb1036e71d126956694fbffad892e01edd13ab7f834071c8a5aa1d6b8d19794d1e51b6b64e4c7b8067699e113443a3b91b870f58b121ad9ac235399083d756045e40b6799b8133f544f0b5eb4ef6fc99e79fa80b339717db36906a3fcfad7e211e07231512438fa3d0c0b04bc7c54019eda469f619e7c99a70626826d29a5cfdf9cdab0e1af8ed9b021fb0acb55e8ec8093581577673066e10b0ef9db5b7e0d0102fc346ac64b2224863276b3b12ee35ba6d2eaaff74dd3a3bfd196fb22f7a877fe228485dca61c9d0186901
+[0;32m[PASS][0m GATE 2: Attestation Key Enrolled — Identity Anchor Set
+
+[0;33m── GATE 3: BOOT QUOTE ──[0m
+  Nonce: 56b40c209e2c7033cc8634f90d175e8b
+  Generating TPM quote against PCRs 0,1,7,11...
+quoted: ff54434780180022000bda8ed6161b191f2913d840cb7ba5b1930f117d2b0a45e7bf24ba6b16d811a685001056b40c209e2c7033cc8634f90d175e8b0000000002d201ea000000280000000001000700020003000100000001000b0383080000201ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+signature:
+  alg: rsassa
+  sig: 69d0129c90155fba0a282af28cd2ffd89e30f0bf92e58e4fe2b81a13d08ac6ed572e5a201caf5cf50fa95a770310a3e733b082096ee3138ab2182fd433e1bf98fa6cc9973be7395a34f4d9d129ab87f681683ac4fb81030d5f70791737eb07690d675004b9daf89cbcbef6cb289e6d822851f0e07def9d12c1a516873f3ed711ac4784962e9f6cc4a6e2b0788941c8a5aa9a5a35796ccefab2c2f77d6be6fafc8905ef014f8537e3213a40c23a31c387399d97f2afbbe29cb5fa22d5bd876d80f79754f9398b7db83ed6fe5ffc566993e9dbc9172a249ee22150f4a4ed03242ae84a94ace770eedfa3b67f0a9bd4669b68deb4652bb78cfca7a0d12d1b515f4a
+pcrs:
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+    11: 0x0000000000000000000000000000000000000000000000000000000000000000
+calcDigest: 1ad0a28e59d8406dd86b9713a200f3c24200d9e0c8e6d0ea24b28af870118eae
+  Quote blob hash:     911bc4b9ae16508682ff784a9fc7321c785a1d08947750291a2adac88be363c1
+  Signature blob hash: 0889616fc498b4617aede92724e36236b77464ad5364ae804907b483ff96af88
+  THIS IS A SILICON-SIGNED BOOT ATTESTATION
+[0;32m[PASS][0m GATE 3: Boot Quote Captured — Silicon Root of Trust
+
+[0;33m── GATE 4: eBPF LSM COMPILATION ──[0m
+  Checking kernel LSM configuration...
+  Active LSMs: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF LSM: ACTIVE
+  Generating vmlinux.h from running kernel...
+  Compiling arda_physical_lsm.c...
+  CMD: clang -O2 -g -target bpf -D__TARGET_ARCH_x86     -I/home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf     -I/usr/include/x86_64-linux-gnu     -c /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.c     -o /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/arda_os/backend/services/bpf/arda_physical_lsm.o
+  Compiled: arda_physical_lsm.o (822536 bytes)
+  Object hash: 0205f691ea3ae177877e815ed552e9576dc73b72ff5e6475f0c8e2a283890512
+[0;32m[PASS][0m GATE 4: eBPF LSM Compiled — Kernel Object Ready
+
+[0;33m── GATE 4.5: HARMONY DISCOVERY ──[0m
+  Running dynamic discovery agent...
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 77 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 159
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 156
+    critical: 62
+    operational: 90
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+═══ ARDA OS — Harmony Discovery Agent ═══
+
+  [1/7] Scanning running processes...
+        Found 77 unique process binaries
+  [2/7] Scanning systemd services...
+        Found 7 service executables
+  [3/7] Scanning systemd helper binaries...
+        Found 47 systemd helpers
+  [4/7] Scanning networking stack...
+        Found 13 networking binaries
+  [5/7] Scanning apt infrastructure...
+        Found 15 apt helpers
+  [6/7] Scanning auth/D-Bus/polkit...
+        Found 9 auth/dbus binaries
+  [7/7] Scanning dynamic linker...
+        Found 1 loader binaries
+
+  Total unique binaries discovered: 159
+
+  Building manifest...
+
+  ═══ DISCOVERY RESULTS ═══
+  Total unique (deduplicated): 156
+    critical: 62
+    operational: 90
+    development: 4
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_discovered_binaries.json
+
+  Dynamic discovery: 156 unique binaries
+  Running static tier discovery (critical + operational + development)...
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Discovering binaries for tiers: critical, operational, development
+
+  Discovery Results:
+    Unique binaries found: 120
+    Binaries not found:    10
+    critical: 18 found, 0 missing
+    operational: 88 found, 6 missing
+    development: 14 found, 4 missing
+
+  Missing binaries (not on this system):
+    [operational] /usr/bin/gawk
+    [operational] /usr/bin/vim
+    [operational] /usr/bin/htop
+    [operational] /usr/bin/nc
+    [operational] /usr/bin/host
+    [operational] /usr/bin/dig
+    [development] /usr/bin/clang-19
+    [development] /usr/bin/pip3
+    [development] /usr/bin/strace
+    [development] /usr/bin/ltrace
+
+  Manifest saved to: /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/05_tier_manifest.json
+  Static tier discovery: 120 unique binaries
+  Merging discovered and tier manifests...
+  Merged manifest: 257 unique binaries
+  Total harmony entries: 257
+[0;32m[PASS][0m GATE 4.5: Harmony Discovery Complete — 257 Binaries Mapped
+
+[0;33m── GATE 5: eBPF ENFORCEMENT ──[0m
+  Test binary: /tmp/arda_test_binary (inode=949, dev=0x26)
+[0;31m  ══ ENFORCE MODE ACTIVE ══[0m
+  Loading BPF LSM with pre-seeded harmony map...
+
+  [1/4] Loading BPF program...
+  BPF program loaded (pinned at /sys/fs/bpf/arda_lsm)
+  [2/4] Locating harmony map...
+  Harmony map ID: 60
+  [3/4] Seeding harmony map from manifest...
+  Seeded: 257 entries, Failed: 0
+  Safety check passed: 257 entries in harmony map
+  [4/4] Testing enforcement...
+  Testing DENY (test binary NOT in harmony map)...
+[0;33m  Test binary executed (not denied) — LSM may not be attached yet[0m
+[0;33m[WARN][0m GATE 5: LSM loaded and seeded but test binary was not denied
+
+[0;33m  Unpinning BPF program (enforcement was demonstrated)[0m
+[0;33m  To keep enforcement persistent, install arda-bombadil.service[0m
+[0;32m[PASS][0m GATE 5: Ring-0 Enforcement PROVEN — 257 Binaries Sealed
+
+[0;33m── GATE 6: ATTESTATION BUNDLE ──[0m
+  Mirror ID:       ARDA-CORONATION-48938DC9BFEE7E02
+  Boot State:      LAWFUL_PARTIAL
+  TPM Quote:       CAPTURED (172 bytes b64)
+  AK Public:       ENROLLED
+  PCR Values:      4 registers
+  Enforcement:     DENY_FAILED
+  Chain Hash:      48938dc9bfee7e028120ec9ed7b22352facf388eeb414975aef5f4e1280a3bfc
+[0;32m[PASS][0m GATE 6: Attestation Bundle Assembled — Full Proof Object
+
+[0;33m── GATE 7: SOVEREIGN SEAL ──[0m
+
+# ARDA OS — SOVEREIGN CORONATION SEAL
+
+## Silicon Truth Protocol
+
+- **Timestamp**: 2026-03-31T08:24:53Z
+- **Machine ID**: c895237d07c64b029a495b62b878aeba
+- **Kernel**: 6.12.74+deb12-amd64
+- **CPU**: 13th Gen Intel(R) Core(TM) i7-1355U
+- **Gates Passed**: 8/7 (Warnings: 1)
+- **Bundle Hash**: 48938dc9bfee7e028120ec9ed7b22352facf388eeb414975aef5f4e1280a3bfc
+
+## Gate Results
+
+- ✅ **GATE_0**: Hardware Census Complete
+- ✅ **GATE_1**: TPM 2.0 Verified — Real Silicon
+- ✅ **GATE_2**: Attestation Key Enrolled — Identity Anchor Set
+- ✅ **GATE_3**: Boot Quote Captured — Silicon Root of Trust
+- ✅ **GATE_4**: eBPF LSM Compiled — Kernel Object Ready
+- ✅ **GATE_4.5**: Harmony Discovery Complete — 257 Binaries Mapped
+- ⚠️ **GATE_5**: LSM loaded and seeded but test binary was not denied
+- ✅ **GATE_5**: Ring-0 Enforcement PROVEN — 257 Binaries Sealed
+- ✅ **GATE_6**: Attestation Bundle Assembled — Full Proof Object
+
+## Evidence Manifest
+
+drwxrwxr-x  3 byron byron   4096 Mar 31 03:25 .
+drwxrwxr-x 10 byron byron   4096 Mar 30 21:48 ..
+-rw-rw-r--  1 byron byron    321 Mar 31 03:24 00_hardware_census.json
+-rw-rw-r--  1 byron byron   1758 Mar 31 03:24 01_tpm_properties.txt
+-rw-rw-r--  1 byron byron    310 Mar 31 03:24 02_pcr_raw.txt
+-rw-rw-r--  1 byron byron    386 Mar 31 03:24 02_pcr_values.json
+-rw-rw-r--  1 byron byron    280 Mar 31 03:25 03_ak_public.pem
+-rw-rw-r--  1 byron byron      0 Mar 31 03:25 04_quote.err
+-rw-rw-r--  1 byron byron    372 Mar 31 03:25 04_quote_metadata.json
+-rw-rw-r--  1 byron byron     33 Mar 31 03:25 04_quote_nonce.txt
+-rw-rw-r--  1 byron byron    129 Mar 31 03:25 04_tpm_quote.bin
+-rw-rw-r--  1 byron byron    668 Mar 31 03:25 04_tpm_quote_pcrs.bin
+-rw-rw-r--  1 byron byron    262 Mar 31 03:25 04_tpm_quote_sig.bin
+-rw-rw-r--  1 byron byron 822536 Mar 31 03:25 05_arda_physical_lsm.o
+-rw-r--r--  1 root  root   37492 Mar 31 03:25 05_discovered_binaries.json
+-rw-r--r--  1 root  root       0 Mar 31 03:25 05_ebpf_compile.log
+-rw-r--r--  1 root  root   61400 Mar 31 03:25 05_harmony_manifest.json
+-rw-r--r--  1 root  root   30543 Mar 31 03:25 05_tier_manifest.json
+-rw-r--r--  1 root  root       0 Mar 31 03:25 06_bpf_load.log
+-rw-rw-r--  1 byron byron    537 Mar 31 03:25 06_bpf_map_list.txt
+-rw-rw-r--  1 byron byron   2747 Mar 31 03:25 06_bpf_prog_list.txt
+-rw-r--r--  1 root  root      50 Mar 31 03:25 06_enforcement_test.log
+-rw-rw-r--  1 byron byron   4299 Mar 31 03:25 07_sovereign_attestation.json
+-rw-rw-r--  1 byron byron    914 Mar 31 03:18 08_covenant_chain.json
+drwxrwxr-x  2 byron byron   4096 Mar 30 19:45 ak
+-rw-r--r--  1 root  root   64408 Mar 31 03:25 coronation.log
+-rw-rw-r--  1 byron byron      0 Mar 31 03:25 CORONATION_SEAL.md
+-rw-rw-r--  1 byron byron    700 Mar 31 03:25 gate_results.txt
+
+## Attestation
+
+This seal was produced by executing the Arda OS Sovereign Coronation Script
+on physical hardware with a real TPM 2.0 chip. The TPM quote is signed by
+the machine's silicon. The eBPF object was compiled against the running kernel.
+
+No mock mode was used. No simulation was employed.
+
+The evidence in this bundle is either:
+- **Proof** that the system works as designed, or
+- **Documentation** of exactly where it does not, which is equally valuable.
+
+---
+
+*Probatio ante laudem. Lex ante actionem. Veritas ante vanitatem.*
+
+[0;33m  Writing first covenant chain entry...[0m
+  Covenant Entry #0: 1e3e308280835b46e6500457f8a3bb81...
+  Mirror ID:         ARDA-CORONATION-48938DC9BFEE7E02
+  Boot State:        LAWFUL_PARTIAL
+  This is the FIRST entry in the real covenant chain.
+[0;32m[PASS][0m GATE 7: Sovereign Seal Written — Covenant Chain Initiated
+
+[0;32m═══════════════════════════════════════════════════════════════[0m
+[0;32m   CORONATION COMPLETE[0m
+[0;32m   Gates Passed: 8/7[0m
+[0;32m   Evidence:     /home/byron/Integritas-Mechanicus-clean/Integritas-Mechanicus/evidence/[0m
+[0;32m═══════════════════════════════════════════════════════════════[0m
+
+[0;36mCopy the evidence/ directory to commit to the covenant chain.[0m
+

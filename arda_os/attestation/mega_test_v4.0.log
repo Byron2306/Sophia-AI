@@ -1,0 +1,248 @@
+
+=================================================================
+   ARDA OS: ULTIMATE SOVEREIGN MEGA TESTER (v4.0)
+   Timestamp: 2026-04-01T00:51:53Z
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 1] SILICON INTEGRITY — Bombadil Constitutional Audit
+─────────────────────────────────────────────────────────────────
+[2026-04-01T00:51:53Z] [bombadil] Bombadil looks around...
+
+  Mirror ID:       not set
+  Covenant State:  lawful_full
+  Chain Valid:     False
+
+  TPM:             present
+  LSM:             lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+  BPF in LSM:      yes
+  eBPF loaded:     yes
+  Harmony map:     present
+  Manifest:        present
+  Foedus:          present
+  BPF object:      present
+  Audit chain:     not yet created
+
+
+✓ CLAIM 1 PASSED: Substrate audit passed.
+
+  Kernel: 6.12.74+deb12-amd64 (x86_64)
+  LSM Stack: lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 2] PQC ROOT OF TRUST — Dilithium Key Reference
+─────────────────────────────────────────────────────────────────
+  PQC Public Key: arda_os/SOVEREIGN_ROOT_PQC.pub
+  SHA-256: 3f31164900401645d53b3c594fefa225ff3ecef68f026662b5dc73320fba4da9
+  Algorithm: ML-DSA (Dilithium-3)
+✓ CLAIM 2 PASSED: PQC root of trust verified.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 3] TPM HARDWARE ATTESTATION — PCR Values
+─────────────────────────────────────────────────────────────────
+  sha256:
+    0 : 0x0886E6FC01B4B9C8FC427EB494C7FA477032D56991529621FE3E9865F532E92F
+    1 : 0x9C2D3FC65C013A74EE1B357F6F857419E4FB3DE8D26278E85C0CD9C334E358A7
+    7 : 0xD1A66959ABF306C3430EBB58DA1122BA0B150AF00FE0129BCECA115B7F5F57D1
+
+✓ CLAIM 3 PASSED: TPM PCR values read.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 4] BPF LSM COMPILATION — Ring-0 Policy Object
+─────────────────────────────────────────────────────────────────
+  Source SHA-256:  88f068e54c2f209c4eb5ea9af21c2f38bf845ff9e834fb85580ef8cd8010355f
+  Object SHA-256: 1e2a6cb05804e5c2112a2884318c6985193a520f490ce4874ce074fc5c4a9492
+✓ CLAIM 4 PASSED: BPF LSM compiled.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 5] RING-0 IGNITION — BPF LSM Attach via C Ignitor
+─────────────────────────────────────────────────────────────────
+libbpf: loading object from bpf/arda_physical_lsm.o
+libbpf: elf: section(3) lsm/bprm_check_security, size 1016, link 0, flags 6, type=1
+libbpf: sec 'lsm/bprm_check_security': found program 'arda_sovereign_ignition' at insn offset 0 (0 bytes), code size 127 insns (1016 bytes)
+libbpf: elf: section(4) .rellsm/bprm_check_security, size 128, link 28, flags 40, type=9
+libbpf: elf: section(5) license, size 4, link 0, flags 3, type=1
+libbpf: license of bpf/arda_physical_lsm.o is GPL
+libbpf: elf: section(6) .maps, size 64, link 0, flags 3, type=1
+libbpf: elf: section(7) .rodata, size 308, link 0, flags 2, type=1
+libbpf: elf: section(18) .BTF, size 13755, link 0, flags 0, type=1
+libbpf: elf: section(20) .BTF.ext, size 844, link 0, flags 0, type=1
+libbpf: elf: section(28) .symtab, size 696, link 1, flags 0, type=2
+libbpf: looking for externs among 29 symbols...
+libbpf: collected 0 externs total
+libbpf: map 'arda_harmony': at sec_idx 6, offset 0.
+libbpf: map 'arda_harmony': found type = 1.
+libbpf: map 'arda_harmony': found key [8], sz = 16.
+libbpf: map 'arda_harmony': found value [11], sz = 4.
+libbpf: map 'arda_harmony': found max_entries = 1024.
+libbpf: map 'arda_state': at sec_idx 6, offset 32.
+libbpf: map 'arda_state': found type = 2.
+libbpf: map 'arda_state': found key_size = 4.
+libbpf: map 'arda_state': found value_size = 4.
+libbpf: map 'arda_state': found max_entries = 1.
+libbpf: map 'arda_phy.rodata' (global data): at sec_idx 7, offset 0, flags 80.
+libbpf: map 2 is "arda_phy.rodata"
+libbpf: sec '.rellsm/bprm_check_security': collecting relocation for section(3) 'lsm/bprm_check_security'
+libbpf: sec '.rellsm/bprm_check_security': relo #0: insn #20 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 20
+libbpf: sec '.rellsm/bprm_check_security': relo #1: insn #57 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 57
+libbpf: sec '.rellsm/bprm_check_security': relo #2: insn #81 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 81
+libbpf: sec '.rellsm/bprm_check_security': relo #3: insn #88 against 'arda_harmony'
+libbpf: prog 'arda_sovereign_ignition': found map 0 (arda_harmony, sec 6, off 0) for insn #88
+libbpf: sec '.rellsm/bprm_check_security': relo #4: insn #95 against 'arda_state'
+libbpf: prog 'arda_sovereign_ignition': found map 1 (arda_state, sec 6, off 32) for insn #95
+libbpf: sec '.rellsm/bprm_check_security': relo #5: insn #109 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 109
+libbpf: sec '.rellsm/bprm_check_security': relo #6: insn #117 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 117
+libbpf: sec '.rellsm/bprm_check_security': relo #7: insn #121 against '.rodata'
+libbpf: prog 'arda_sovereign_ignition': found data map 2 (arda_phy.rodata, sec 7, off 0) for insn 121
+libbpf: object 'arda_physical_l': failed (-95) to create BPF token from '/sys/fs/bpf', skipping optional step...
+libbpf: loaded kernel BTF from '/sys/kernel/btf/vmlinux'
+libbpf: sec 'lsm/bprm_check_security': found 8 CO-RE relocations
+libbpf: CO-RE relocating [25] struct linux_binprm: found target candidate [1603] struct linux_binprm in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #0: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #0: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #0: patched insn #7 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #1: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #1: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #1: patched insn #9 (LDX/ST/STX) off 64 -> 64
+libbpf: CO-RE relocating [37] struct file: found target candidate [727] struct file in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #2: <byte_off> [37] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #2: matching candidate #0 <byte_off> [727] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #2: patched insn #10 (LDX/ST/STX) off 40 -> 40
+libbpf: CO-RE relocating [95] struct inode: found target candidate [910] struct inode in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #3: <byte_off> [95] struct inode.i_ino (0:11 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #3: matching candidate #0 <byte_off> [910] struct inode.i_ino (0:11 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #3: patched insn #11 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #4: <byte_off> [25] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #4: matching candidate #0 <byte_off> [1603] struct linux_binprm.file (0:12 @ offset 64)
+libbpf: prog 'arda_sovereign_ignition': relo #4: patched insn #13 (LDX/ST/STX) off 64 -> 64
+libbpf: prog 'arda_sovereign_ignition': relo #5: <byte_off> [37] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #5: matching candidate #0 <byte_off> [727] struct file.f_inode (0:6 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #5: patched insn #14 (LDX/ST/STX) off 40 -> 40
+libbpf: prog 'arda_sovereign_ignition': relo #6: <byte_off> [95] struct inode.i_sb (0:8 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #6: matching candidate #0 <byte_off> [910] struct inode.i_sb (0:8 @ offset 40)
+libbpf: prog 'arda_sovereign_ignition': relo #6: patched insn #15 (LDX/ST/STX) off 40 -> 40
+libbpf: CO-RE relocating [142] struct super_block: found target candidate [916] struct super_block in [vmlinux]
+libbpf: prog 'arda_sovereign_ignition': relo #7: <byte_off> [142] struct super_block.s_dev (0:1 @ offset 16)
+libbpf: prog 'arda_sovereign_ignition': relo #7: matching candidate #0 <byte_off> [916] struct super_block.s_dev (0:1 @ offset 16)
+libbpf: prog 'arda_sovereign_ignition': relo #7: patched insn #16 (LDX/ST/STX) off 16 -> 16
+libbpf: found no pinned map to reuse at '/sys/fs/bpf/arda_harmony'
+libbpf: map 'arda_harmony': created successfully, fd=4
+libbpf: pinned map '/sys/fs/bpf/arda_harmony'
+libbpf: found no pinned map to reuse at '/sys/fs/bpf/arda_state'
+libbpf: map 'arda_state': created successfully, fd=5
+libbpf: pinned map '/sys/fs/bpf/arda_state'
+libbpf: map 'arda_phy.rodata': created successfully, fd=6
+libbpf: link fd=8: pinned at /sys/fs/bpf/arda_lsm_link
+libbpf: map 'arda_harmony' already pinned at '/sys/fs/bpf/arda_harmony'; not re-pinning
+libbpf: map 'arda_state' already pinned at '/sys/fs/bpf/arda_state'; not re-pinning
+libbpf: pinned map '/sys/fs/bpf/arda_phy_rodata'
+SUCCESS: Arda LSM Attached and Maps Linked.
+
+✓ CLAIM 5 PASSED: BPF LSM attached, maps pinned.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 6] HARMONY MAP — Comprehensive Binary Seeding
+─────────────────────────────────────────────────────────────────
+  ✓ T1 Verified: /bin/bash (ino=27263057, hex=51 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/sh (ino=27263155, hex=b3 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/dash (ino=27263155, hex=b3 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/ls (ino=27263605, hex=75 02 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/cat (ino=27263103, hex=7f 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/grep (ino=27263396, hex=a4 01 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/chmod (ino=27263116, hex=8c 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/cp (ino=27263138, hex=a2 00 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /bin/rm (ino=27263896, hex=98 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/bin/sudo (ino=27264005, hex=05 04 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/bin/python3 (ino=27263872, hex=80 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/bin/python3.13 (ino=27263872, hex=80 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/local/bin/bpftool (ino=27428646, hex=26 87 a2 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/bin/stat (ino=27263997, hex=fd 03 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  ✓ T1 Verified: /usr/bin/id (ino=27263478, hex=f6 01 a0 01 00 00 00 00 02 00 30 10 00 00 00 00)
+  Attempted: 3920, Map Capacity: 1024, Resident: 1024
+
+  Seeded: 3920 total (15 T1, 25 T2, 3880 T3)
+  Map Dump: 140291 bytes
+  Map Dump SHA-256: 74fff971c3f801e25552c9b3aaa14f1bbff03bbb5051024a9ceafc8f0dab64fb
+✓ CLAIM 6 PASSED: Harmony Map seeded and verified.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 7] AUDIT HEARTBEAT — Live Hook Verification
+─────────────────────────────────────────────────────────────────
+  Trace: 15 ALLOWED, 0 AUDIT-DENIED
+✓ CLAIM 7 PASSED: All Tier 1 identities alive in Ring-0.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 8] ENFORCEMENT — Ring-0 Deny-by-Default
+─────────────────────────────────────────────────────────────────
+  Spawning Safety Sentinel (45s auto-revert)...
+  Sentinel PID: 148086
+  ⚔ RING-0 ENFORCEMENT ACTIVE ⚔
+
+  [TEST A] Authorized Binary (/bin/ls)...
+    ✓ PERMITTED (exit 0)
+  [TEST B] Unauthorized Binary (/tmp/arda_unauth_test)...
+    ✓ BLOCKED (PermissionError) — ENFORCEMENT WORKS
+
+  Kernel Trace: 17 ALLOWED, 1 ENFORCED-DENIED
+    python3-148111  [008] ...11  5931.272480: bpf_trace_printk: ARDA_LSM: [ENFORCE] DENIED execution for inode 867
+✓ CLAIM 8 PASSED: Sovereignty proven — allow + deny verified.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 9] LORIEN RECOVERY — Self-Healing Test
+─────────────────────────────────────────────────────────────────
+  Target: /usr/bin/wc (ino=27264166, dev=271581186)
+  Hex Key: a6 04 a0 01 00 00 00 00 02 00 30 10 00 00 00 00
+  [BASELINE] exit=0 — ✓ Running (seeded in T3)
+  [FRACTURE] Removed /usr/bin/wc from Harmony Map
+  [VERIFY DENY] PermissionError — ✓ BLOCKED by Ring-0 after fracture
+  [HEAL] Re-added /usr/bin/wc to Harmony Map (Lorien)
+  [VERIFY HEALED] exit=0 — ✓ RESTORED — Self-healing proven
+✓ CLAIM 9 PASSED: Full lifecycle BASELINE→FRACTURE→DENY→HEAL→ALLOW verified.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 10] ONTOLOGICAL ISOLATION — Deny-by-Default Proof
+─────────────────────────────────────────────────────────────────
+  Result: PASSED (from enforcement deny test)
+  An unregistered binary is ontologically impossible within the kingdom.
+
+─────────────────────────────────────────────────────────────────
+[CLAIM 11] COVENANT CHAIN — Hash-Chained Audit Log
+─────────────────────────────────────────────────────────────────
+  Events: 9
+  Chain Valid: True
+  Head Hash: b4f60dd5ed8323bd08b1c2263fc22399e7f6d84a7e1f533134ee7dd0ffda1bf5
+  DB SHA-256: 8e837fca8b35fe9868c6234ce565498adf71841cb0bf1e36ef75fd20452711ac
+✓ CLAIM 11 PASSED: CovenantChain seeded and verified.
+
+  Re-running Bombadil check (post-chain)...
+  ✓ Bombadil report updated with live chain state.
+─────────────────────────────────────────────────────────────────
+[CLAIM 12] TPM QUOTE — Nonce-Bound Attestation
+─────────────────────────────────────────────────────────────────
+  Created EK + AK pair
+  Nonce: 14cbcab054ff62848bd71c8ba148bce9
+  AK Context: arda_os/attestation/tpm_ak.ctx
+  Quote Message SHA-256: 484a5ecbf8684a64e55daaa105d0872715e49f85103df7028409d0917a49b92e
+  Quote Signature SHA-256: a7362ea8f06583c0d4e35e3008d2ec75cf6a52f9c5dc20ba72322d332ca95d72
+✓ CLAIM 12 PASSED: TPM quote with nonce verified.
+
+
+[SAFETY] Deactivating Ring-0 Enforcement...
+  ✓ Sovereignty state set to AUDIT.
+  Harmony Map dump: 140291 bytes, SHA-256: 0ff9f292105750933f02866bd34729ed65404212ed90cb532e1400b9221eabb0
+
+═════════════════════════════════════════════════════════════════
+   ⚖ VERDICT: SOVEREIGN — ALL 13 CHECKS VERIFIED
+   Claims: 13/13 PASSED
+═════════════════════════════════════════════════════════════════
+
+  📜 AUDITUS written to: AUDITUS_SOVEREIGN_20260401_v4.md
+
+=================================================================
+   MEGA TEST v4.0 COMPLETE
+=================================================================

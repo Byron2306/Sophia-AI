@@ -1,1 +1,0 @@
-./coronation_kit/scripts/04_lawful_coronation.sh: line 139: /usr/bin/ls: Operation not permitted
