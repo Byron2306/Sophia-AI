@@ -1,0 +1,24 @@
+ARDA OS SOVEREIGN PROOF BUNDLE — v4.0
+Generated: 2026-04-01T00:00:10Z
+Machine: debian
+Kernel: 6.12.74+deb12-amd64
+
+SHA-256 HASHES OF ALL BUNDLE FILES:
+==================================
+6b96e5813210e8e9e19f6e071fd739ab86b52c5fc04fe93a02eea8e5632ecac8  arda_bombadil.py
+8b84c67c8015b489593623639696f0af15a56c4e78199b642f1b3efe396d937b  arda_mega_tester.py
+88f068e54c2f209c4eb5ea9af21c2f38bf845ff9e834fb85580ef8cd8010355f  arda_physical_lsm.c
+1e2a6cb05804e5c2112a2884318c6985193a520f490ce4874ce074fc5c4a9492  arda_physical_lsm.o
+33661433ae94960bef265045d2b3ef1104a1069f73626132b17ab6a1e062bba3  arda_sovereign_ignitor
+43e574832bae6d13f22abe13f97ae86e04905ecf19b1b8506fea509c3d6c7934  arda_sovereign_ignitor.c
+1333b7ee3834bbca3dbf06f954a68a2731fe9c11dd16bb97ea61604b502d174f  AUDITUS_SOVEREIGN_20260331_v4.md
+8bbd62e1d9947da69c26c11b1d4f617af29bdec713ce77867176f1959be8d298  enforcement_trace_v4.0.log
+7961e44ce886cd11e64750587580eeaf68e71693fcc66c4dda43bbff104c2c86  formation_manifest.signed.json
+1fa37be090afbdce933bb3699db20733bf23f9a2f75cb245c77e549e38f60dcf  harmony_map_sovereign_dump.json
+98c79f2accb281da2377bf54d86cadb825d5319d3555c318fdaf696a479f99c8  instrumentum_foederis_integritas_mechanicus.pdf
+a6693e906c4a2c139b225502910b2d91555ec74a86ee7b4886b138f59bae6696  mega_test_v4.0.log
+530a4929777456d08e39b1cbb9fe7267c9ab771d6098aba54c8ae9c8596e3b2b  sovereign_manifest.json
+3f31164900401645d53b3c594fefa225ff3ecef68f026662b5dc73320fba4da9  SOVEREIGN_ROOT_PQC.pub
+7f92b183e56532b33a741eed270d4d505f072a455ff8372759025a41ca4728c1  VERIFY_INDEPENDENTLY.md
+
+VERDICT: SOVEREIGN — ALL CLAIMS VERIFIED (11/11)

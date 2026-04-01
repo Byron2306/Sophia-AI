@@ -18,15 +18,12 @@ def seed_map(map_id, path):
         return
     
     inode, dev = identity
-    # Key: struct arda_identity { __u64 inode; __u32 dev; }
-    # QI = 8 bytes unsigned long long + 4 bytes unsigned int (total 12 bytes)
-    key_bytes = struct.pack('QI', inode, dev)
-    key_hex = ' '.join(f'{b:02x}' for b in key_bytes)
+    # Key: struct arda_identity { __u64 inode; __u32 dev; __u32 pad; }
+    # Using JSON for BTF-aware maps (much more reliable than raw hex)
+    key_json = f'{{"inode":{inode},"dev":{int(dev)},"pad":0}}'
+    val_json = '1'
     
-    # Value: __u32 = 1
-    val_hex = '01 00 00 00'
-    
-    cmd = f'bpftool map update id {map_id} key hex {key_hex} value hex {val_hex}'
+    cmd = f"bpftool map update id {map_id} key '{key_json}' value {val_json}"
     print(f"[SEED] {path} (inode={inode}, dev={dev})")
     try:
         subprocess.run(cmd, shell=True, check=True, capture_output=True, text=True)

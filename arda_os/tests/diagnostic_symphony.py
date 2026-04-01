@@ -21,9 +21,9 @@ async def run_diagnostic():
 
     print(f"[ACTION] Attempting autonomous ignition of {check_health_path}...")
     
-    execution = await tool_gateway.execute(
-        tool_id="check_health",
-        parameters={},
+    execution = tool_gateway.execute(
+        tool_id="process_list",
+        parameters={"format": "-ef"},
         principal="Autonomous_Daemon",
         token_id="TOK-SHIRE-001",
         trust_state="trusted"

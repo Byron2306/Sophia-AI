@@ -41,7 +41,7 @@ apt-get update -qq
 # Core tools
 apt-get install -y -qq \
     python3 python3-pip python3-venv \
-    git curl wget \
+    git curl wget jq \
     gcc make pkg-config \
     2>/dev/null
 echo -e "${GREEN}  ✓ Core tools installed${NC}"
@@ -55,6 +55,7 @@ echo -e "${GREEN}  ✓ TPM tools installed${NC}"
 # eBPF toolchain
 apt-get install -y -qq \
     clang llvm libbpf-dev bpftool \
+    python3-bcc bpfcc-tools \
     linux-headers-$(uname -r) \
     2>/dev/null || echo -e "${GOLD}  ⚠ Some eBPF packages unavailable (may need backports)${NC}"
 echo -e "${GREEN}  ✓ eBPF toolchain installed${NC}"

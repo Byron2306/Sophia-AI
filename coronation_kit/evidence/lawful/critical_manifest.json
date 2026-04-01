@@ -1,0 +1,196 @@
+{
+  "protocol": "ARDA_HARMONY_MAP_v2",
+  "timestamp": "2026-03-31T12:05:29.069605+00:00",
+  "hostname": "debian",
+  "kernel": "6.12.74+deb12-amd64",
+  "tiers_included": [
+    "critical"
+  ],
+  "entries": [
+    {
+      "path": "/usr/bin/bash",
+      "aliases": [
+        "/bin/bash"
+      ],
+      "inode": 27263057,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "223fe8564b60636bc738b6178d3ba9a50ef7d791266b0efae6363bb716e4c47f"
+    },
+    {
+      "path": "/usr/bin/dash",
+      "aliases": [
+        "/bin/sh",
+        "/bin/dash"
+      ],
+      "inode": 27263155,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "a6f559e00b69a4aa4d8cb607be18d9386c5aee55c509e2c075549dcf00e00fc7"
+    },
+    {
+      "path": "/usr/bin/sudo",
+      "aliases": [],
+      "inode": 27264005,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "2ed07aef6361ad85039527030f74125dac119532703bca126f751580e37d9c76"
+    },
+    {
+      "path": "/usr/bin/su",
+      "aliases": [],
+      "inode": 27264004,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "c7c418276a0acc8e543d3b7d65e00e967048e196aec5f69cbe946a528b40d8bd"
+    },
+    {
+      "path": "/usr/bin/login",
+      "aliases": [],
+      "inode": 27263593,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "7160d7e148e2804351e195c02efa01b24d38cdd0caf8afd8604baba328321192"
+    },
+    {
+      "path": "/usr/lib/systemd/systemd",
+      "aliases": [
+        "/sbin/init",
+        "/lib/systemd/systemd",
+        "/usr/lib/systemd/systemd"
+      ],
+      "inode": 27287689,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "0356ad6e453ccfcd94b0dae214200da18ac2ea52f4537477e6c7602ac6d394eb"
+    },
+    {
+      "path": "/usr/bin/systemctl",
+      "aliases": [],
+      "inode": 27264015,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "bcfe24087122c038dde6fc4b52fe8e6986cd08b23798bbb72961daa0b11a23c1"
+    },
+    {
+      "path": "/usr/lib/systemd/systemd-journald",
+      "aliases": [],
+      "inode": 27287702,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "ea94dbaccef4a82e895ea06c667ce76c46f6fddf007b6504c565651a30da694f"
+    },
+    {
+      "path": "/usr/lib/systemd/systemd-logind",
+      "aliases": [],
+      "inode": 27287704,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "fa27df3869d90cbed4a24308cdf2c266281cfca0757078bed05ce0204fdb9a94"
+    },
+    {
+      "path": "/usr/bin/udevadm",
+      "aliases": [
+        "/usr/lib/systemd/systemd-udevd"
+      ],
+      "inode": 27264090,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "5ca18ba27dd06f39926a252a4c87c3badd5b77d1acd1557f9f5d42bdd089da7b"
+    },
+    {
+      "path": "/usr/sbin/agetty",
+      "aliases": [
+        "/sbin/agetty",
+        "/sbin/getty",
+        "/usr/bin/agetty"
+      ],
+      "inode": 27394529,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "45f2bc903e21bf5639237a3daf74017b1ef3e28a7c715b354fe09c56e4b4516e"
+    },
+    {
+      "path": "/usr/bin/mount",
+      "aliases": [
+        "/bin/mount",
+        "/sbin/mount"
+      ],
+      "inode": 27263665,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "92253cf919646b4a0242998526d35eea39204dff0363e74086290d63ccb39fed"
+    },
+    {
+      "path": "/usr/bin/umount",
+      "aliases": [
+        "/bin/umount",
+        "/sbin/umount"
+      ],
+      "inode": 27264119,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "93387d7db63410ac94824d677616a5e36567abe5a724d4e5e71727fea531ffc5"
+    },
+    {
+      "path": "/usr/sbin/fsck",
+      "aliases": [
+        "/sbin/fsck"
+      ],
+      "inode": 27394621,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "202b7bbe370054da52bc5a62de84aed5eb558ae440354eea72cc4368ef3d4f83"
+    },
+    {
+      "path": "/usr/sbin/e2fsck",
+      "aliases": [
+        "/sbin/e2fsck",
+        "/sbin/fsck.ext4"
+      ],
+      "inode": 27394599,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "a1325970ef22dfadd225aa185e2711d85194eb9762efdf408f34f9952ce56bdc"
+    },
+    {
+      "path": "/usr/local/bin/bpftool",
+      "aliases": [
+        "/usr/sbin/bpftool"
+      ],
+      "inode": 27428646,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "74bd16335aa1c40714fb50287a42766c6faa4958f969cce32fef89485ce4934c"
+    },
+    {
+      "path": "/usr/bin/python3.13",
+      "aliases": [
+        "/usr/bin/python3"
+      ],
+      "inode": 27263872,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "e59d0124ff06c248546876e01fcfb1ea3cda63534949f94a9372bfcfe3bfc3f5"
+    },
+    {
+      "path": "/usr/bin/stat",
+      "aliases": [],
+      "inode": 27263997,
+      "dev": 66306,
+      "tier": "critical",
+      "sha256": "128754b37ab743a539d889a91441c440f9b52df77f4e008b345ff221ce1daeaa"
+    }
+  ],
+  "not_found": [],
+  "stats": {
+    "total_unique_binaries": 18,
+    "total_not_found": 0,
+    "tier_breakdown": {
+      "critical": {
+        "found": 18,
+        "missing": 0
+      }
+    }
+  }
+}

@@ -3,8 +3,11 @@ import logging
 import sys
 import os
 
-# Set system path
-sys.path.append('c:/Users/User/source/repos/Metatron-triune-outbound-gate')
+# Set system path relative to current repo
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend"))
 
 try:
     from backend.services.process_birth_guard import get_process_birth_guard
