@@ -55,7 +55,7 @@ if str(ARDA_OS_ROOT) not in sys.path:
 
 PRESENCE_PORT = int(os.environ.get("PRESENCE_PORT", "7070"))
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:7b")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:3b")
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
 ELEVENLABS_VOICE_ID = "6cGdLUjez65BOQgJ1KOv"
 ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
@@ -99,9 +99,15 @@ def ollama_generate(prompt: str, system_prompt: str = "", model: str = None) -> 
         "model": model,
         "prompt": prompt,
         "stream": False,
+        "keep_alive": "10m",      # keep model warm between requests
+        "options": {
+            "num_predict": 80,    # two to three sentences max
+            "num_ctx": 2048,
+            "temperature": 0.7,
+        },
     }
     if system_prompt:
-        payload["system"] = system_prompt
+        payload["system"] = system_prompt + "\n\nYou are a lawful presence, not a chatbot. Respond in two to three sentences. Be solemn, precise, and brief. Never ramble."
 
     try:
         data = json.dumps(payload).encode("utf-8")
