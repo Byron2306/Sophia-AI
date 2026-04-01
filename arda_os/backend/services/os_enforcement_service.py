@@ -82,7 +82,7 @@ class OsEnforcementService:
             logger.warning(f"ARDA_LSM: Ring-0 Guard failed to arm (Physical BPF missing): {e}")
             logger.warning("RING-0 MOCK: Operating in High-Fidelity Sovereign Simulation mode.")
             self.bpf = None
-            self.is_authoritative = True # Maintain authority for sovereign logic checks
+            self.is_authoritative = False  # MUST be False — BPF failed, no Ring-0 guard
 
     def _handle_pinning(self):
         """Pins the BPF program and map for persistent host enforcement."""
@@ -152,14 +152,16 @@ class OsEnforcementService:
                             ledger = json.load(f)
                             # Look for any attestation where the subject matches the artifact name 
                             # and the evidence includes the correct file hash.
+                            # Verification: Subject match AND Principal match
                             for entry in ledger:
                                 stmt = entry.get("attestation", {}).get("statement", {})
                                 evid = stmt.get("evidence", {})
-                                # Verification: Subject match AND Digest match
-                                if f"ACTION_{command_context.get('command')}" in stmt.get("subject", ""):
+                                subject = stmt.get("subject", "")
+                                # Match the executable path against the ledger subject
+                                if os.path.basename(executable_path) in subject:
                                     if evid.get("principal") == consensus.get("principal"):
-                                         manifested_in_ledger = True
-                                         break
+                                        manifested_in_ledger = True
+                                        break
                     
                     if not manifested_in_ledger:
                         logger.critical(f"ARDA_LSM: [FORENSIC VETO] Artifact execution not found in Transparency Ledger.")
@@ -285,14 +287,12 @@ class OsEnforcementService:
             # The LSM will return -EPERM before the execve() syscall completes.
             return subprocess.run(command)
         else:
-            # NON-SOVEREIGN: Simulation branch (Only active outside Arda Sovereign Mode)
+            # NON-SOVEREIGN: No Ring-0 guard available
             if os.environ.get("ARDA_SOVEREIGN_MODE") == "1":
                 raise PermissionError("ARDA_VETO: Sovereign Path Compromised (No Ring-0 Guard)")
-                
-            if status == 0:
-                logger.critical(f"ARDA_VETO: Simulated Proactive Denial for {command[0]}")
-                raise PermissionError(f"Arda OS Veto (Simulated Ring-0): {command[0]}")
-            
+
+            # Simulation fallback: log and execute
+            logger.warning(f"ARDA_SIMULATED_EXEC: {command[0]} (no BPF guard)")
             import subprocess
             return subprocess.run(command)
 
