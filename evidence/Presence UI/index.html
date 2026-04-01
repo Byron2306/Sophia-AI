@@ -52,6 +52,36 @@
             </div>
           </section>
 
+          <section class="orchestral-state panel-glass" id="orchestral-panel">
+            <div class="panel-title">CONSTITUTIONAL ORCHESTRA</div>
+            <div class="orchestra-grid" id="orchestra-grid">
+              <div class="orchestra-voice" id="orch-harmonic">
+                <span class="orch-label">♫ HARMONIC</span>
+                <span class="orch-value" id="orch-harmonic-val">—</span>
+              </div>
+              <div class="orchestra-voice" id="orch-choir">
+                <span class="orch-label">🎵 CHOIR</span>
+                <span class="orch-value" id="orch-choir-val">—</span>
+              </div>
+              <div class="orchestra-voice" id="orch-triune">
+                <span class="orch-label">⚖ TRIUNE</span>
+                <span class="orch-value" id="orch-triune-val">—</span>
+              </div>
+              <div class="choir-voices" id="choir-voices">
+                <span class="choir-voice" id="cv-varda" title="Varda — Covenant Integrity">Varda ·</span>
+                <span class="choir-voice" id="cv-vaire" title="Vairë — Cadence Truth">Vairë ·</span>
+                <span class="choir-voice" id="cv-mandos" title="Mandos — Lawful Boundary">Mandos ·</span>
+                <span class="choir-voice" id="cv-manwe" title="Manwë — Sovereign Oversight">Manwë ·</span>
+                <span class="choir-voice" id="cv-ulmo" title="Ulmo — Deep Signal">Ulmo</span>
+              </div>
+              <div class="triune-voices" id="triune-voices">
+                <span class="triune-voice" id="tv-metatron" title="Metatron — Assessment">Metatron ·</span>
+                <span class="triune-voice" id="tv-michael" title="Michael — Validation">Michael ·</span>
+                <span class="triune-voice" id="tv-loki" title="Loki — Challenge">Loki</span>
+              </div>
+            </div>
+          </section>
+
           <form class="directive-bar panel-glass" id="directive-form">
             <input id="directive-input" type="text" placeholder="Enter directive." autocomplete="off" />
             <button type="submit" class="icon-button" id="speak-button" title="Speak directive">▶</button>
@@ -113,7 +143,8 @@
         <span class="status-item">Mandos <strong class="status-steady">operational</strong></span>
         <span class="status-item">Presence <strong>declared</strong></span>
         <span class="status-item">Voice <strong id="voice-status">ready</strong></span>
-        <span class="status-item">Redeclaration <strong>current session</strong></span>
+        <span class="status-item">Resonance <strong id="footer-resonance" class="status-steady">—</strong></span>
+        <span class="status-item">Verdict <strong id="footer-verdict">—</strong></span>
       </footer>
     </div>
 

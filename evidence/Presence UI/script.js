@@ -23,6 +23,7 @@
 
 const API_BASE = window.location.origin; // same origin as presence server
 let serverConnected = false;
+let sessionToken = null; // Principal verification token from sealed covenant
 
 // ================================================================
 // DOM REFERENCES
@@ -96,17 +97,112 @@ async function apiSpeak(directive) {
     const resp = await fetch(`${API_BASE}/api/speak`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: directive, topic: directive.slice(0, 50) }),
+      body: JSON.stringify({ text: directive, topic: directive.slice(0, 50), session_token: sessionToken }),
     });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     serverConnected = true;
-    console.log(`[Presence] Response from ${data.source}${data.model ? ' (' + data.model + ')' : ''}, mandos: ${data.mandos_context}`);
+    const encId = data.encounter_id || 'none';
+    console.log(`[Presence] ${encId} | ${data.source}${data.model ? ' (' + data.model + ')' : ''} | mandos: ${data.mandos_context}`);
+    // Update system log with encounter ID
+    const logEl = document.getElementById('system-log-body');
+    if (logEl) {
+      const ts = new Date().toLocaleTimeString();
+      logEl.textContent = `[${ts}] ${encId} | ${data.source} | ${data.eval_count || 0} tokens`;
+    }
+    // Update Constitutional Orchestra
+    updateOrchestralState(data);
     return data.response;
   } catch (err) {
     console.warn('[Presence] Server unreachable, using fallback:', err.message);
     serverConnected = false;
     return generateFallbackResponse(directive);
+  }
+}
+
+/**
+ * Update the Constitutional Orchestra panel with live data from the API response.
+ */
+function updateOrchestralState(data) {
+  const harmonic = data.harmonic || {};
+  const choir = data.choir || {};
+  const triune = data.triune || {};
+  const spectrum = choir.spectrum || {};
+  const voices = choir.voices || {};
+
+  // ── HARMONIC ──
+  const hEl = document.getElementById('orch-harmonic-val');
+  const hBox = document.getElementById('orch-harmonic');
+  if (hEl) {
+    const res = harmonic.resonance != null ? harmonic.resonance.toFixed(3) : '—';
+    const disc = harmonic.discord != null ? harmonic.discord.toFixed(3) : '—';
+    hEl.textContent = `${res} / ${disc}`;
+    hBox.className = 'orchestra-voice ' + (
+      harmonic.discord >= 0.85 ? 'critical' :
+      harmonic.discord >= 0.5 ? 'strained' : 'resonant'
+    );
+  }
+
+  // ── CHOIR ──
+  const cEl = document.getElementById('orch-choir-val');
+  const cBox = document.getElementById('orch-choir');
+  if (cEl) {
+    const g = spectrum.global != null ? spectrum.global.toFixed(3) : '—';
+    cEl.textContent = g;
+    cBox.className = 'orchestra-voice ' + (
+      spectrum.global === 0 ? 'critical' :
+      spectrum.global < 0.6 ? 'strained' : 'resonant'
+    );
+  }
+
+  // ── TRIUNE ──
+  const tEl = document.getElementById('orch-triune-val');
+  const tBox = document.getElementById('orch-triune');
+  if (tEl) {
+    const v = triune.final_verdict || '—';
+    tEl.textContent = v;
+    tBox.className = 'orchestra-voice ' + (
+      v === 'DENY' ? 'critical' :
+      v === 'SCRUTINIZE' ? 'strained' : 'resonant'
+    );
+  }
+
+  // ── CHOIR VOICES ──
+  const voiceMap = { varda: 'cv-varda', vaire: 'cv-vaire', mandos: 'cv-mandos', manwe: 'cv-manwe', ulmo: 'cv-ulmo' };
+  for (const [name, elId] of Object.entries(voiceMap)) {
+    const el = document.getElementById(elId);
+    if (!el) continue;
+    const v = voices[name];
+    if (!v) continue;
+    el.className = 'choir-voice ' + (v.score >= 0.8 ? 'singing' : v.score >= 0.5 ? 'strained' : 'silent');
+  }
+
+  // ── TRIUNE VOICES ──
+  const triuneMap = { metatron: 'tv-metatron', michael: 'tv-michael', loki: 'tv-loki' };
+  for (const [name, elId] of Object.entries(triuneMap)) {
+    const el = document.getElementById(elId);
+    if (!el) continue;
+    const v = triune[name];
+    if (!v) continue;
+    const verdict = v.verdict || '';
+    el.className = 'triune-voice ' + (
+      verdict === 'RESONANT' || verdict === 'LAWFUL' || verdict === 'UNCHALLENGED' ? 'resonant' :
+      verdict === 'SCRUTINIZE' || verdict === 'CHALLENGED' || verdict === 'SUSPICIOUS' ? 'challenged' : 'denied'
+    );
+  }
+
+  // ── FOOTER ──
+  const footerRes = document.getElementById('footer-resonance');
+  if (footerRes) {
+    const g = spectrum.global != null ? spectrum.global.toFixed(3) : '—';
+    footerRes.textContent = g;
+    footerRes.className = spectrum.global >= 0.6 ? 'status-steady' : 'status-warning';
+  }
+  const footerVerdict = document.getElementById('footer-verdict');
+  if (footerVerdict) {
+    const v = triune.final_verdict || '—';
+    footerVerdict.textContent = v;
+    footerVerdict.className = v === 'GRANT' ? 'status-steady' : v === 'SCRUTINIZE' ? 'status-warning' : '';
   }
 }
 
@@ -487,6 +583,11 @@ function escapeHtml(text) {
 // Check server connectivity
 apiGet('health').then((data) => {
   serverConnected = !!data;
+  // Capture principal session token (derived from sealed covenant identity hash)
+  if (data?.session_token) {
+    sessionToken = data.session_token;
+    console.log('[Presence] Principal session token acquired (covenant-bound)');
+  }
   if (voiceStatus) {
     const svc = data?.services || {};
     if (svc.elevenlabs === 'configured') {

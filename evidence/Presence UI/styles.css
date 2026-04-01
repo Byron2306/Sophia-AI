@@ -680,3 +680,93 @@ h1 {
   .directive-bar { grid-template-columns: 1fr 48px 48px 48px 48px; }
   .presence-card { min-height: 440px; }
 }
+
+/* ================================================================
+   CONSTITUTIONAL ORCHESTRA PANEL
+   ================================================================ */
+
+.orchestral-state {
+  margin-top: 8px;
+}
+
+.orchestral-state .panel-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--arda-accent-cold);
+}
+
+.orchestra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.orchestra-voice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  border-radius: 6px;
+  background: rgba(35, 39, 45, 0.5);
+  border: 1px solid var(--arda-line-faint);
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.orchestra-voice.resonant {
+  border-color: rgba(152, 169, 160, 0.4);
+  background: rgba(152, 169, 160, 0.08);
+}
+
+.orchestra-voice.strained {
+  border-color: rgba(183, 162, 125, 0.4);
+  background: rgba(183, 162, 125, 0.08);
+}
+
+.orchestra-voice.critical {
+  border-color: rgba(189, 120, 120, 0.4);
+  background: rgba(189, 120, 120, 0.08);
+}
+
+.orch-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--arda-text-dim);
+  text-transform: uppercase;
+}
+
+.orch-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--arda-text-main);
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.choir-voices, .triune-voices {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+
+.choir-voice, .triune-voice {
+  font-size: 0.65rem;
+  color: var(--arda-text-dim);
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
+}
+
+.choir-voice.singing, .triune-voice.resonant {
+  color: var(--arda-status-steady);
+}
+
+.choir-voice.strained, .triune-voice.challenged {
+  color: var(--arda-status-warning);
+}
+
+.choir-voice.silent, .triune-voice.denied {
+  color: #bd7878;
+}
