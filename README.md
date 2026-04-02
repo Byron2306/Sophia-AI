@@ -1,6 +1,6 @@
 # SOPHIA AI: SOVEREIGN CORE (v4.3.1)
 
-![SOPHIA AI: SOVEREIGN CORE](file:///home/byron/.gemini/antigravity/brain/6057ab41-702c-464e-bed0-dc6fb32363cc/sophia_ai_github_header_v2_1775138699421.png)
+![SOPHIA AI: SOVEREIGN CORE](sophia_header.png)
 
 ## 🏛️ Sovereign Declaration
 Sophia AI is an autonomous, decentralized, and ethically-bounded intelligence framework. This repository contains the **Coronation Instance (v4.3.1)**, signifying the complete transition to a **Sovereign-First Architecture** where constitutional enforcement is code-native and deterministic.
