@@ -770,3 +770,169 @@ h1 {
 .choir-voice.silent, .triune-voice.denied {
   color: #bd7878;
 }
+
+/* ================================================================
+   HIGH-FIDELITY COMPONENTS (PHASES III-VI)
+   ================================================================ */
+
+.cognition-fabric, .sovereign-spectrum {
+  margin-top: 12px;
+}
+
+.cognition-grid, .spectrum-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cognition-item, .spectrum-item {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  background: rgba(30, 34, 40, 0.4);
+  border-radius: 4px;
+  border: 1px solid var(--arda-line-faint);
+}
+
+.cog-label, .spec-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--arda-text-dim);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.cog-value, .spec-value {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--arda-text-main);
+  font-family: var(--arda-font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Spectrum Bar */
+.spec-bar-wrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.spec-bar {
+  height: 100%;
+  background: var(--arda-status-steady);
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+}
+
+/* Endpoint Fortress (Micro/Meso/Macro health bars) */
+.endpoint-fortress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 12px;
+  height: 3px;
+}
+
+.fortress-bar {
+  height: 100%;
+  background: var(--arda-status-steady);
+  border-radius: 1px;
+  opacity: 0.4;
+  transition: background-color 0.4s ease, opacity 0.4s ease;
+}
+
+.fortress-bar.strained {
+  background: var(--arda-status-warning);
+  opacity: 0.8;
+}
+
+.fortress-bar.critical {
+  background: #bd7878;
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(189, 120, 120, 0.4);
+}
+
+/* Status variants for cognition/spectrum */
+.cog-value.alert, .spec-value.alert {
+  color: #bd7878;
+  text-shadow: 0 0 4px rgba(189, 120, 120, 0.4);
+}
+
+.cog-value.warning, .spec-value.warning {
+  color: var(--arda-status-warning);
+}
+
+/* Metatron pulse animation */
+@keyframes heart-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.pulsing {
+  animation: heart-pulse 2s infinite ease-in-out;
+}
+
+/* DEEP LOGIC INDICATORS (Phase VII) */
+.deep-logic-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deep-logic-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-fancy);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.logic-led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FIRE: Flame Imperishable (Reality) */
+.logic-led.fire.active {
+  background: #ff4500;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* BRIDGE: Eärendil Flow (Sync) */
+.logic-led.bridge.active {
+  background: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* NOTATION: Token (Authorization) */
+.logic-led.notation.active {
+  background: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* DISSONANCE: Pulse red if critical */
+.logic-led.error {
+  background: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+  animation: led-pulse 1s infinite alternate;
+}
+
+@keyframes led-pulse {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}

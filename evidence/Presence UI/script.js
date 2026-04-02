@@ -191,18 +191,102 @@ function updateOrchestralState(data) {
     );
   }
 
-  // ── FOOTER ──
-  const footerRes = document.getElementById('footer-resonance');
-  if (footerRes) {
-    const g = spectrum.global != null ? spectrum.global.toFixed(3) : '—';
-    footerRes.textContent = g;
-    footerRes.className = spectrum.global >= 0.6 ? 'status-steady' : 'status-warning';
+  updateHighFidelityPanels(data.polyphonic_state);
+}
+
+/**
+ * Update the High-Fidelity Sovereign Dashboard panels (Cognition/Spectrum).
+ */
+function updateHighFidelityPanels(state) {
+  if (!state) return;
+
+  // ── COGNITION FABRIC ──
+  const cog = state.cognition || {};
+  const elAatl = document.getElementById('cog-aatl');
+  const elAatr = document.getElementById('cog-aatr');
+  const elMlT = document.getElementById('cog-ml-t');
+  const elHypo = document.getElementById('cog-hypo');
+
+  if (elAatl) {
+    const val = cog.aatl || 0;
+    elAatl.textContent = `${val}%`;
+    elAatl.className = 'cog-value ' + (val >= 70 ? 'alert' : val >= 40 ? 'warning' : '');
   }
-  const footerVerdict = document.getElementById('footer-verdict');
-  if (footerVerdict) {
-    const v = triune.final_verdict || '—';
-    footerVerdict.textContent = v;
-    footerVerdict.className = v === 'GRANT' ? 'status-steady' : v === 'SCRUTINIZE' ? 'status-warning' : '';
+  if (elAatr) {
+    const val = cog.aatr || 'NONE';
+    elAatr.textContent = val;
+    elAatr.className = 'cog-value ' + (val !== 'NONE' ? 'alert' : '');
+  }
+  if (elMlT) {
+    const val = cog.ml_threat != null ? cog.ml_threat.toFixed(2) : '0.00';
+    elMlT.textContent = val;
+    elMlT.className = 'cog-value ' + (cog.ml_threat >= 0.7 ? 'alert' : cog.ml_threat >= 0.4 ? 'warning' : '');
+  }
+  if (elHypo) {
+    elHypo.textContent = cog.hypothesis || '—';
+  }
+
+  // ── SOVEREIGN SPECTRUM ──
+  const net = state.network || {};
+  const q = state.quorum || {};
+  const m = state.metatron || {};
+
+  const elPulse = document.getElementById('vns-pulse-bar');
+  const elQuorum = document.getElementById('quorum-val');
+  const elMetatron = document.getElementById('metatron-heartbeat');
+
+  if (elPulse) {
+    const disc = net.discord || 0;
+    const width = Math.max(5, (1 - disc) * 100);
+    elPulse.style.width = `${width}%`;
+    elPulse.style.backgroundColor = disc >= 0.8 ? '#bd7878' : disc >= 0.5 ? 'var(--arda-status-warning)' : 'var(--arda-status-steady)';
+  }
+  if (elQuorum) {
+    const nodes = q.nodes || 1;
+    const nodeStr = q.node_id ? `[${q.node_id}]` : '[LOCAL]';
+    elQuorum.textContent = `${nodes} NODE${nodes > 1 ? 'S' : ''} ${nodeStr}`;
+    elQuorum.className = 'spec-value ' + (q.status === 'VETOED' ? 'alert' : q.status === 'strained' ? 'warning' : '');
+  }
+  if (elMetatron) {
+    elMetatron.textContent = m.heartbeat || 'SIG_OK';
+    elMetatron.className = 'spec-value ' + (m.liveness ? 'pulsing' : 'alert');
+  }
+
+  // ── ENDPOINT FORTRESS ──
+  const sub = state.substrate || {};
+  const elMicro = document.getElementById('fort-micro');
+  const elMeso = document.getElementById('fort-meso');
+  const elMacro = document.getElementById('fort-macro');
+
+  if (elMicro) {
+    const val = sub.micro_varda != null ? sub.micro_varda : 1.0;
+    elMicro.className = 'fortress-bar micro ' + (val < 0.5 ? 'critical' : val < 0.8 ? 'strained' : '');
+  }
+  if (elMeso) {
+    const val = net.discord || 0;
+    elMeso.className = 'fortress-bar meso ' + (val >= 0.85 ? 'critical' : val >= 0.5 ? 'strained' : '');
+  }
+  if (elMacro) {
+    const val = cog.ml_threat || 0;
+    elMacro.className = 'fortress-bar macro ' + (val >= 0.85 ? 'critical' : val >= 0.5 ? 'strained' : '');
+  }
+
+  // ── DEEP LOGIC INDICATORS (Phase VII) ──
+  const elFire = document.querySelector('#fire-indicator .logic-led');
+  const elBridge = document.querySelector('#bridge-indicator .logic-led');
+  const elNotation = document.querySelector('#notation-indicator .logic-led');
+
+  if (elFire) {
+    const isFresh = m.fire_freshness === true;
+    elFire.className = 'logic-led fire ' + (isFresh ? 'active' : 'error');
+  }
+  if (elBridge) {
+    const isActive = net.light_bridge === 'active';
+    elBridge.className = 'logic-led bridge ' + (isActive ? 'active' : '');
+  }
+  if (elNotation) {
+    const isVerified = sub.notation_status === 'verified';
+    elNotation.className = 'logic-led notation ' + (isVerified ? 'active' : 'error');
   }
 }
 
@@ -580,7 +664,7 @@ function escapeHtml(text) {
 // INIT
 // ================================================================
 
-// Check server connectivity
+// Start background telemetry polling
 apiGet('health').then((data) => {
   serverConnected = !!data;
   // Capture principal session token (derived from sealed covenant identity hash)
@@ -602,6 +686,12 @@ apiGet('health').then((data) => {
   if (ollamaStatus) {
     ollamaStatus.textContent = data?.services?.ollama?.status === 'running' ? 'connected' : 'offline';
   }
+
+  // Initial UI refresh
+  if (data?.polyphonic_state) {
+    updateHighFidelityPanels(data.polyphonic_state);
+  }
+
   console.log('[Arda Presence] Server:', serverConnected ? 'connected' : 'offline (fallback mode)');
   console.log('[Arda Presence] Services:', data?.services);
 }).catch(() => {
@@ -609,5 +699,18 @@ apiGet('health').then((data) => {
   if (voiceStatus) voiceStatus.textContent = 'offline';
   console.log('[Arda Presence] Server offline — running in fallback mode');
 });
+
+// Periodic polling every 3 seconds for the Sovereign Dashboard
+setInterval(async () => {
+  if (!serverConnected) return;
+  try {
+    const data = await apiGet('health');
+    if (data && data.polyphonic_state) {
+      updateHighFidelityPanels(data.polyphonic_state);
+    }
+  } catch (err) {
+    console.warn('[Presence] Polling failed:', err.message);
+  }
+}, 3000);
 
 initSpeechRecognition();

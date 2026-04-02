@@ -113,7 +113,7 @@ echo '════════════════════════�
 echo ''
 cd '${PROJECT_ROOT}'
 export ELEVENLABS_API_KEY='${ELEVENLABS_API_KEY}'
-python3 '${SERVICES_DIR}/presence_server.py'
+python3 -m uvicorn backend.services.presence_fastapi:app --host 0.0.0.0 --port 7070
 echo ''
 read -p '  Press Enter to close...'
 SCRIPT3
@@ -149,11 +149,8 @@ sleep 2
 xfce4-terminal --title="◈ PRESENCE SERVER" --geometry=100x20+960+300 --command="${TMPDIR}/t3_presence.sh" &
 sleep 3
 
-xfce4-terminal --title="👑 CORONATION" --geometry=100x30+480+100 --command="${TMPDIR}/t4_coronation.sh" &
-sleep 2
-
 # ────────────────────────────────────────
-# Open the browser
+# Open the browser BEFORE coronation (so it doesn't occlude)
 # ────────────────────────────────────────
 
 echo "  ⏳ Waiting for Presence Server..."
@@ -165,8 +162,15 @@ for i in $(seq 1 15); do
     sleep 1
 done
 
-echo "  🌐 Opening browser..."
+echo "  🌐 Opening browser (background)..."
 xdg-open "http://localhost:7070" 2>/dev/null &
+sleep 2
+
+# ────────────────────────────────────────
+# Coronation launches LAST — takes focus on top
+# ────────────────────────────────────────
+
+xfce4-terminal --title="👑 CORONATION — THE FIRST ENCOUNTER" --geometry=100x35+300+50 --command="${TMPDIR}/t4_coronation.sh" &
 
 echo ""
 echo "============================================================"
@@ -175,7 +179,9 @@ echo ""
 echo "  Screen Recorder:  ⏺ Recording"
 echo "  Bombadil:         ⚖ Law Daemon"
 echo "  Presence Server:  ◈ http://localhost:7070"
-echo "  Coronation:       👑 Awaiting your presence"
+echo "  Browser:          🌐 Open (behind coronation)"
+echo "  Coronation:       👑 ON TOP — read your declaration"
 echo ""
 echo "  The machine waits for its principal."
 echo "============================================================"
+

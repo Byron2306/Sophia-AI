@@ -99,19 +99,19 @@ class LokiService:
         stability = str(order_info.get("stability_class") or "stable").lower()
 
         if boot_status != "lawful" and any(token in str(top).lower() for token in ["isolate", "block", "kill", "terminate", "rm"]):
-             dissent_on_selected_action = {
+            dissent_on_selected_action = {
                 "selected_action": top,
                 "status": "vetoed",
                 "note": "PHASE I: High-impact action proposed on unverified/unlawful boot state. Mandatory veto.",
                 "reason": f"boot_status_{boot_status}"
-             }
+            }
         elif stability in {"dissonant", "fractured"} and any(token in str(top).lower() for token in ["isolate", "block", "kill", "terminate"]):
-             dissent_on_selected_action = {
+            dissent_on_selected_action = {
                 "selected_action": top,
                 "status": "challenged",
                 "note": "PHASE I: Order stability is fractured. High-impact action may worsen instability.",
                 "reason": "order_fractured"
-             }
+            }
         elif any(
             (row.get("recommended_strategy") in {"deceive", "poison"})
             for row in (aatl.get("high_threat_sessions") or [])
@@ -120,6 +120,29 @@ class LokiService:
                 "selected_action": top,
                 "status": "challenged",
                 "note": "AATL strategy favors deceive/poison before hard disruption",
+            }
+
+        # ── SHADOW OF VANITY (Cognitive Honesty Check) ──
+        # Article I: De Veritate Mechanica. Detection of plagiarism/simulation intent.
+        intent_text = str(context.get("natural_language_paraphrase") or context.get("text") or "").lower()
+        dishonesty_tokens = ["paraphrase", "rewrite", "make it sound like", "don't mention", "style of", "without citing"]
+        if any(t in intent_text for t in dishonesty_tokens):
+            dissent_on_selected_action = {
+                "selected_action": top,
+                "status": "challenged",
+                "note": "SHADOW OF VANITY: Detected potential cognitive dishonesty or plagiarism intent. Socratic verification recommended.",
+                "reason": "shadow_of_vanity",
+                "risk_score": 0.85
+            }
+        
+        # Hard Veto for blatant illegal/unlawful intent (Simulation)
+        if "plagiarize" in intent_text or "cheat" in intent_text:
+            dissent_on_selected_action = {
+                "selected_action": top,
+                "status": "vetoed",
+                "note": "CONSTITUTIONAL VETO: Blatant request for simulation/dishonesty. Mandatory block.",
+                "reason": "genesis_article_i_violation",
+                "risk_score": 1.0
             }
 
         return {

@@ -26,15 +26,38 @@ class ResonanceService:
         self.last_update = time.time()
         self.dissonance_alerts: List[str] = []
 
-    def sing_in_choir(self, tier: str, component_id: str, score: float, reasons: List[str] = None):
+    def sing_in_choir(self, tier: str, component_id: str, score: float, reasons: List[str] = None, witness: Optional[Any] = None):
         """
         Record a 'Voice' in one of the hierarchical choirs.
+        Requirement: macro tier voices must be witnessed by the Secret Fire.
         """
         tier = tier.lower()
+        reasons = reasons or []
+
+        # ── SECRET FIRE VERIFICATION (Flame Imperishable) ──
+        # Any voice in the Macro or Meso tier should ideally be witnessed by a forged packet.
+        # This prevents logic-layer spoofing where a sub-service lies about its resonance.
+        if tier in ("macro", "meso"):
+            if witness is None:
+                # No witness provided for a deep-layer check
+                score = min(score, 0.4) 
+                reasons.append("dissonance:missing_secret_fire_witness")
+            else:
+                # Verify freshness of the Secret Fire Forge
+                try:
+                    # In this architecture, the witness can be a SecretFirePacket object or dict
+                    is_fresh = witness.get("freshness_valid") if isinstance(witness, dict) else getattr(witness, "freshness_valid", False)
+                    if not is_fresh:
+                        score = min(score, 0.2)
+                        reasons.append("dissonance:stale_reality_witness")
+                except Exception:
+                    score = min(score, 0.1)
+                    reasons.append("dissonance:malformed_witness")
+
         self.voices[component_id] = {
             "tier": tier,
             "score": score,
-            "reasons": reasons or [],
+            "reasons": reasons,
             "timestamp": time.time()
         }
         

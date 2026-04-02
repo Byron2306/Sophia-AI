@@ -27,6 +27,9 @@ Socket API (when running as daemon):
     GET require_full → 200 if lawful_full, 403 if not
     GET chain_head   → latest audit chain entry
     GET chain_count  → number of events in the chain
+    GET principal_status  → covenant status from CoronationService
+    GET principal_context → full pre-response context (Mandos memory)
+    GET covenant_inspect  → calibration + resonance (Article VIII)
 """
 
 import json
@@ -65,10 +68,10 @@ def get_config():
         "evidence_dir": base / "evidence",
         "bpf_object": base / "bpf" / "arda_physical_lsm.o",
         "socket_path": Path(os.environ.get(
-            "ARDA_SOCK", "/run/arda/bombadil.sock"
+            "ARDA_SOCK", str(base / "evidence" / "bombadil.sock")
         )),
         "pid_file": Path(os.environ.get(
-            "ARDA_PID", "/run/arda/bombadil.pid"
+            "ARDA_PID", str(base / "evidence" / "bombadil.pid")
         )),
         "log_path": base / "evidence" / "bombadil.log",
     }
@@ -479,6 +482,27 @@ def determine_covenant_state(config):
         else:
             state = "degraded"
 
+    # ── Check for sealed coronation covenant on disk ──
+    # The coronation covenant is the application-layer bond.
+    # Even without Ring-0 enforcement, a sealed covenant means
+    # the relationship is lawfully established.
+    coronation_dir = config["evidence_dir"] / "mandos" / "covenants" / "constitutional"
+    if coronation_dir.exists():
+        for mf in sorted(coronation_dir.glob("*_manifest.json"),
+                         key=lambda p: p.stat().st_mtime, reverse=True):
+            try:
+                mf_data = json.loads(mf.read_text())
+                if mf_data.get("payload", {}).get("state") == "sealed":
+                    state = "sealed"
+                    findings["coronation_covenant"] = {
+                        "present": True,
+                        "manifest_id": mf_data["payload"].get("manifest_id"),
+                        "sealed_at": mf_data["payload"].get("coronation_sealed_at"),
+                    }
+                    break
+            except Exception:
+                pass
+
     mirror_id = None
     if manifest_data:
         mirror_id = manifest_data.get("mirror_id")
@@ -542,6 +566,12 @@ class BombadilServer:
             return self._findings()
         elif action == "refresh":
             return self._refresh()
+        elif action == "principal_status":
+            return self._principal_status()
+        elif action == "principal_context":
+            return self._principal_context(request_data)
+        elif action == "covenant_inspect":
+            return self._covenant_inspect()
         else:
             return {"error": f"unknown_action: {action}"}
 
@@ -624,6 +654,79 @@ class BombadilServer:
         )
 
         return self._status()
+
+    # ═══════════════════════════════════════════════════════════════════
+    # PRINCIPAL / COVENANT MEMORY QUERIES
+    # Mandos Memory integration — the covenant remembers lawfully.
+    # ═══════════════════════════════════════════════════════════════════
+
+    def _principal_status(self):
+        """Returns covenant status from the CoronationService."""
+        try:
+            from backend.services.coronation_service import get_coronation_service
+            svc = get_coronation_service()
+            return svc.get_bombadil_status()
+        except ImportError:
+            return {"error": "coronation_service not available", "status": "module_missing"}
+        except Exception as e:
+            return {"error": f"principal_status failed: {e}", "status": "error"}
+
+    def _principal_context(self, request_data):
+        """Returns full pre-response context from the MandosContextService."""
+        import asyncio
+        topic = ""
+        try:
+            if isinstance(request_data, str) and request_data.startswith("{"):
+                req = json.loads(request_data)
+                topic = req.get("topic", "")
+        except (json.JSONDecodeError, ValueError):
+            pass
+
+        try:
+            from backend.services.mandos_context import get_mandos_context_service
+            svc = get_mandos_context_service()
+            # Run async context builder in sync context
+            loop = asyncio.new_event_loop()
+            try:
+                ctx = loop.run_until_complete(svc.build_context(current_topic=topic))
+            finally:
+                loop.close()
+            return ctx.model_dump()
+        except ImportError:
+            return {"error": "mandos_context not available", "status": "module_missing"}
+        except Exception as e:
+            return {"error": f"principal_context failed: {e}", "status": "error"}
+
+    def _covenant_inspect(self):
+        """
+        Article VIII: The human retains absolute right to inspect
+        all reasoning, memory, calibration models, and state.
+        """
+        import asyncio
+        try:
+            from backend.services.coronation_service import get_coronation_service
+            svc = get_coronation_service()
+
+            loop = asyncio.new_event_loop()
+            try:
+                calibration = loop.run_until_complete(svc.get_calibration_snapshot())
+                resonance = loop.run_until_complete(svc.get_resonant_identity_profile())
+                presence = loop.run_until_complete(svc.declare_presence())
+            finally:
+                loop.close()
+
+            return {
+                "article_viii": "absolute inspection right",
+                "calibration": calibration,
+                "resonance": resonance,
+                "presence": presence,
+                "covenant_state": svc.get_covenant_state().value,
+                "trust_tier": svc._active_trust_tier.value if svc._active_trust_tier else None,
+            }
+        except ImportError:
+            return {"error": "coronation_service not available", "status": "module_missing"}
+        except Exception as e:
+            return {"error": f"covenant_inspect failed: {e}", "status": "error"}
 
     def serve(self):
         """Start listening on the Unix socket."""

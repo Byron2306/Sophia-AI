@@ -41,3 +41,11 @@ morgoth_*.txt
 
 # Build artifacts
 *.zip
+
+# Sovereign Exclusions
+*.mp4
+*.pid
+*.db-shm
+*.db-wal
+.witness_tmp/
+.~lock.*

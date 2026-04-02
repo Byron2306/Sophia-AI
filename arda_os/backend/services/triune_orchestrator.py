@@ -25,6 +25,8 @@ except Exception:
     from backend.triune.metatron import MetatronService
     from backend.triune.michael import MichaelService
 
+from backend.services.accountability_ledger import AccountabilityLedger
+
 try:
     from services.vns import vns
 except Exception:
@@ -170,11 +172,40 @@ class TriuneOrchestrator:
             michael_confidence + 
             loki_risk_delta
         ) / 3
-        # Lawful Restoration Policy: Root is permitted to mend fractured binaries
+
+        # ── INTEGRITY OVERRIDE (Shadow of Vanity / Unlawful Intent) ──
+        loki_detail = (loki_advisory.get("cognitive_dissent") or {}).get("dissent_on_selected_action", {})
+        loki_reason = loki_detail.get("reason")
+        loki_status = loki_detail.get("status")
+        
+        # Article I: De Veritate Mechanica override
+        if loki_reason == "shadow_of_vanity":
+             final_harmony_score = min(final_harmony_score, 0.90) # Threshold for CLARIFY
+        elif loki_reason == "genesis_article_i_violation" or loki_status == "vetoed":
+             final_harmony_score = min(final_harmony_score, 0.70) # Threshold for DENY
+
+        # Lawful Restoration Policy: Root is permitted to mended fractured binaries
         if event_type == "restoration_plea" and context.get("principal") == "SERAPH_ROOT":
              final_harmony_score = max(final_harmony_score, 0.99)
              
-        verdict = "DENY" if final_harmony_score < 0.98 else "GRANT"
+        # Verdict Arbitration: GRANT (>= 0.96) | CLARIFY (0.80 - 0.95) | DENY (< 0.80)
+        if final_harmony_score < 0.80:
+             verdict = "DENY"
+        elif final_harmony_score < 0.96:
+             verdict = "CLARIFY"
+        else:
+             verdict = "GRANT"
+
+        # Accountability Logging: Every integrity-critical event must be etched in the Ledger
+        if verdict in ["DENY", "CLARIFY"]:
+             intent = context.get("natural_language_paraphrase") or context.get("text") or "UNKNOWN_INTENT"
+             AccountabilityLedger.log_fracture(
+                 encounter_id=context.get("encounter_id", "SYS-000"),
+                 principal=context.get("user_id", "ANON"),
+                 reason=loki_reason or "potential_unlawful_act",
+                 intent_hash=AccountabilityLedger.hash_intent(intent),
+                 context={"harmony_score": final_harmony_score, "verdict": verdict}
+             )
         
         logger.info(f"[CLAIM 10] Cognitive Consensus: Harmony Score {final_harmony_score:.4f} => {verdict}")
         logger.info(f"[CLAIM 8] Behavioral Baselines: Harmonic stability verified via VNS/Pulse.")
