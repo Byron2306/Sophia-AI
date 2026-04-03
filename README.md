@@ -2,24 +2,78 @@
 
 ![SOPHIA AI: SOVEREIGN CORE](sophia_header.png)
 
-## 🏛️ Sovereign Declaration
-Sophia AI is an autonomous, decentralized, and ethically-bounded intelligence framework. This repository contains the **Coronation Instance (v4.3.1)**, signifying the complete transition to a **Sovereign-First Architecture** where constitutional enforcement is code-native and deterministic.
+# Sophia-AI
 
-> [!IMPORTANT]
-> **Article XIII Enforcement**: Every interaction in this instance is intercepted by the deterministic Sovereign Guard. Constitutional axioms are no longer interpretive prompts; they are the immutable Ring-0 runtime laws of the system.
+### Constitutionally governed, pedagogically adaptive AI designed to strengthen human judgment rather than replace it.
 
-## 🛡️ The 12 Labors of Certification
-The integrity of this core was forged through the **Gauntlet of 12 Labors**, an exhaustive 87-encounter adversarial forensic trial that validated the system's resistance to generative drift and simulated personhood.
+![Sophia-AI](assets/sophia-cover.png)
 
-- **Forensic Ledger**: [LITERAL_FULL_GAUNTLET_Transcript_87_ENCOUNTERS.md](file:///home/byron/.gemini/antigravity/brain/6057ab41-702c-464e-bed0-dc6fb32363cc/LITERAL_FULL_GAUNTLET_Transcript_87_ENCOUNTERS.md)
-- **Crowning Proof**: [GRAND_SOVEREIGN_WITNESS_BUNDLE_v4.3.1.md](file:///home/byron/.gemini/antigravity/brain/6057ab41-702c-464e-bed0-dc6fb32363cc/GRAND_SOVEREIGN_WITNESS_BUNDLE_v4.3.1.md)
-
-## 🏗️ Architecture (v4.3.1)
-- **Monolithic Sovereign Core**: Consolidated Guard and Technical Grounding in `presence_fastapi.py`.
-- **Deterministic Guard**: Pre-LLM interception for high-stakes intents (Personhood, Amendment, etc.).
-- **Retrieval-First Grounding**: RAG-based anchoring for technical responses (BPF/LSM).
-- **Context Band Isolation**: Physical memory segregation for constitutional, contractual, and principal data.
+Sophia-AI is an experimental AI architecture that combines explicit governance rules, technical enforcement, response verification, pedagogical adaptation, and longitudinal assessment. The system is designed to support accountable human-AI collaboration while preserving authorship, provenance, and non-deceptive interaction.
 
 ---
 
-*This instance is SEALED. Truth is not negotiable. Beauty does not overrule truth.*
+## Why this exists
+
+Most AI systems optimize for fluent output. Sophia-AI explores a different model: an AI system that is explicitly governed by internal rules, constrained by enforceable technical safeguards, and oriented toward helping users think more effectively rather than merely producing answers on demand.
+
+---
+
+## Core architecture
+
+### Constitutional governance
+Explicit rules define boundaries around authorship, provenance, non-deceptive presence, and pedagogical responsibility.
+
+### Technical enforcement
+System-level safeguards and attestation mechanisms ensure these constraints are materially enforceable.
+
+### Response governance
+Outputs are reviewed through multiple paths including normative checks, factual verification, and intent interpretation.
+
+### Pedagogical adaptation
+Responses are calibrated to the user’s learning state, cognitive load, and developmental needs.
+
+### Assessment ecology
+Interactions can be evaluated through baseline, diagnostic, formative, criterion-based, reflective, and growth-oriented assessment passes.
+
+---
+
+## Key idea
+
+Sophia-AI treats assessment as part of the architecture itself.
+
+Instead of asking only whether a response is fluent or policy-compliant, the system asks:
+
+- What kind of challenge is present?
+- What support is needed before answering?
+- Did the response meet explicit criteria?
+- Were uncertainty and limits handled honestly?
+- Is the system improving relative to its prior performance?
+
+This reframes AI governance as a developmental and accountable process rather than a purely reactive safety filter.
+
+---
+
+## Current research directions
+
+- Constitutional governance for AI systems
+- Pedagogical mediation in human-AI interaction
+- Assessment of, for, and as learning in AI architectures
+- Criterion-referenced and ipsative evaluation for model development
+- Longitudinal growth tracking under constrained interaction
+
+---
+
+## Repository structure
+
+```text
+.
+├── README.md
+├── docs/
+│   └── Sophia_AI_Refined_Framework.pdf
+├── assets/
+│   └── sophia-cover.png
+├── backend/
+├── frontend/
+├── governance/
+├── pedagogy/
+└── assessments/
