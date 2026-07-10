@@ -2,7 +2,7 @@
 
 ### Constitutional governance and pedagogical intelligence for authorship-preserving AI
 
-![Sophia-AI](assets/sophia-cover.png)
+![Sophia-AI](Sophia.png)
 
 > **Sophia-AI is an experimental architecture for bounded, inspectable, pedagogically adaptive AI assistance.**  
 > Its purpose is not to replace human judgment, but to preserve authorship, strengthen reasoning, govern assistance, and make AI interaction more accountable.
