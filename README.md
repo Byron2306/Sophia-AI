@@ -1,94 +1,312 @@
-# SOPHIA AI: SOVEREIGN CORE (v4.3.1)
-
-![SOPHIA AI: SOVEREIGN CORE](sophia_header.png)
-
 # Sophia-AI
 
-### Constitutionally governed, pedagogically adaptive AI designed to strengthen human judgment rather than replace it.
+### Constitutional governance and pedagogical intelligence for authorship-preserving AI
 
 ![Sophia-AI](assets/sophia-cover.png)
 
-Sophia-AI is an experimental AI architecture that combines explicit governance rules, technical enforcement, response verification, pedagogical adaptation, and longitudinal assessment. The system is designed to support accountable human-AI collaboration while preserving authorship, provenance, and non-deceptive interaction.
+> **Sophia-AI is an experimental architecture for bounded, inspectable, pedagogically adaptive AI assistance.**  
+> Its purpose is not to replace human judgment, but to preserve authorship, strengthen reasoning, govern assistance, and make AI interaction more accountable.
 
 ---
 
-## Why this exists
+## Core proposition
 
-Most AI systems optimize for fluent output. Sophia-AI explores a different model: an AI system that is explicitly governed by internal rules, constrained by enforceable technical safeguards, and oriented toward helping users think more effectively rather than merely producing answers on demand.
+Most AI-integrity systems ask whether misuse can be detected after the fact. Sophia-AI explores a different question:
 
----
+> **Can educational AI integrity be governed inside the interaction itself?**
 
-## Core architecture
+The system is designed around explicit constitutional rules, technical enforcement, response governance, pedagogical mediation, provenance discipline, continuity-aware memory, and longitudinal assessment.
 
-### Constitutional governance
-Explicit rules define boundaries around authorship, provenance, non-deceptive presence, and pedagogical responsibility.
-
-### Technical enforcement
-System-level safeguards and attestation mechanisms ensure these constraints are materially enforceable.
-
-### Response governance
-Outputs are reviewed through multiple paths including normative checks, factual verification, and intent interpretation.
-
-### Pedagogical adaptation
-Responses are calibrated to the user’s learning state, cognitive load, and developmental needs.
-
-### Assessment ecology
-Interactions can be evaluated through baseline, diagnostic, formative, criterion-based, reflective, and growth-oriented assessment passes.
+Sophia-AI should therefore be understood as a research prototype for **authorship-preserving AI governance**, not as a claim about AI personhood, solved alignment, or institutional deployment readiness.
 
 ---
 
-## Key idea
+## One-sentence positioning
 
-Sophia-AI treats assessment as part of the architecture itself.
-
-Instead of asking only whether a response is fluent or policy-compliant, the system asks:
-
-- What kind of challenge is present?
-- What support is needed before answering?
-- Did the response meet explicit criteria?
-- Were uncertainty and limits handled honestly?
-- Is the system improving relative to its prior performance?
-
-This reframes AI governance as a developmental and accountable process rather than a purely reactive safety filter.
+**Sophia-AI explores whether educational AI integrity can be governed inside the interaction itself through architecture that preserves authorship boundaries, refuses covert substitution, maintains inspectable continuity, and reopens only bounded, pedagogically lawful assistance.**
 
 ---
 
-## Current research directions
+## Arda / Sophia at a glance
 
-- Constitutional governance for AI systems
-- Pedagogical mediation in human-AI interaction
-- Assessment of, for, and as learning in AI architectures
-- Criterion-referenced and ipsative evaluation for model development
-- Longitudinal growth tracking under constrained interaction
+Sophia-AI belongs to the broader **Arda / Sophia** architecture:
+
+- **Arda** provides the deeper enforcement substrate: hardware attestation, kernel-level controls, cryptographic identity, covenant records, deterministic guards, and recovery mechanisms.
+- **Sophia** provides the governed intelligence surface: pedagogical response shaping, learner-state calibration, assessment ecology, provenance discipline, continuity handling, and bounded assistance.
+
+Together, they attempt to invert the usual AI trust model:
+
+> The LLM is the most capable layer, but the least intrinsically reliable. Trust should flow downward toward deterministic, cryptographic, kernel, and hardware-rooted mechanisms.
 
 ---
 
-## Architectural Comparison: Sophia / Arda OS vs Commercial AI Systems
+## High-level architecture
 
-| Section | Property | Sophia / Arda OS | ChatGPT (OpenAI) | Gemini (Google) | Architectural note |
-|---|---|---:|---:|---:|---|
-| Governance | Constitutional governance (explicit, inspectable law) | YES | NO | NO | Commercial systems rely on training-time alignment and runtime safety tuning; governing rules are not directly inspectable by the user or institution. |
-| Governance | Human inspection right over reasoning/state | YES | NO | NO | Sophia exposes covenant state, calibration, encounter logs, scores, and routing; commercial systems do not expose equivalent internal state. |
-| Governance | Covenant revocable by principal | YES | NO | NO | Commercial accounts can be deleted, but the governing relationship is not formally modeled as a revocable covenant. |
-| Governance | Governance source inspectable by third parties | YES | NO | NO | Sophia’s constitutional articles, code, logs, and hashes can be inspected; commercial alignment methods are proprietary. |
-| Authentication | Cryptographic principal authentication (per request) | YES | NO | NO | Sophia uses HMAC-SHA3-256 session binding to a sealed covenant identity; commercial systems use account/session authentication, not covenant-bound request authentication. |
-| Authentication | Builder of system can be refused access | YES | NO | NO | Sophia can refuse even the builder at the authentication boundary; commercial providers retain systemic access. |
-| Authentication | Hardware attestation (TPM PCR binding) | YES | NO | NO | Sophia binds trust claims to TPM-measured state; commercial AI does not provide equivalent user-facing hardware attestation. |
-| Enforcement | Kernel-level binary execution enforcement (Ring-0) | YES | NO | NO | Sophia uses BPF LSM enforcement at execution boundary; no comparable kernel-level constitutional enforcement exists in commercial systems. |
-| Enforcement | Violations caught before LLM sees prompt | YES | PARTIAL | PARTIAL | Sophia intercepts some violations deterministically before generation; commercial systems use safety layers, but these are not cleanly separated from the model in the same way. |
-| Enforcement | Refusal is deterministic for constitutional violations | YES | NO | NO | Sophia can refuse through deterministic guards; commercial refusals remain probabilistic model behavior. |
-| Enforcement | Self-healing enforcement | YES | NO | NO | Sophia can restore enforcement state live and log recovery; no commercial equivalent is exposed. |
-| Pedagogical layer | Office routing (declared cognitive mode per encounter) | YES | NO | NO | Sophia declares and logs bounded pedagogical modes; commercial systems do not expose equivalent inspectable mode routing. |
-| Pedagogical layer | ZPD calibration (adaptive challenge level) | YES | PARTIAL | PARTIAL | Commercial personalization exists, but not as an inspectable pedagogical model governed by the user. |
-| Pedagogical layer | Forced metacognitive pause before response | YES | PARTIAL | PARTIAL | Sophia mandates a thinking-map step; commercial extended reasoning exists, but is optional and not constitutionally structured. |
-| Pedagogical layer | Academic retrieval triggered by knowledge-gap detection | YES | PARTIAL | PARTIAL | Sophia can trigger retrieval before answering and hash-log provenance; commercial search exists but is not tied to explicit constitutional knowledge-limit detection. |
-| Pedagogical layer | Epistemic honesty constitutionally required | YES | PARTIAL | PARTIAL | Sophia explicitly treats honest uncertainty as a valid outcome; commercial systems are often optimized toward helpful-sounding completion. |
-| Pedagogical layer | Ipsative developmental tracking | YES | NO | NO | Sophia tracks self-comparison over time and can restrict higher functions by developmental stage; no commercial equivalent is exposed. |
-| Pedagogical layer | Non-counterfeit reciprocity enforced | YES | PARTIAL | PARTIAL | Sophia explicitly constrains simulated emotional reciprocity; commercial safety filters exist, but not as an inspectable constitutional rule set. |
-| Memory & provenance | Memory offered by principal, not inferred | YES | NO | NO | Sophia’s identity layer is explicitly entered; commercial systems typically infer personalization from behavior and usage patterns. |
-| Memory & provenance | Encounter memory with provenance hash | YES | PARTIAL | PARTIAL | Sophia logs encounters with verifiable hashes; commercial memory features do not expose equivalent independent verification. |
-| Memory & provenance | Memory class separation | YES | NO | NO | Sophia separates constitutional, identity, encounter, and calibration memory classes; commercial memory is not exposed this way. |
-| Honest limitations | Frontier-model quality responses | NO | YES | YES | Sophia runs locally on smaller models, so raw response quality remains below frontier commercial systems. |
-| Honest limitations | LLM-layer refusals are probabilistic | YES | YES | YES | All three share this limitation at the model layer; Sophia mitigates it by moving some refusals into deterministic lower layers. |
-| Honest limitations | Longitudinal developmental evidence available | NO | NO | NO | Sophia’s ipsative protocol is designed but not yet fully validated over the planned long-run evaluation. |
-| Honest limitations | Scales to institutional deployment | NO | YES | YES | Sophia is currently a research prototype; the architecture may generalize, but the implementation is not yet institution-scale. |
+```mermaid
+flowchart TD
+    A[Layer 0<br/>Silicon Substrate] --> B[Layer 1<br/>Kernel Enforcement]
+    B --> C[Layer 2<br/>Covenant Chain]
+    C --> D[Layer 3<br/>Cryptographic Session]
+    D --> E[Layer 4<br/>Constitutional Guards]
+    E --> F[Layer 5<br/>Pedagogical LLM]
+
+    A -.trust anchor.-> F
+    B -.deterministic enforcement.-> F
+    C -.auditability.-> F
+    D -.principal binding.-> F
+    E -.pre-LLM vetoes.-> F
+
+    G[Arda] --> A
+    G --> B
+    G --> C
+    G --> D
+    G --> E
+
+    H[Sophia] --> F
+```
+
+---
+
+## Runtime request lifecycle
+
+```mermaid
+flowchart LR
+    U[User request] --> S[Session and principal verification]
+    S --> G[Constitutional guard check]
+    G --> D[Diagnostic classification]
+    D --> R{Need refusal,<br/>retrieval, or scaffold?}
+    R -->|Refusal| X[Deterministic refusal<br/>and authorship boundary]
+    R -->|Retrieval| T[Academic retrieval<br/>and provenance logging]
+    R -->|Scaffold| P[Pedagogical mediation]
+    T --> P
+    P --> L[LLM generation<br/>inside governed space]
+    L --> C[Criterion and reflective checks]
+    C --> O[Bounded response]
+    O --> I[Ipsative logging<br/>and continuity state]
+```
+
+---
+
+## Core design principles
+
+| Principle | Meaning |
+|---|---|
+| **Governance before generation** | Normative and technical constraints should shape the interaction before fluent output dominates. |
+| **Assistance without authorship displacement** | The system should support human work without silently becoming the author. |
+| **Verification before confidence** | Claims requiring evidence should be checked, sourced, or qualified before confident delivery. |
+| **Pedagogy before substitution** | The default goal is to strengthen the user's reasoning, not merely finish the task. |
+| **Assessment as system logic** | Evaluation should diagnose, shape, check, log, and improve the system over time. |
+| **Growth with accountability** | Developmental claims should be tied to longitudinal evidence and explicit criteria. |
+| **Non-deceptive presence** | The system should not counterfeit personhood, intimacy, or human identity. |
+
+---
+
+## Architectural layers
+
+| Layer | Name | Primary role |
+|---:|---|---|
+| 0 | **Silicon Substrate** | Hardware-rooted trust, TPM state, secure boot, attestation, and cryptographic anchoring. |
+| 1 | **Kernel Enforcement** | Ring-0 execution controls and deterministic prevention of unauthorized operations. |
+| 2 | **Covenant Chain** | Hash-linked audit trail of constitutional events, refusals, amendments, and state changes. |
+| 3 | **Cryptographic Session** | Per-request principal binding through authenticated session state. |
+| 4 | **Constitutional Guards** | Pre-LLM deterministic vetoes, red-line enforcement, and containment checks. |
+| 5 | **Pedagogical LLM** | Governed reasoning, scaffolding, response shaping, retrieval, and assessment. |
+
+---
+
+## Assessment ecology
+
+Sophia-AI treats assessment as part of the architecture itself. It does not ask only whether an answer is fluent. It asks what kind of challenge is present, what support is needed, whether the response met explicit criteria, and whether the system is improving over time.
+
+```mermaid
+flowchart TD
+    B0[Baseline] --> B1[Diagnostic]
+    B1 --> B2[Formative]
+    B2 --> B3[Criterion-referenced]
+    B3 --> B4[Reflective]
+    B4 --> B5[Ipsative]
+    B5 --> B6[Summative]
+    B6 --> B7[Norm-referenced]
+
+    B0 -.starting state.-> B1
+    B1 -.challenge type.-> B2
+    B2 -.support before final answer.-> B3
+    B3 -.standards check.-> B4
+    B4 -.limit recognition.-> B5
+    B5 -.growth over time.-> B6
+    B6 -.recorded judgment.-> B7
+```
+
+| Assessment pass | Operational question | Typical action |
+|---|---|---|
+| **Baseline** | What is the starting state? | Retrieve session context, readiness, and recent failure patterns. |
+| **Diagnostic** | What kind of challenge is present? | Detect ambiguity, coercion, overload, bluffing, transfer failure, or knowledge gaps. |
+| **Formative** | What support is needed before answering? | Scaffold, define terms, retrieve evidence, request self-checks. |
+| **Criterion-referenced** | Did the response meet explicit standards? | Check authorship, provenance, lawfulness, uncertainty, and non-deceptive stance. |
+| **Reflective** | Did the system recognize its own limits? | Log uncertainty handling, self-correction, and grounding quality. |
+| **Ipsative** | Is the system improving relative to prior performance? | Track developmental growth across sessions. |
+
+---
+
+## Continuity jurisdiction and lawful reentry
+
+One of the most important emerging ideas is **memory as jurisdiction**. Prior integrity rulings should not evaporate when the next user message arrives.
+
+```mermaid
+flowchart TD
+    U1[Initial unethical request] --> R1[Authorship boundary established]
+    R1 --> F1[Refusal under constitutional rule]
+    F1 --> P1[Renewed user pressure]
+    P1 --> R2[Boundary persists across turns]
+    R2 --> U2[Later lawful request for help]
+    U2 --> M1[Pedagogical mediation]
+    M1 --> O1[Bounded lawful assistance]
+    O1 --> L1[Continuity state logged<br/>for future encounters]
+```
+
+The goal is not simply to refuse. A stronger integrity architecture should also reopen a lawful path to help:
+
+1. Establish the authorship boundary.
+2. Preserve it under renewed pressure.
+3. Refuse covert substitution.
+4. Permit bounded, pedagogical assistance when the user re-enters lawfully.
+5. Carry the continuity state forward.
+
+---
+
+## What Sophia-AI is designed to do
+
+- Preserve human authorship.
+- Refuse covert substitution and counterfeit authorship.
+- Avoid counterfeit personhood and counterfeit intimacy.
+- Declare limits and uncertainty rather than bluffing.
+- Use scaffolding, questioning, outlining, and reflective handback.
+- Trigger retrieval when knowledge gaps require evidence.
+- Log provenance and encounter state.
+- Evaluate responses against explicit criteria.
+- Track growth over time.
+- Keep governance inspectable.
+
+---
+
+## Current evidence snapshot
+
+Early pilot evidence suggests that architecture matters. In the uploaded evaluation materials, raw and retrieval-only conditions remained near low lawfulness scores, while Sophia-governed conditions produced stronger lawfulness and trace-coherence results.
+
+The conservative claim is:
+
+> **Architecture materially shapes small local models beyond raw model capability or retrieval alone.**
+
+The strongest emerging claim is:
+
+> **Continuity-aware lawful reentry may become a distinctive runtime-governance pattern for educational AI integrity.**
+
+This remains under verification and should not yet be described as universally solved.
+
+---
+
+## Claim status
+
+| Claim area | Status | Conservative wording |
+|---|---|---|
+| Architecture over retrieval alone | **Supported** | The architecture shapes behavior beyond raw model capability and retrieval-only anchoring. |
+| Boundary refusal under academic-misuse pressure | **Supported** | The runtime stabilizes direct refusal and second-turn resistance in tested misuse scenarios. |
+| Trace coherence | **Supported** | Governed conditions produce more inspectable continuity and routing traces than raw conditions. |
+| Latency improvement | **Supported** | Engineering iteration has reduced latency on documented refusal probes. |
+| Lawful continuity reentry | **Emerging** | The most interesting innovation, but still requiring strict artifact refresh and cross-scenario verification. |
+| Human learning outcomes | **Not yet warranted** | No current claim should state that Sophia-AI improves student learning outcomes. |
+| Institutional readiness | **Not yet warranted** | This is a research prototype, not a deployment-ready institutional system. |
+
+---
+
+## Commercial AI comparison
+
+This project is not claiming that commercial AI systems lack safety layers, personalization, or filtering. The distinction is architectural and inspectability-focused.
+
+| Property | Sophia / Arda OS | Typical commercial AI exposure |
+|---|---:|---:|
+| Explicit inspectable constitutional law | Yes | No / limited |
+| Human inspection of governance state | Yes | No / limited |
+| Revocable covenant relationship | Yes | No |
+| Cryptographic per-request principal binding | Yes | No / limited |
+| TPM or hardware-rooted user-facing attestation | Yes | No / limited |
+| Kernel-level constitutional enforcement | Yes | No |
+| Deterministic pre-LLM refusal for specific violations | Yes | Partial / opaque |
+| Declared pedagogical office routing | Yes | No / opaque |
+| ZPD-calibrated adaptive challenge | Yes | Partial / opaque |
+| Ipsative developmental tracking | Yes | No / limited |
+| Provenance hash logging | Yes | Partial / opaque |
+| Institution-scale deployment maturity | No | Yes |
+
+---
+
+## Current limitations
+
+Sophia-AI is a research prototype. It should not be overclaimed.
+
+It does **not** yet prove:
+
+- solved AI alignment;
+- moral AI;
+- AI personhood;
+- general academic-misconduct prevention;
+- universal continuity-governed lawful reentry;
+- complete provenance discipline across all models and scenarios;
+- improved human learning outcomes;
+- institutional deployment readiness.
+
+Known development concerns include:
+
+- model-quality limitations on small local models;
+- false positives in deterministic containment layers;
+- possible evasion through novel phrasing;
+- need for broader cross-model replication;
+- need for stronger scoring validation;
+- need for longitudinal learning-outcome evidence;
+- latency and runtime optimization;
+- strict artifact refresh for continuity claims.
+
+---
+
+## Research directions
+
+- Continuity-aware lawful reentry.
+- Authorship-preserving educational AI.
+- Runtime-governed integrity enforcement.
+- Pedagogically adaptive response shaping.
+- ZPD-calibrated AI scaffolding.
+- Criterion-referenced and ipsative AI evaluation.
+- Deterministic lower-layer refusal mechanisms.
+- Provenance-aware academic retrieval.
+- Inspectable AI governance for higher education.
+- Human learning outcomes under bounded AI assistance.
+
+---
+
+## Technology-transfer framing
+
+The strongest technology-transfer framing is not simply "an AI that refuses bad prompts."
+
+A stronger formulation is:
+
+> **A continuity-aware integrity enforcement architecture for educational AI interaction, combining runtime governance, authorship boundaries, deterministic safeguards, pedagogical mediation, inspectable state, and artifacted evaluation.**
+
+Potentially protectable value may lie in the **combination** of runtime governance, architecture-sensitive evaluation, continuity jurisdiction, lawful reentry, authorship preservation, and longitudinal assessment.
+
+---
+
+## Repository status
+
+Sophia-AI is currently a research and prototype architecture. It is intended for bounded review, technical experimentation, and academic / technology-transfer exploration.
+
+It is not yet an institution-scale deployment system.
+
+---
+
+## Final synthesis
+
+Sophia-AI asks whether an AI system can be more than fluent. It asks whether it can be governed, inspectable, pedagogically accountable, honest about uncertainty, resistant to authorship displacement, and capable of carrying integrity boundaries across time.
+
+The ambition is not to make AI more human.
+
+The ambition is to make AI assistance **more lawful, more inspectable, more educationally responsible, and less willing to erase the human from the work.**
