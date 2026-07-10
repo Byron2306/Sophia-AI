@@ -3,7 +3,7 @@
 ### Constitutional governance and pedagogical intelligence for authorship-preserving AI
 
 <p align="center">
-  <img src="Sophia.png" width="550" style="max-width: 92%; height: auto;">
+  <img src="Sophia.png" width="750" style="max-width: 92%; height: auto;">
 </p>
 
 > **Sophia-AI is an experimental architecture for bounded, inspectable, pedagogically adaptive AI assistance.**  
