@@ -9,7 +9,12 @@ on:
       - 'arda_os/backend/services/dio_product_review.py'
       - 'arda_os/backend/services/presence_server.py'
       - 'tests/test_dio_product_review_routing.py'
+      - 'tests/run_dio_product_review_live.py'
       - '.github/workflows/dio-product-review-ollama.yml'
+
+concurrency:
+  group: sophia-dio-review-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   routing-contract:
@@ -21,3 +26,43 @@ jobs:
           python-version: '3.11'
       - name: Run specialist routing regression tests
         run: python -m unittest -v tests.test_dio_product_review_routing
+
+  live-ollama-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Start Ollama and pull tiny Qwen
+        run: |
+          ollama serve >/tmp/ollama.log 2>&1 &
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:11434/api/tags >/dev/null && break
+            sleep 1
+          done
+          ollama pull qwen2.5:0.5b
+      - name: Start Sophia Presence 7070
+        env:
+          PRESENCE_PORT: '7070'
+          OLLAMA_URL: http://127.0.0.1:11434
+          OLLAMA_MODEL: qwen2.5:0.5b
+        run: |
+          python arda_os/backend/services/presence_server.py >/tmp/sophia-presence.log 2>&1 &
+          for i in {1..45}; do
+            curl -fsS http://127.0.0.1:7070/api/health >/dev/null && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:7070/api/health
+      - name: Execute live specialist review
+        run: python tests/run_dio_product_review_live.py /tmp/sophia-live-review.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sophia-dio-live-review-witness
+          path: |
+            /tmp/sophia-live-review.json
+            /tmp/sophia-presence.log
+            /tmp/ollama.log
