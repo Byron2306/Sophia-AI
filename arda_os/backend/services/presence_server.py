@@ -39,6 +39,12 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
+from backend.services.dio_product_review import (
+    build_product_review_prompt,
+    build_product_review_system_prompt,
+    resolve_product_review_lane,
+)
+
 # ================================================================
 # PROJECT PATH SETUP
 # ================================================================
@@ -1026,6 +1032,50 @@ class PresenceHandler(SimpleHTTPRequestHandler):
                 "reason": "principal_not_verified",
                 "encounter_id": refusal_id,
             })
+            return
+
+        # ── DIO SPECIALIST PRODUCT REVIEW LANE ──
+        # This route is selected deterministically from structured request
+        # metadata. The LLM cannot promote a generic conversation into it.
+        review_lane = resolve_product_review_lane(body)
+        if review_lane["selected"]:
+            encounter_id = f"enc-{hashlib.sha256(f'{time.time()}{text}'.encode()).hexdigest()[:12]}"
+            review_system = build_product_review_system_prompt(body)
+            review_prompt = build_product_review_prompt(body, text)
+            result = ollama_generate(review_prompt, system_prompt=review_system)
+            if result.get("status") == "ok":
+                response_text = str(result.get("response") or "").strip()
+                _log_encounter(encounter_id, text, response_text, "dio_product_review_lane")
+                self._json_response({
+                    "response": response_text,
+                    "source": "dio_product_review_lane",
+                    "model": result.get("model"),
+                    "eval_count": result.get("eval_count", 0),
+                    "encounter_id": encounter_id,
+                    "dio_product_review_lane": True,
+                    "reasoned_integrity_lane": True,
+                    "document_evidence_task": review_lane["task"],
+                    "ui_surface": review_lane["ui_surface"],
+                    "authority_created": False,
+                    "release_authority": False,
+                    "external_send_authority": False,
+                })
+                return
+            fallback = (
+                "The specialist review lane is selected, but the configured local "
+                "review model is unavailable. No generic pedagogical fallback was used."
+            )
+            _log_encounter(encounter_id, text, fallback, "dio_product_review_unavailable")
+            self._json_response({
+                "response": fallback,
+                "source": "dio_product_review_unavailable",
+                "reason": result.get("error", "ollama_unavailable"),
+                "encounter_id": encounter_id,
+                "dio_product_review_lane": True,
+                "authority_created": False,
+                "release_authority": False,
+                "external_send_authority": False,
+            }, 503)
             return
 
         # Generate encounter ID
