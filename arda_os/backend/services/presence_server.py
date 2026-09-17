@@ -39,11 +39,6 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
-from backend.services.dio_product_review import (
-    build_product_review_prompt,
-    build_product_review_system_prompt,
-    resolve_product_review_lane,
-)
 
 # ================================================================
 # PROJECT PATH SETUP
@@ -56,6 +51,12 @@ PRESENCE_UI_DIR = PROJECT_ROOT / "evidence" / "Presence UI"
 # Add arda_os to sys.path for service imports
 if str(ARDA_OS_ROOT) not in sys.path:
     sys.path.insert(0, str(ARDA_OS_ROOT))
+
+from backend.services.dio_product_review import (
+    build_product_review_prompt,
+    build_product_review_system_prompt,
+    resolve_product_review_lane,
+)
 
 # Phase VII Deep Layer Imports
 try:
