@@ -64,8 +64,15 @@ try:
     from backend.services.earendil_flow import get_earendil_flow
     from backend.services.notation_token import get_notation_token_service
     from backend.services.quorum_engine import get_quorum_engine
-except ImportError:
-    log("Warning: Phase VII services not fully reachable from Presence Server context.")
+except ImportError as exc:
+    # Logging is defined later in this module. Phase VII services are optional
+    # for the local Presence/Ollama lane, so import failure must degrade rather
+    # than preventing the 7070 server from booting.
+    print(f"[presence] Warning: Phase VII services unavailable: {exc}", file=sys.stderr)
+    get_secret_fire_forge = None
+    get_earendil_flow = None
+    get_notation_token_service = None
+    get_quorum_engine = None
 
 # ================================================================
 # CONFIGURATION
