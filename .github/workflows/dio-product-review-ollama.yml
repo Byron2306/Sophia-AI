@@ -1,0 +1,23 @@
+name: Sophia DIO Product Review
+
+on:
+  push:
+    branches:
+      - agent/dio-product-review-ollama
+  pull_request:
+    paths:
+      - 'arda_os/backend/services/dio_product_review.py'
+      - 'arda_os/backend/services/presence_server.py'
+      - 'tests/test_dio_product_review_routing.py'
+      - '.github/workflows/dio-product-review-ollama.yml'
+
+jobs:
+  routing-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run specialist routing regression tests
+        run: python -m unittest -v tests.test_dio_product_review_routing
